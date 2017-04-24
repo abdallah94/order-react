@@ -3,5 +3,7 @@
  */
 
 import {SearchContainer} from './searchComponent/SearchContainer';
+import {CustomerMainComponent} from './customerMainComponent/CustomerMainComponent';
 
 export {SearchContainer};
+export {CustomerMainComponent};
