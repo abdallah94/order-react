@@ -7,7 +7,6 @@ import {Search} from "./Search";
 import {Constants} from '../../../utils';
 /* Modules */
 import {connect} from "react-redux";
-import i18next from "i18next";
 
 const mapStateToProps = (state) => {
     return {}
