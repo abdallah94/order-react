@@ -17,6 +17,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         changeLanguage: () => {
             i18next.changeLanguage(i18next.language === Constants.ENGLISH ? Constants.ARABIC : Constants.ENGLISH);
+        },
+        showCart: () => {
+
         }
     }
 };

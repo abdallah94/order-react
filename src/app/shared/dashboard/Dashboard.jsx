@@ -6,8 +6,9 @@ import "./style.css";
 import React, {Component} from "react";
 import {Navbar,Nav,NavItem} from 'react-bootstrap';
 import {Link} from 'react-router';
-
 import i18next from "i18next";
+
+import {Constants} from '../../../utils';
 
 class Dashboard extends Component {
     render() {
@@ -23,7 +24,7 @@ class Dashboard extends Component {
                     <Nav pullRight>
                         <NavItem eventKey={1}><h5>{i18next.t("LOGIN")}</h5></NavItem>
                         <NavItem eventKey={2} ><h5 onClick={()=>{this.props.changeLanguage()}}>{i18next.t("LANGUAGE")}</h5></NavItem>
-                        <NavItem eventKey={3}><h5>0595453476</h5></NavItem>
+                        <NavItem eventKey={3}><h5>{Constants.CONTACT_US_PHONE_NUMBER}</h5></NavItem>
                         <NavItem eventKey={4}><h5>CART</h5></NavItem>
                     </Nav>
                 </Navbar.Collapse>
