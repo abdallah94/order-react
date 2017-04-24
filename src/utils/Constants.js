@@ -2,7 +2,8 @@
  * Created by Fujitsu on 4/24/2017.
  */
 const Constants={
-    val:7,
+    ENGLISH:"en",
+    ARABIC:"ar",
 };
 
 export default Constants;

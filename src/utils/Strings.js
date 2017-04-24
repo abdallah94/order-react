@@ -4,10 +4,16 @@
 
 const Strings = {
     en: {
-        translation: {}
+        translation: {
+            LOGIN:"Login",
+            LANGUAGE:"English",
+        }
     }
     , ar: {
-        translation: {}
+        translation: {
+            LOGIN:"تسجيل الدخول",
+            LANGUAGE:"العربية",
+        }
     }
 };
 
