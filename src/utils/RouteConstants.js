@@ -6,6 +6,7 @@ const RouteConstants = {
     ROUTE_APP_CUSTOMER: "customer",
     ROUTE_APP_ADMIN: "admin",
     ROUTE_APP_RESTAURANT: "restaurant",
+    ROUTE_APP_CUSTOMER_RESTAURANTS: "restaurants",
 };
 
 const PathConstants = {
@@ -13,6 +14,7 @@ const PathConstants = {
     PATH_APP_CUSTOMER: "/" + RouteConstants.ROUTE_APP_CUSTOMER,
     PATH_APP_ADMIN: "/" + RouteConstants.ROUTE_APP_ADMIN,
     PATH_APP_RESTAURANT: "/" + RouteConstants.ROUTE_APP_RESTAURANT,
+    PATH_APP_CUSTOMER_RESTAURANTS: "/" + RouteConstants.ROUTE_APP_CUSTOMER + "/" + RouteConstants.ROUTE_APP_CUSTOMER_RESTAURANTS,
 };
 
 

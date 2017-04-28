@@ -7,12 +7,14 @@ const Strings = {
         translation: {
             LOGIN:"Login",
             LANGUAGE:"English",
+            RESTAURANT:"Restaurant",
         }
     }
     , ar: {
         translation: {
             LOGIN:"تسجيل الدخول",
             LANGUAGE:"العربية",
+            RESTAURANT:"المطعم",
         }
     }
 };
