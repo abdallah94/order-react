@@ -12,12 +12,12 @@ class Search extends Component {
         }
     }
 
-    render() {
+    render() { 
         return (
             <Row>
                 <Form horizontal>
                     <Row className="row-eq-height">
-                        <Col xs={3} xsOffset={3} className="no-padding">
+                        <Col xs={2} xsOffset={4} className="no-padding">
                             <Select className="select-search" value={this.state.value}
                                     multi={false}
                                     simpleValue={true}
