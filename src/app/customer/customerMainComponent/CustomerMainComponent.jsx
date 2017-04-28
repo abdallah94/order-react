@@ -1,10 +1,8 @@
 import "./style.css";
 import React, {Component} from "react";
-import {Grid, Row, Image} from 'react-bootstrap';
-
+import {Grid} from "react-bootstrap";
 /*Components*/
-import {Constants} from '../../../utils';
-import {SearchContainer} from '../';
+import {SearchContainer} from "../";
 
 class CustomerMainComponent extends Component {
     render() {

@@ -1,10 +1,8 @@
 /**
  * Created by Abdallah on 4/24/2017.
  */
-
 /* Components */
 import {Search} from "./Search";
-import {Constants} from '../../../utils';
 /* Modules */
 import {connect} from "react-redux";
 
@@ -20,7 +18,7 @@ const mapDispatchToProps = (dispatch) => {
 
 //TODO: Delete dummy data
 function getDummyData() {
-    return [{value: 0, label: "Restaurant", disabled:true}, {value: 1, label: "MCdonalds"}, {value: 2, label: "KFC"}, {
+    return [{value: 0, label: "Restaurant", disabled: true}, {value: 1, label: "MCdonalds"}, {value: 2, label: "KFC"}, {
         value: 3,
         label: "Mr.Pizza"
     }, {

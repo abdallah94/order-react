@@ -1,10 +1,9 @@
 import "./style.css";
 import React, {Component} from "react";
-import {Form, FormGroup, Col, Row, Button,Image} from 'react-bootstrap';
-import Select from 'react-select';
-import i18next from 'i18next';
-
-import {Constants} from '../../../utils';
+import {Form, Col, Row, Button, Image} from "react-bootstrap";
+import Select from "react-select";
+import i18next from "i18next";
+import {Constants} from "../../../utils";
 
 class Search extends Component {
     constructor(props) {
