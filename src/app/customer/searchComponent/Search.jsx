@@ -14,10 +14,10 @@ class Search extends Component {
 
     render() { 
         return (
-            <Row>
+            <Row className="search-component">
                 <Form horizontal>
                     <Row className="row-eq-height">
-                        <Col xs={2} xsOffset={4} className="no-padding">
+                        <Col xs={2} xsOffset={5} className="no-padding">
                             <Select className="select-search" value={this.state.value}
                                     multi={false}
                                     simpleValue={true}
@@ -26,7 +26,7 @@ class Search extends Component {
                                     options={this.props.options}>
                             </Select>
                         </Col>
-                        <Col xs={3} className="no-padding no-border-radius no-border">
+                        <Col xs={2} className="no-padding no-border-radius no-border">
                             <Button className="button-find">{i18next.t("FIND")}</Button>
                             <Button className="button-show-all">{i18next.t("SHOW_ALL")}</Button>
                         </Col>
