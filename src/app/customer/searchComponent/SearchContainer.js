@@ -3,6 +3,7 @@
  */
 /* Components */
 import {Search} from "./Search";
+import {findRestaurant} from "../";
 /* Modules */
 import {connect} from "react-redux";
 
@@ -14,7 +15,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        findRestaurants:(name)=>{
+        findRestaurants: (name) => {
+            dispatch(findRestaurant(name));
 
         }
     }
