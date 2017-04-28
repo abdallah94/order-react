@@ -8,6 +8,8 @@ const Strings = {
             LOGIN:"Login",
             LANGUAGE:"English",
             RESTAURANT:"Restaurant",
+            FIND:"Find",
+            SHOW_ALL:"Show all",
         }
     }
     , ar: {
@@ -15,6 +17,8 @@ const Strings = {
             LOGIN:"تسجيل الدخول",
             LANGUAGE:"العربية",
             RESTAURANT:"المطعم",
+            FIND:"بحث",
+            SHOW_ALL:"عرض الكل",
         }
     }
 };
