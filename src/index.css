@@ -1,6 +1,25 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  padding-top: 4.571em;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    padding-top: 4.571em;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.no-margins {
+    margin: 0;
+}
+
+.no-border{
+    border:0
+}
+
+.no-border-radius{
+    border-radius: 0;
+}
+.border-1px{
+    border: 1px;
 }
