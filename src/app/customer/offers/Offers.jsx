@@ -1,15 +1,8 @@
-/**
- * Created by Abdallah on 4/28/2017.
- */
-
-/*CSS*/
-import './style.css'
-
+import "./style.css";
 /* Components */
-
 /*Modules*/
-import React from 'react';
-import {Row, Col, Carousel, Image} from 'react-bootstrap';
+import React from "react";
+import {Col, Carousel, Image} from "react-bootstrap";
 
 export class Offers extends React.Component {
     constructor(props) {
@@ -22,17 +15,17 @@ export class Offers extends React.Component {
     render() {
         return (
             <Col xs={10} xsOffset={1}>
-            <Carousel activeIndex={this.state.index} direction={this.state.direction} onSelect={this.handleSelect}>
-                {this.props.offers.map((offer, i) => (
-                    <Carousel.Item>
-                        <Image responsive src={offer.image} className="offer-image"/>
-                        <Carousel.Caption>
-                            <h3>{offer.restaurant}</h3>
-                            <p>{offer.description}</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                ))}
-            </Carousel>
+                <Carousel activeIndex={this.state.index} direction={this.state.direction} onSelect={this.handleSelect}>
+                    {this.props.offers.map((offer, i) => (
+                        <Carousel.Item>
+                            <Image responsive src={offer.image} className="offer-image"/>
+                            <Carousel.Caption>
+                                <h3>{offer.restaurant}</h3>
+                                <p>{offer.description}</p>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                    ))}
+                </Carousel>
             </Col>
 
         )
