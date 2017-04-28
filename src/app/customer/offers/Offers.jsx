@@ -15,10 +15,10 @@ export class Offers extends React.Component {
     render() {
         return (
             <Col xs={10} xsOffset={1}>
-                <Carousel activeIndex={this.state.index} direction={this.state.direction} onSelect={this.handleSelect}>
+                <Carousel activeIndex={this.state.index} direction={this.state.direction} onSelect={this.handleSelect} interval={1} slide wrap>
                     {this.props.offers.map((offer, i) => (
-                        <Carousel.Item>
-                            <Image responsive src={offer.image} className="offer-image"/>
+                        <Carousel.Item key={i}>
+                            <Image responsive height={200} src={offer.image} className="offer-image"/>
                             <Carousel.Caption>
                                 <h3>{offer.restaurant}</h3>
                                 <p>{offer.description}</p>
@@ -35,12 +35,11 @@ export class Offers extends React.Component {
     getInitialState() {
         return {
             index: 0,
-            direction: null
+            direction: 'prev'
         };
     }
 
     handleSelect(selectedIndex, e) {
-        alert('selected=' + selectedIndex + ', direction=' + e.direction);
         this.setState({
             index: selectedIndex,
             direction: e.direction
