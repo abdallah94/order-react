@@ -1,0 +1,24 @@
+.button-find {
+    border: 1px solid #ccc;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-radius: 0;
+    height:100%;
+}
+
+.button-show-all {
+    height:100%;
+    border: 1px solid #ccc;
+    border-radius: 0;
+}
+
+.select-search>.Select-control{
+    border-radius:0;
+}
+
+.row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+}
