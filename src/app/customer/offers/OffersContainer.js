@@ -20,7 +20,15 @@ const mapDispatchToProps = (dispatch) => {
 
 //TODO: Delete dummy data
 function getDummyOffers() {
-    return [{image: Constants.OFFER_1}, {image: Constants.OFFER_2}, {image: Constants.OFFER_3}, {image: Constants.OFFER_4},];
+    return [{
+        image: Constants.OFFER_1,
+        restaurant: "KFC",
+        description: "Buy two get one free"
+    }, {image: Constants.OFFER_2, restaurant: "Buffalo", description: "free meal"}, {
+        image: Constants.OFFER_3,
+        restaurant: "KFC",
+        description: "15$ lunch!"
+    }, {image: Constants.OFFER_4, restaurant: "Mr.Pizza", description: "Large Pizza for 10$"},];
 }
 
 let OffersContainer = connect(mapStateToProps, mapDispatchToProps)(Offers);

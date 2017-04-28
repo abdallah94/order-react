@@ -13,7 +13,11 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {}
+    return {
+        findRestaurants:(name)=>{
+
+        }
+    }
 };
 
 //TODO: Delete dummy data

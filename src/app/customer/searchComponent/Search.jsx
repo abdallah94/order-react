@@ -11,12 +11,14 @@ class Search extends Component {
         this.state = {
             value: 0,
         }
+        this.findRestaurant = this.findRestaurant.bind(this);
+        this.findAllRestaurants = this.findAllRestaurants.bind(this);
     }
 
     render() {
         return (
             <div className="search-wrapper">
-                <Image reposive src={Constants.FOOD_IMG} className="image-food"/>
+                <Image responsive src={Constants.FOOD_IMG} className="image-food"/>
                 <Row className="search-component">
                     <Form horizontal>
                         <Row className="row-eq-height">
@@ -30,14 +32,19 @@ class Search extends Component {
                                 </Select>
                             </Col>
                             <Col xs={2} className="no-padding no-border-radius no-border">
-                                <Button className="button-find">{i18next.t("FIND")}</Button>
-                                <Button className="button-show-all">{i18next.t("SHOW_ALL")}</Button>
+                                <Button className="button-find" onClick={() => {
+                                    this.findRestaurant()
+                                }}>{i18next.t("FIND")}</Button>
+                                <Button className="button-show-all" onClick={() => {
+                                    this.findAllRestaurants()
+                                }}>{i18next.t("SHOW_ALL")}</Button>
                             </Col>
                         </Row>
                     </Form>
                 </Row>
             </div>
-        );
+        )
+            ;
     }
 
     handleSelectChange(value) {
@@ -46,6 +53,16 @@ class Search extends Component {
             value = 0;
         }
         this.setState({value: value});
+    }
+
+    findRestaurant() {
+        let val = !!this.state.value ? this.props.options[this.state.value] : "";
+        this.props.findRestaurant(val);
+    }
+
+    findAllRestaurants() {
+        let val = !!this.state.value ? this.props.options[this.state.value] : "";
+        this.props.findRestaurant(val);
     }
 
 }
