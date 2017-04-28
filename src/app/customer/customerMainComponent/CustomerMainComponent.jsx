@@ -11,6 +11,7 @@ class CustomerMainComponent extends Component {
         return (
             <Grid fluid>
                 <Image reposive src={Constants.FOOD_IMG} className="image-food"/>
+                <SearchContainer/>
             </Grid>
         );
     }
