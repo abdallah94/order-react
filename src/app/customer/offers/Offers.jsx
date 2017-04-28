@@ -9,11 +9,14 @@ import './style.css'
 
 /*Modules*/
 import React from 'react';
+import {Row, Col} from 'react-bootstrap';
 
 export class Offers extends React.Component {
     render() {
         return (
-            <h1>Offers</h1>
+            <Row>
+                <h1>Offers</h1>
+            </Row>
 
         )
 
