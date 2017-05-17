@@ -8,6 +8,7 @@ import {OffersContainer} from './offers/OffersContainer';
 import {findRestaurant} from './actions';
 import {RestaurantsListContainer} from './restaurantsList/RestaurantsListContainer';
 import {CustomerContainer} from './CustomerContainer';
+import {MenuItemContainer} from './menuItem/MenuItemContainer';
 
 export {SearchContainer};
 export {CustomerMainComponent};
@@ -15,3 +16,4 @@ export {OffersContainer};
 export {findRestaurant};
 export {RestaurantsListContainer};
 export {CustomerContainer};
+export {MenuItemContainer}
