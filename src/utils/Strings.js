@@ -5,20 +5,24 @@
 const Strings = {
     en: {
         translation: {
-            LOGIN:"Login",
-            LANGUAGE:"English",
-            RESTAURANT:"Restaurant",
-            FIND:"Find",
-            SHOW_ALL:"Show all",
+            LOGIN: "Login",
+            LANGUAGE: "English",
+            RESTAURANT: "Restaurant",
+            FIND: "Find",
+            SHOW_ALL: "Show all",
+            DELIVERY: "Delivery",
+            MIN: "Min",
         }
     }
     , ar: {
         translation: {
-            LOGIN:"تسجيل الدخول",
-            LANGUAGE:"العربية",
-            RESTAURANT:"المطعم",
-            FIND:"بحث",
-            SHOW_ALL:"عرض الكل",
+            LOGIN: "تسجيل الدخول",
+            LANGUAGE: "العربية",
+            RESTAURANT: "المطعم",
+            FIND: "بحث",
+            SHOW_ALL: "عرض الكل",
+            DELIVERY: "التوصيل",
+            Min: "حد أدنى",
         }
     }
 };
