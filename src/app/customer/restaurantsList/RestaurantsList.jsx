@@ -16,12 +16,11 @@ export class RestaurantsList extends React.Component {
     render() {
         return (
             <Grid fluid>
-                <Row>
+                <Row className="restaurant-list-container">
                     {this.props.restaurants && this.props.restaurants.map((restaurant, index) => (
                         <RestaurantItemContainer {...restaurant}/>
                     ))
                     }
-                    <h1>RestaurantsList</h1>
                 </Row>
             </Grid>
 

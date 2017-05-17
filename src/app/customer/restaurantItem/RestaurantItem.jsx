@@ -16,7 +16,7 @@ import i18next from 'i18next';
 export class RestaurantItem extends React.Component {
     render() {
         return (//TODO:continue UI
-            <Row>
+            <Row className="restaurant-item-container">
                 <Col xs={6} md={3}>
                     <Image responsive src={this.props.imageUrl} className="restaurant-item-restaurant-logo"/>
                 </Col>
@@ -29,7 +29,7 @@ export class RestaurantItem extends React.Component {
                     <h6 className="restaurant-item-delivery-time">{i18next.t("DELIVERY")} {this.props.deliveryTime}</h6>
                 </Col>
                 <Col xs={6} md={3}>
-                    <h2 className="restaurant-item-min-order">{i18next.t("MIN")} {this.props.minOrder}</h2>
+                    <h2 className="restaurant-item-min-order">{this.props.minOrder} {i18next.t("MIN")}</h2>
                 </Col>
             </Row>
 

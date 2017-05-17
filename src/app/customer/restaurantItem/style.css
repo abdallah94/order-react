@@ -1,3 +1,39 @@
 .restaurant-item-restaurant-logo {
-    height: 10rem;
+    height: 20rem;
+    width: 20rem;
+}
+
+.restaurant-item-container {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: solid 1px;
+}
+
+.restaurant-item-container:hover {
+    background-color: springgreen;
+}
+
+.restaurant-item-restaurant-name {
+    margin-top: 4rem;
+    font-size: 22px;
+    color: white;
+}
+
+.restaurant-item-restaurant-phone {
+    font-size: 18px;
+    color: white;
+    margin-top: 6rem;
+}
+
+.restaurant-item-delivery-time {
+    margin-top: 4rem;
+    font-size: 16px;
+    color: white;
+    margin-top: 6rem;
+}
+
+.restaurant-item-min-order {
+    font-size: 16px;
+    color: white;
+    margin-top: 6rem;
 }
