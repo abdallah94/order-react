@@ -6,6 +6,7 @@
 import './style.css'
 
 /* Components */
+import {RestaurantItemContainer} from '../';
 
 /*Modules*/
 import React from 'react';
@@ -16,6 +17,10 @@ export class RestaurantsList extends React.Component {
         return (
             <Grid fluid>
                 <Row>
+                    {this.props.restaurants && this.props.restaurants.map((restaurant, index) => (
+                        <RestaurantItemContainer {...restaurant}/>
+                    ))
+                    }
                     <h1>RestaurantsList</h1>
                 </Row>
             </Grid>
