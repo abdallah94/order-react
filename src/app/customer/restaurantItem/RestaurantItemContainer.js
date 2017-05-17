@@ -1,8 +1,11 @@
 /**
  * Created by Fujitsu on 5/18/2017.
  */
+
 /* Components */
 import {RestaurantItem} from "./RestaurantItem";
+import {Constants} from '../../../utils';
+
 /* Modules */
 import {connect} from "react-redux";
 
@@ -27,4 +30,13 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 let RestaurantItemContainer = connect(mapStateToProps, mapDispatchToProps)(RestaurantItem);
+RestaurantItemContainer.defaultProps = {
+    id: -1,
+    imageUrl: Constants.FOOD_IMG,
+    name: "Awesome Restaurant",
+    deliveryTime: 50,
+    rating: 4,
+    phoneNum: "097256848972",
+    minOrder: 40,
+};
 export {RestaurantItemContainer};

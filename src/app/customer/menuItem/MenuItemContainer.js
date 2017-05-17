@@ -3,6 +3,7 @@
  */
 /* Components */
 import {MenuItem} from "./MenuItem";
+import {Constants} from '../../../utils';
 /* Modules */
 import {connect} from "react-redux";
 
@@ -25,4 +26,11 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 let MenuItemContainer = connect(mapStateToProps, mapDispatchToProps)(MenuItem);
+MenuItemContainer.defaultProps = {
+    id: -1,
+    imageUrl: Constants.FOOD_IMG,
+    name: "Delicious meal",
+    description: "This is a long description of the meal mentioned above, enjoy!",
+    price: "10"
+};
 export {MenuItemContainer};

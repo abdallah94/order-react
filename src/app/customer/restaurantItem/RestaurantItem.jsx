@@ -38,13 +38,3 @@ export class RestaurantItem extends React.Component {
     }
 
 }
-
-RestaurantItem.defaultProps = {
-    id: -1,
-    imageUrl: Constants.FOOD_IMG,
-    name: "Awesome Restaurant",
-    deliveryTime: 50,
-    rating: 4,
-    phoneNum: "097256848972",
-    minOrder: 40,
-};

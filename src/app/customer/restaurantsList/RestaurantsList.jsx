@@ -9,11 +9,16 @@ import './style.css'
 
 /*Modules*/
 import React from 'react';
+import {Grid, Row, Col} from 'react-bootstrap';
 
 export class RestaurantsList extends React.Component {
     render() {
         return (
-            <h1>RestaurantsList</h1>
+            <Grid fluid>
+                <Row>
+                    <h1>RestaurantsList</h1>
+                </Row>
+            </Grid>
 
         )
 

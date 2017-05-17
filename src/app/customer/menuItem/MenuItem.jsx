@@ -26,11 +26,3 @@ export class MenuItem extends React.Component {
     }
 
 }
-
-MenuItem.defaultProps = {
-    id: -1,
-    imageUrl: Constants.FOOD_IMG,
-    name: "Delicious meal",
-    description: "This is a long description of the meal mentioned above, enjoy!",
-    price: "10"
-};
