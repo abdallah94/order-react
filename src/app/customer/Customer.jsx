@@ -15,7 +15,9 @@ export class Customer extends React.Component {
         return (
             <div>
                 <DashboardContainer/>
-                {this.props.children}
+                <div className="customer-container">
+                    {this.props.children}
+                </div>
             </div>
 
         )
