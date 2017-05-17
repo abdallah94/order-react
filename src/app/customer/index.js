@@ -9,6 +9,7 @@ import {findRestaurant} from './actions';
 import {RestaurantsListContainer} from './restaurantsList/RestaurantsListContainer';
 import {CustomerContainer} from './CustomerContainer';
 import {MenuItemContainer} from './menuItem/MenuItemContainer';
+import {RestaurantItemContainer} from './restaurantItem/RestaurantItemContainer';
 
 export {SearchContainer};
 export {CustomerMainComponent};
@@ -16,4 +17,5 @@ export {OffersContainer};
 export {findRestaurant};
 export {RestaurantsListContainer};
 export {CustomerContainer};
-export {MenuItemContainer}
+export {MenuItemContainer};
+export {RestaurantItemContainer};
