@@ -1,18 +1,21 @@
 /**
  * Created by Abdallah on 4/23/2017.
  */
-import {browserHistory, Route, Router, IndexRoute} from "react-router";
+import {browserHistory, Route, Router, IndexRoute, IndexRedirect} from "react-router";
 import React from "react";
-
-import {RouteConstants} from '../utils';
+import {RouteConstants} from "../utils";
 import AppContainer from "./AppContainer";
-import {CustomerMainComponent} from './customer';
+import {CustomerContainer, CustomerMainComponent} from "./customer";
 
 let Routing = () => {
-    return (
+    return ( 
         <Router history={browserHistory}>
             <Route path="/" component={AppContainer}>
-                <IndexRoute component={CustomerMainComponent}/>
+                <IndexRedirect to={RouteConstants.ROUTE_APP_CUSTOMER}/>
+                <Route path={RouteConstants.ROUTE_APP_CUSTOMER} component={CustomerContainer}>
+                    <IndexRoute component={CustomerMainComponent}/>
+                </Route>
+                <Route/>
             </Route>
         </Router>
     );
