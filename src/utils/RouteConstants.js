@@ -6,7 +6,7 @@ const RouteConstants = {
     ROUTE_APP_CUSTOMER: "customer",
     ROUTE_APP_ADMIN: "admin",
     ROUTE_APP_RESTAURANT: "restaurant",
-    ROUTE_APP_CUSTOMER_RESTAURANTS: "restaurants",
+    ROUTE_APP_CUSTOMER_RESTAURANTS: "restaurants(?name=:name)",
 };
 
 const PathConstants = {

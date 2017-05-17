@@ -5,15 +5,16 @@ import {browserHistory, Route, Router, IndexRoute, IndexRedirect} from "react-ro
 import React from "react";
 import {RouteConstants} from "../utils";
 import AppContainer from "./AppContainer";
-import {CustomerContainer, CustomerMainComponent} from "./customer";
+import {CustomerContainer, CustomerMainComponent, RestaurantsListContainer} from "./customer";
 
 let Routing = () => {
-    return ( 
+    return (
         <Router history={browserHistory}>
             <Route path="/" component={AppContainer}>
                 <IndexRedirect to={RouteConstants.ROUTE_APP_CUSTOMER}/>
                 <Route path={RouteConstants.ROUTE_APP_CUSTOMER} component={CustomerContainer}>
                     <IndexRoute component={CustomerMainComponent}/>
+                    <Route path={RouteConstants.ROUTE_APP_CUSTOMER_RESTAURANTS} component={RestaurantsListContainer}/>
                 </Route>
                 <Route/>
             </Route>
