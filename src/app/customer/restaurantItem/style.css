@@ -10,7 +10,8 @@
 }
 
 .restaurant-item-container:hover {
-    background-color: springgreen;
+    background-color: silver;
+    cursor: pointer;
 }
 
 .restaurant-item-restaurant-name {
