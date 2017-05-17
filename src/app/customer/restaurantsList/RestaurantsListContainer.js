@@ -6,7 +6,8 @@ import {RestaurantsList} from "./RestaurantsList";
 /* Modules */
 import {connect} from "react-redux";
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+    let searchName = ownProps.location.query;//TODO:use value to get data from api;
     return {}
 };
 
