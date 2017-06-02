@@ -12,6 +12,7 @@ const Strings = {
             SHOW_ALL: "Show all",
             DELIVERY: "Delivery",
             MIN: "Min",
+            VIEW: "View",
         }
     }
     , ar: {
@@ -23,6 +24,7 @@ const Strings = {
             SHOW_ALL: "عرض الكل",
             DELIVERY: "التوصيل",
             Min: "حد أدنى",
+            VIEW: "عرض",
         }
     }
 };
