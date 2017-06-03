@@ -38,4 +38,7 @@ export class RestaurantItem extends React.Component {
 
     }
 
+    navigateToRestaurant() {
+    }
+
 }
