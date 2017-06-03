@@ -56,13 +56,12 @@ class Search extends Component {
     }
 
     findRestaurant() {
-        let val = !!this.state.value ? this.props.options[this.state.value] : "";
+        let val = !!this.state.value ? this.props.options[this.state.value].label : "";
         this.props.findRestaurant(val);
     }
 
     findAllRestaurants() {
-        let val = !!this.state.value ? this.props.options[this.state.value] : "";
-        this.props.findRestaurant(val);
+        this.props.findRestaurant("");
     }
 
 }

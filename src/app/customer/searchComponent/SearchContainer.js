@@ -3,9 +3,10 @@
  */
 /* Components */
 import {Search} from "./Search";
-import {findRestaurant} from "../";
+import {PathConstants} from '../../../utils';
 /* Modules */
 import {connect} from "react-redux";
+import {browserHistory} from 'react-router';
 
 const mapStateToProps = (state) => {
     return {//TODO: Add Restaurants from API
@@ -15,9 +16,12 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        findRestaurants: (name) => {
-            dispatch(findRestaurant(name));
-
+        findRestaurant: (name) => {
+            let options = {pathname: PathConstants.PATH_APP_CUSTOMER_RESTAURANTS};
+            if (name) {
+                options.query = {name: name}
+            }
+            browserHistory.push(options);
         }
     }
 };
