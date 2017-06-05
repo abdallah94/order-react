@@ -1,12 +1,21 @@
 /**
- * Created by Abdallah on 4/24/2017.
+ * Created by omar on 6/6/2017.
  */
-import {RouteConstants} from '../../utils';
+/*modules*/
+/*Components*/
 
-import {browserHistory} from 'react-router';
+export const ADD_ITEM = "ADD_ITEM";
+export const REMOVE_ITEM = "REMOVE_ITEM";
 
-export function findRestaurant(name) {
-    browserHistory.push(RouteConstants.ROUTE_APP_CUSTOMER_RESTAURANTS);
-
-
+//this action uses fetch instead of redux-JSON-API because the API doesn't follow the standards
+export function addItem(id, number, price, name) {
+    return ({
+        type: ADD_ITEM,
+        payload: {
+            id: id,
+            number: number,
+            price: price,
+            name: name,
+        }
+    });
 }

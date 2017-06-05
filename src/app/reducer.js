@@ -3,6 +3,8 @@
  */
 import {combineReducers} from "redux";
 
-const reducers = combineReducers({});
+import {cart} from './customer';
+
+const reducers = combineReducers({cart});
 
 export default reducers;
