@@ -1,11 +1,10 @@
 /**
  * Created by Fujitsu on 6/3/2017.
  */
-
 /* Components */
 import {Order} from "./Order";
+import {addItem} from "../../customer";
 import {Constants} from '../../../utils';
-
 /* Modules */
 import {connect} from "react-redux";
 
@@ -23,8 +22,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addOrder: (id, num) => {//TODO: add calling API and navigating to retaurant page
-
+        addOrder: (id, number, name, price) => {//TODO: add calling API and navigating to retaurant page
+            dispatch(addItem(id, number, price, name));
         }
     }
 };
