@@ -6,7 +6,7 @@
 import './style.css'
 
 /* Components */
-import {RestaurantItemContainer} from '../';
+import {RestaurantItem} from '../';
 
 /*Modules*/
 import React from 'react';
@@ -18,7 +18,7 @@ export class RestaurantsList extends React.Component {
             <Grid fluid>
                 <Row className="restaurant-list-container">
                     {this.props.restaurants && this.props.restaurants.map((restaurant, index) => (
-                        <RestaurantItemContainer {...restaurant}/>
+                        <RestaurantItem {...restaurant}/>
                     ))
                     }
                 </Row>
