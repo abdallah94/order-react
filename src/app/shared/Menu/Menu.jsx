@@ -6,6 +6,7 @@
 import './style.css'
 
 /* Components */
+import {OrderContainer} from '../';
 
 /*Modules*/
 import React from 'react';
@@ -13,10 +14,9 @@ import React from 'react';
 export class Menu extends React.Component {
     render() {
         return (
-            <h1>Menu</h1>
-
+            !!this.props.items && this.props.items.map((item) => {
+                <OrderContainer {...item}/>
+            })
         )
-
     }
-
 }

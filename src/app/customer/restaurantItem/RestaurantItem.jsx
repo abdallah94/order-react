@@ -7,16 +7,19 @@ import './style.css'
 
 /* Components */
 import {Constants} from '../../../utils';
+import {PathConstants} from '../../../utils';
+
 
 /*Modules*/
 import React from 'react';
 import {Image, Row, Col, Button} from 'react-bootstrap';
+import brwoserHistory from 'react-router';
 import i18next from 'i18next';
 
 export class RestaurantItem extends React.Component {
     render() {
         return (//TODO:continue UI
-            <Row className="restaurant-item-container">
+            <Row className="restaurant-item-container" onClick={this.navigateToRestaurant.bind(this)}>
                 <Col xs={6} md={3}>
                     <Image responsive src={this.props.imageUrl} className="restaurant-item-restaurant-logo"/>
                 </Col>
@@ -39,6 +42,7 @@ export class RestaurantItem extends React.Component {
     }
 
     navigateToRestaurant() {
+        brwoserHistory.push(PathConstants.PATH_APP_CUSTOMER_RESTAURANTS + "/" + this.props.id);
     }
 
 }
