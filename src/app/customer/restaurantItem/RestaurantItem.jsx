@@ -13,7 +13,7 @@ import {PathConstants} from '../../../utils';
 /*Modules*/
 import React from 'react';
 import {Image, Row, Col, Button} from 'react-bootstrap';
-import brwoserHistory from 'react-router';
+import {browserHistory} from "react-router";
 import i18next from 'i18next';
 
 export class RestaurantItem extends React.Component {
@@ -42,7 +42,7 @@ export class RestaurantItem extends React.Component {
     }
 
     navigateToRestaurant() {
-        brwoserHistory.push(PathConstants.PATH_APP_CUSTOMER_RESTAURANTS + "/" + this.props.id);
+        browserHistory.push(PathConstants.PATH_APP_CUSTOMER_RESTAURANTS + "/" + this.props.id);
     }
 
 }

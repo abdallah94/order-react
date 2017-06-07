@@ -10,7 +10,7 @@ import {connect} from "react-redux";
 const mapStateToProps = (state, ownProps) => {
     return {
         restaurantID: ownProps.id,
-        items: state.restaurant.items,
+        //items: state.restaurant.items,//TODO:uncommint when adding API
     }
 };
 

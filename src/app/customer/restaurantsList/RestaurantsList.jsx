@@ -18,7 +18,7 @@ export class RestaurantsList extends React.Component {
             <Grid fluid>
                 <Row className="restaurant-list-container">
                     {this.props.restaurants && this.props.restaurants.map((restaurant, index) => (
-                        <RestaurantItem {...restaurant}/>
+                        <RestaurantItem key={restaurant.id} {...restaurant}/>
                     ))
                     }
                 </Row>
