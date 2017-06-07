@@ -8,9 +8,9 @@ import {Constants} from '../../../utils';
 
 /* Modules */
 import {connect} from "react-redux";
-
+ 
 const mapStateToProps = (state, ownProps) => {
-    let searchName = ownProps.location.query;//TODO:use value to get data from api;
+    let searchName = ownProps.location.query.name;//TODO:use value to get data from api;
     return {//TODO:remove dummy data
         restaurants: ownProps.restaurants,
     }
