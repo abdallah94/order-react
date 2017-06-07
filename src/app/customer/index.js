@@ -9,6 +9,7 @@ import {RestaurantsListContainer} from "./restaurantsList/RestaurantsListContain
 import {CustomerContainer} from "./CustomerContainer";
 import {RestaurantItem} from "./restaurantItem/RestaurantItem";
 import {cart} from "./reducer";
+import {CartContainer} from './cart/CartContainer';
 
 export {SearchContainer};
 export {CustomerMainComponent};
@@ -19,3 +20,4 @@ export {CustomerContainer};
 export {RestaurantItem};
 export {cart};
 export {addItem};
+export {CartContainer};
