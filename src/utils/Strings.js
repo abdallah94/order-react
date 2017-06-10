@@ -13,6 +13,7 @@ const Strings = {
             DELIVERY: "Delivery",
             MIN: "Min",
             VIEW: "View",
+            EDIT: "Edit",
         }
     }
     , ar: {
@@ -25,6 +26,7 @@ const Strings = {
             DELIVERY: "التوصيل",
             Min: "حد أدنى",
             VIEW: "عرض",
+            Edit: "تعديل",
         }
     }
 };

@@ -1,0 +1,17 @@
+.order-image {
+    height: 150px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.order-container {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: solid 1px;
+}
+
+.order-button-edit {
+    margin-top: 4rem;
+    margin-left: 40%;
+    font-size: 16px;
+}

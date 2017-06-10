@@ -16,7 +16,8 @@ const mapStateToProps = (state, ownProps) => {
         imageUrl: ownProps.imageUrl,
         rating: ownProps.rating,
         phoneNum: ownProps.phoneNum,
-        minOrder: ownProps.minOrder
+        minOrder: ownProps.minOrder,
+        edit:ownProps.edit,
     }
 };
 
@@ -29,13 +30,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 let OrderContainer = connect(mapStateToProps, mapDispatchToProps)(Order);
-OrderContainer.defaultProps = {
-    id: -1,
-    imageUrl: Constants.FOOD_IMG,
-    name: "Awesome Restaurant",
-    deliveryTime: 50,
-    rating: 4,
-    phoneNum: "097256848972",
-    minOrder: 40,
-};
 export {OrderContainer};

@@ -4,6 +4,7 @@ body {
     font-family: sans-serif;
     padding-top: 4.571em;
     background-color: rgb(47, 52, 61);
+    color: rgb(100, 239, 216);
 }
 
 .no-padding {
@@ -14,17 +15,18 @@ body {
     margin: 0;
 }
 
-.no-border{
-    border:0
+.no-border {
+    border: 0
 }
 
-.no-border-radius{
+.no-border-radius {
     border-radius: 0;
 }
-.border-1px{
+
+.border-1px {
     border: 1px;
 }
 
-.margin-top-by-3rem{
+.margin-top-by-3rem {
     margin-top: 3rem;
 }
