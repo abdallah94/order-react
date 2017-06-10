@@ -10,7 +10,7 @@ import {connect} from "react-redux";
 const mapStateToProps = (state, ownProps) => {
     return {
         restaurantID: ownProps.id,
-        eidt: (ownProps.role === "RESTAURANT"),//TODO:change to value from API
+        edit: (ownProps.role === "RESTAURANT"),//TODO:change to value from API
         //items: state.restaurant.items,//TODO:uncommint when adding API
     }
 };
@@ -34,6 +34,6 @@ MenuContainer.defaultProps = {
         imageUrl: Constants.OFFER_4
     },
         {id: 1, name: "menu item 2", description: "An awesome Meal 2", price: 60, imageUrl: Constants.OFFER_3}],
-    role: "RESTAURANT",
+    role: "CUSTOMER",
 };
 export {MenuContainer};
