@@ -15,6 +15,7 @@ import React from 'react';
 import {Image, Row, Col, Button} from 'react-bootstrap';
 import {browserHistory} from "react-router";
 import i18next from 'i18next';
+import Rating from 'react-rating';
 
 export class RestaurantItem extends React.Component {
     render() {
@@ -28,8 +29,11 @@ export class RestaurantItem extends React.Component {
                     <h3 className="restaurant-item-restaurant-phone">{this.props.phoneNum}</h3>
                 </Col>
                 <Col xs={6} md={3}>
-                    <h4 className="restaurants-item-rating">{this.props.rating}</h4>
-                    <h6 className="restaurant-item-delivery-time">{i18next.t("DELIVERY")} {this.props.deliveryTime} {i18next.t("MIN")}</h6>
+                    <div className="restaurants-item-rating">
+                        <Rating readonly initialRate={this.props.rating} empty="fa fa-star-o fa-2x medium"
+                                full="fa fa-star fa-2x medium"/>
+                        <h6 className="restaurant-item-delivery-time">{i18next.t("DELIVERY")} {this.props.deliveryTime} {i18next.t("MIN")}</h6>
+                    </div>
                 </Col>
                 <Col xs={6} md={3}>
                     <h2 className="restaurant-item-min-order">{this.props.minOrder} $</h2>
