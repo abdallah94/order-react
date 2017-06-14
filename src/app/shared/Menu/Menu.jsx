@@ -19,7 +19,7 @@ export class Menu extends React.Component {
             <Row className="menu-container">
                 <Col xs={12} md={8}>
                     {!!this.props.items && this.props.items.map((item) => (
-                        <OrderContainer key={item.id} {...item} edit={this.props.edit}/>
+                        <OrderContainer restaurantID={this.props.restaurantID} key={item.id} {...item} edit={this.props.edit}/>
                     ))}
                 </Col>
                 <Col xs={12} md={4}>

@@ -14,6 +14,9 @@ const Strings = {
             MIN: "Min",
             VIEW: "View",
             EDIT: "Edit",
+            SUM: "Sum",
+            TOTAL: "Total",
+            MY_CART:"My Cart"
         }
     }
     , ar: {
@@ -27,6 +30,9 @@ const Strings = {
             Min: "حد أدنى",
             VIEW: "عرض",
             Edit: "تعديل",
+            SUM: "المجموع",
+            TOTAL: "المجموع الكلي",
+            MY_CART:"حقيبتي"
         }
     }
 };

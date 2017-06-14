@@ -6,6 +6,7 @@ import OFFER_1 from "../assets/img/offers_1.jpg";
 import OFFER_2 from "../assets/img/offers_2.jpeg";
 import OFFER_3 from "../assets/img/offers_3.jpeg";
 import OFFER_4 from "../assets/img/offers_4.jpeg";
+import CART_IMG from "../assets/img/cart.png";
 const Constants = {
     ENGLISH: "en",
     ARABIC: "ar",
@@ -15,6 +16,7 @@ const Constants = {
     OFFER_2,
     OFFER_3,
     OFFER_4,
+    CART_IMG,
 };
 
 export default Constants;

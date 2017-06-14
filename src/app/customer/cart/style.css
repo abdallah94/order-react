@@ -1,0 +1,18 @@
+.cart-component-cart-symbol {
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    object-fit: cover;
+}
+
+.cart-component-cart-symbol-container{
+    background-color: transparent;
+}
+
+.cart-rest-name{ 
+    text-align: center;
+}
+
+.cart-container{
+    background-color: transparent;
+}
