@@ -15,3 +15,6 @@
     margin-left: 40%;
     font-size: 16px;
 }
+.add-symbol:hover{
+    cursor: pointer;
+}
