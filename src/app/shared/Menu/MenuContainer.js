@@ -26,6 +26,12 @@ const mapDispatchToProps = (dispatch) => {
 let MenuContainer = connect(mapStateToProps, mapDispatchToProps)(Menu);
 MenuContainer.defaultProps = {
     restaurantID: -1,
+    imageUrl: Constants.OFFER_3,
+    restaurantName: "KFC",
+    phoneNum: "025467234",
+    deliveryTime: 50,
+    minOrder: 50,
+    rating:4,
     items: [{
         id: 0,
         name: "menu item 1",
