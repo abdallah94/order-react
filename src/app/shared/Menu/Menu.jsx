@@ -22,7 +22,7 @@ export class Menu extends React.Component {
                         <OrderContainer restaurantID={this.props.restaurantID} key={item.id} {...item} edit={this.props.edit}/>
                     ))}
                 </Col>
-                <Col xs={12} md={4}>
+                <Col xs={12} md={3} mdOffset={1} className="cart-container">
                     <CartContainer/>
                 </Col>
             </Row>

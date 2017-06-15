@@ -14,5 +14,8 @@
 }
 
 .cart-container{
+    padding-left: 2rem;
     background-color: transparent;
+    border: 2px groove #6e4038;
+    border-radius: 0;
 }

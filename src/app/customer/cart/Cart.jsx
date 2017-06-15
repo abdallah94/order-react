@@ -16,7 +16,7 @@ import i18next from 'i18next';
 export class Cart extends React.Component {
     render() {
         return (
-            <div className="cart-container">
+            <div>
                 <Row>
                     <Col xs={6} xsOffset={3} className="cart-component-cart-symbol-container">
                         <h3 className="center-block text-align-center">{i18next.t("MY_CART")}</h3>
