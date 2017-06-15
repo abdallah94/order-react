@@ -16,10 +16,11 @@ import {Row, Col} from 'react-bootstrap';
 export class Menu extends React.Component {
     render() {
         return (
-            <Row className="menu-container">
+            <Row className="body-container">
                 <Col xs={12} md={8} className="orders-container">
                     {!!this.props.items && this.props.items.map((item) => (
-                        <OrderContainer restaurantID={this.props.restaurantID} key={item.id} {...item} edit={this.props.edit}/>
+                        <OrderContainer restaurantID={this.props.restaurantID} key={item.id} {...item}
+                                        edit={this.props.edit}/>
                     ))}
                 </Col>
                 <Col xs={12} md={3} mdOffset={1} className="cart-container">

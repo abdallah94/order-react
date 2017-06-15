@@ -33,3 +33,9 @@ body {
 .text-align-center{
     text-align: center;
 }
+.body-container{
+    padding-top: 4rem;
+    padding-right: 4rem;
+    padding-left: 4rem;
+    background: white;
+}
