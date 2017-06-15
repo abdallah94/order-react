@@ -17,7 +17,7 @@ export class Menu extends React.Component {
     render() {
         return (
             <Row className="menu-container">
-                <Col xs={12} md={8}>
+                <Col xs={12} md={8} className="orders-container">
                     {!!this.props.items && this.props.items.map((item) => (
                         <OrderContainer restaurantID={this.props.restaurantID} key={item.id} {...item} edit={this.props.edit}/>
                     ))}

@@ -6,7 +6,8 @@
 }
 
 .cart-component-cart-symbol-container{
-    background-color: transparent;
+    background-color: #cccccc;
+    border-bottom:2px solid #9a6f43;
 }
 
 .cart-rest-name{
@@ -14,8 +15,10 @@
 }
 
 .cart-container{
-    padding-left: 2rem;
     background-color: transparent;
-    border: 2px groove #6e4038;
+    border: 2px groove #cccccc;
     border-radius: 0;
+}
+
+.cart-title{
 }

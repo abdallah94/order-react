@@ -17,9 +17,8 @@ export class Cart extends React.Component {
     render() {
         return (
             <div>
-                <Row>
-                    <Col xs={6} xsOffset={3} className="cart-component-cart-symbol-container">
-                        <h3 className="center-block text-align-center">{i18next.t("MY_CART")}</h3>
+                <Row className="cart-component-cart-symbol-container">
+                    <Col xs={6} xsOffset={3}>
                         <Image src={Constants.CART_IMG} className="cart-component-cart-symbol center-block"/>
                     </Col>
                 </Row>
