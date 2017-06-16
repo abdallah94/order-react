@@ -30,12 +30,21 @@ body {
     margin-top: 3rem;
 }
 
-.text-align-center{
+.text-align-center {
     text-align: center;
 }
-.body-container{
+
+.body-container {
     padding-top: 4rem;
     padding-right: 4rem;
     padding-left: 4rem;
     background: white;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.text-align-left {
+    text-align: left;
 }

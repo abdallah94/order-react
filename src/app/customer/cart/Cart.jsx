@@ -28,11 +28,28 @@ export class Cart extends React.Component {
                 {this.props.items && this.props.items.map((item) => (
                     <CartElement editItemNumber={this.props.editItemNumber} {...item}/>
                 ))}
-                <Col xs={12}>
-                    <h4 className="cart-sum">{i18next.t("SUM")}:{this.props.sum}</h4>
-                    <h4 className="">{i18next.t("DELIVERY")}:{this.props.delivery}</h4>
-                    <h4 className="">{i18next.t("TOTAL")}:{this.props.total}</h4>
-                </Col>
+                <Row>
+                    <Col xs={12}>
+                        <Col xs={6}>
+                        <h5 className="cart-sum text-align-left">{i18next.t("SUM")}:</h5>
+                        </Col>
+                        <Col xs={6}>
+                            <h5 className="text-align-right">{this.props.sum}</h5>
+                        </Col>
+                        <Col xs={6}>
+                            <h5 className="text-align-left">{i18next.t("DELIVERY")}:</h5>
+                        </Col>
+                        <Col xs={6}>
+                            <h5 className="text-align-right">{this.props.delivery}</h5>
+                        </Col>
+                        <Col xs={6}>
+                            <h5 className="text-align-left">{i18next.t("TOTAL")}:</h5>
+                        </Col>
+                        <Col xs={6}>
+                            <h5 className="text-align-right">{this.props.total}</h5>
+                        </Col>
+                    </Col>
+                </Row>
             </div>
         )
     }
