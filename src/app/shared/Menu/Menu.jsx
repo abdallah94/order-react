@@ -17,22 +17,26 @@ import {Row, Col} from 'react-bootstrap';
 export class Menu extends React.Component {
     render() {
         return (
-            <Row className="body-container">
-                <Col xs={12}>
-                    <RestaurantHeader restaurantID={this.props.restaurantID} imageUrl={this.props.imageUrl}
-                                      phoneNum={this.props.phoneNum} name={this.props.restaurantName}
-                                      deliveryTime={this.props.deliveryTime} minOrder={this.props.minOrder}
-                                      rating={this.props.rating}/>
-                </Col>
-                <Col xs={12} md={8} className="orders-container">
-                    {!!this.props.items && this.props.items.map((item) => (
-                        <OrderContainer restaurantID={this.props.restaurantID} key={item.id} {...item}
-                                        edit={this.props.edit}/>
-                    ))}
-                </Col>
-                <Col xs={12} md={3} mdOffset={1} className="cart-container">
-                    <CartContainer/>
-                </Col>
+            <Row>
+                <Row className="body-container">
+                    <Col xs={12}>
+                        <RestaurantHeader restaurantID={this.props.restaurantID} imageUrl={this.props.imageUrl}
+                                          phoneNum={this.props.phoneNum} name={this.props.restaurantName}
+                                          deliveryTime={this.props.deliveryTime} minOrder={this.props.minOrder}
+                                          rating={this.props.rating}/>
+                    </Col>
+                </Row>
+                <Row className="body-container orders-container">
+                    <Col xs={12} md={8}>
+                        {!!this.props.items && this.props.items.map((item) => (
+                            <OrderContainer restaurantID={this.props.restaurantID} key={item.id} {...item}
+                                            edit={this.props.edit}/>
+                        ))}
+                    </Col>
+                    <Col xs={12} md={3} mdOffset={1} className="cart-container">
+                        <CartContainer/>
+                    </Col>
+                </Row>
             </Row>
         )
     }
