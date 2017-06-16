@@ -1,0 +1,12 @@
+.cart-element-container {
+    border-bottom: solid 1px;
+    margin-top: 10px;
+}
+
+.card-item-name {
+    margin-top: 3px;
+}
+
+.card-item-price {
+    margin-top: 3px;
+}

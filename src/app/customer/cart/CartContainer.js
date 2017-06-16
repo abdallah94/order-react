@@ -13,7 +13,9 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {}
+    return {editItemNumber:(newNumber)=>{
+
+    }}
 };
 
 let CartContainer = connect(mapStateToProps, mapDispatchToProps)(Cart);
