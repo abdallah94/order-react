@@ -22,18 +22,18 @@ export class Order extends React.Component {
                     <h2>{this.props.name}</h2>
                     <p>{this.props.description}</p>
                 </Col>
-                {!this.props.edit &&
-                <Col mdOffset={0} md={4} xsOffset={2} xs={8}>
+                <Col mdOffset={0} md={2} xsOffset={2} xs={4}>
                     <Col xs={6}>
-                        <h3 className="text-center">{this.props.price} $</h3>
-                    </Col>
-                    <Col xs={6}>
-                        <h3 className="text-center"><i className="fa fa-plus-square add-symbol" aria-hidden="true"></i></h3>
+                        <h4 className="text-align-left order-price">{this.props.price} $</h4>
                     </Col>
                 </Col>
-                }
+                {!this.props.edit &&
+                <Col mdOffset={0} md={2} xsOffset={3} xs={3}>
+                    <h3 className="text-center"><i className="fa fa-plus-square add-symbol" aria-hidden="true"></i>
+                    </h3>
+                </Col>}
                 {this.props.edit &&
-                <Col mdOffset={2} md={2} xsOffset={3} xs={6}>
+                <Col mdOffset={0} md={2} xsOffset={3} xs={3}>
                     <Button className="order-button-edit text-center">{i18next.t("EDIT")}</Button>
                 </Col>
                 }

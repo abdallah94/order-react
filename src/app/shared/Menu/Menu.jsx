@@ -20,7 +20,7 @@ export class Menu extends React.Component {
             <Row className="body-container">
                 <Col xs={12}>
                     <RestaurantHeader restaurantID={this.props.restaurantID} imageUrl={this.props.imageUrl}
-                                      phoneNum={this.props.phoneNum} restaurantName={this.props.restaurantName}
+                                      phoneNum={this.props.phoneNum} name={this.props.restaurantName}
                                       deliveryTime={this.props.deliveryTime} minOrder={this.props.minOrder}
                                       rating={this.props.rating}/>
                 </Col>
