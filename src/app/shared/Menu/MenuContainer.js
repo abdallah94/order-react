@@ -10,14 +10,14 @@ import {connect} from "react-redux";
 const mapStateToProps = (state, ownProps) => {
     return {
         restaurantID: ownProps.id,
-        edit: true,//TODO:change to value from API
+        edit: (ownProps.role === "RESTAURANT"),//TODO:change to value from API
         //items: state.restaurant.items,//TODO:uncommint when adding API
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchItems: (restaurantID) => {//TODO:ADD API 
+        fetchItems: (restaurantID) => {//TODO:ADD API
 
         }
     }
