@@ -12,6 +12,16 @@ import React from 'react';
 import i18next from 'i18next';
 
 export class Order extends React.Component {
+    constructor(props) {
+        super(props);
+        this.addOrder = this.addOrder.bind(this);
+    }
+
+    addOrder() {
+        this.props.addOrder(this.props.id, 1, this.props.name, this.props.price,
+            this.props.restaurantID, this.props.minOrder, this.props.deliveryTime,this.props.deliveryFee);
+    }
+
     render() {
         return (
             <Row className="order-container">
@@ -27,7 +37,8 @@ export class Order extends React.Component {
                 </Col>
                 {!this.props.edit &&
                 <Col mdOffset={0} md={2} xsOffset={3} xs={3}>
-                    <h3 className="text-center"><i className="fa fa-plus-square add-symbol" aria-hidden="true"></i>
+                    <h3 className="text-center" onClick={this.addOrder}><i className="fa fa-plus-square add-symbol"
+                                                                           aria-hidden="true"></i>
                     </h3>
                 </Col>}
                 {this.props.edit &&

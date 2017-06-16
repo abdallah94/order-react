@@ -48,7 +48,6 @@ class Search extends Component {
     }
 
     handleSelectChange(value) {
-        console.log(value);
         if (!value) {
             value = 0;
         }

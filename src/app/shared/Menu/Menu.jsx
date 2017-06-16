@@ -27,7 +27,8 @@ export class Menu extends React.Component {
                 <Col xs={12} md={8} className="orders-container">
                     {!!this.props.items && this.props.items.map((item) => (
                         <OrderContainer restaurantID={this.props.restaurantID} key={item.id} {...item}
-                                        edit={this.props.edit}/>
+                                        deliveryTime={this.props.deliveryTime} edit={this.props.edit}
+                                        deliveryFee={this.props.deliveryFee} minOrder={this.props.minOrder}/>
                     ))}
                 </Col>
                 <Col xs={12} md={3} mdOffset={1} className="cart-container">

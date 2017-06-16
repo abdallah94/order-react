@@ -9,7 +9,7 @@ import {connect} from "react-redux";
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        restaurantID: ownProps.id,
+        restaurantID: ownProps.params.id,
         edit: (ownProps.role === "RESTAURANT"),//TODO:change to value from API
         //items: state.restaurant.items,//TODO:uncommint when adding API
     }
@@ -25,13 +25,13 @@ const mapDispatchToProps = (dispatch) => {
 
 let MenuContainer = connect(mapStateToProps, mapDispatchToProps)(Menu);
 MenuContainer.defaultProps = {
-    restaurantID: -1,
     imageUrl: Constants.OFFER_3,
     restaurantName: "KFC",
     phoneNum: "025467234",
     deliveryTime: 50,
     minOrder: 50,
     rating:4,
+    deliveryFee:10,
     items: [{
         id: 0,
         name: "menu item 1",

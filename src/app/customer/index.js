@@ -11,6 +11,7 @@ import {RestaurantItem} from "./restaurantItem/RestaurantItem";
 import {cart} from "./reducer";
 import {CartContainer} from './cart/CartContainer';
 import {CartElement} from './cartElement/CartElement';
+import {editNumberOfItems} from './actions';
 
 export {SearchContainer};
 export {CustomerMainComponent};
@@ -23,3 +24,4 @@ export {cart};
 export {addItem};
 export {CartContainer};
 export {CartElement};
+export {editNumberOfItems}

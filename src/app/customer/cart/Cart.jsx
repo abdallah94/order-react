@@ -26,12 +26,12 @@ export class Cart extends React.Component {
                     <h2 className="center-block cart-rest-name">{this.props.restaurantName}</h2>
                 </Col>
                 {this.props.items && this.props.items.map((item) => (
-                    <CartElement editItemNumber={this.props.editItemNumber} {...item}/>
+                    <CartElement key={item.id} editItemNumber={this.props.editItemNumber} {...item}/>
                 ))}
                 <Row>
                     <Col xs={12}>
                         <Col xs={6}>
-                        <h5 className="cart-sum text-align-left">{i18next.t("SUM")}:</h5>
+                            <h5 className="cart-sum text-align-left">{i18next.t("SUM")}:</h5>
                         </Col>
                         <Col xs={6}>
                             <h5 className="text-align-right">{this.props.sum}</h5>
@@ -40,7 +40,7 @@ export class Cart extends React.Component {
                             <h5 className="text-align-left">{i18next.t("DELIVERY")}:</h5>
                         </Col>
                         <Col xs={6}>
-                            <h5 className="text-align-right">{this.props.delivery}</h5>
+                            <h5 className="text-align-right">{this.props.deliveryFee}</h5>
                         </Col>
                         <Col xs={6}>
                             <h5 className="text-align-left">{i18next.t("TOTAL")}:</h5>
