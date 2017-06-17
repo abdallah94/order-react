@@ -24,7 +24,7 @@ export class Cart extends React.Component {
         const totalOffset = (this.props.checkout) ? 4 : 0;
         const totalWidth = (this.props.checkout) ? 2 : 6;
         return (
-            <div>
+            <div className="padding-bottom-2rem white-background">
                 {!this.props.checkout &&
                 <Row className="cart-component-cart-symbol-container">
                     <Col xs={6} xsOffset={3}>
@@ -33,18 +33,25 @@ export class Cart extends React.Component {
                 </Row>
                 }
                 <Col xs={12} className="no-padding">
-                    <h2 className={`${(!this.props.checkout) ? "center-block text-align-center" : ""} cart-rest-name`}>{this.props.restaurantName}
+                    <h2 className="center-block text-align-center cart-rest-name">{this.props.restaurantName}
                     </h2>
                 </Col>
                 <br/>
                 <br/>
                 {this.props.items && this.props.items.map((item) => (
-                    <CartElement key={item.id} editItemNumber={this.props.editItemNumber} {...item} checkout={this.props.checkout}/>
+                    <CartElement key={item.id} editItemNumber={this.props.editItemNumber} {...item}
+                                 checkout={this.props.checkout}/>
                 ))}
                 <br/>
                 <br/>
                 <Row>
                     <Col xs={12}>
+                        <Col xs={totalWidth} xsOffset={totalOffset}>
+                            <h5 className="text-align-left">{i18next.t("DELIVERY_TIME")}:</h5>
+                        </Col>
+                        <Col xs={totalWidth}>
+                            <h5 className="text-align-right">{this.props.deliveryTime}</h5>
+                        </Col>
                         <Col xs={totalWidth} xsOffset={totalOffset}>
                             <h5 className="cart-sum text-align-left">{i18next.t("SUM")}:</h5>
                         </Col>

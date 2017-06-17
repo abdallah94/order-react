@@ -18,6 +18,19 @@ const Strings = {
             TOTAL: "Total",
             MY_CART: "My Cart",
             CHECKOUT: "Checkout",
+            FIRST_NAME: "First Name",
+            LAST_NAME: "Last Name",
+            PHONE_NUMBER: "Phone Number",
+            EMAIL: "Email",
+            AREA: "Area",
+            STREET: "Street",
+            BUILDING: "Building",
+            APARTMENT: "Apartment",
+            FLOOR: "Floor",
+            ORDER: "Order",
+            CUSTOMER_DETAILS: "Customer Details",
+            SUBMIT_ORDER: "Submit Order",
+            DELIVERY_TIME: "Delivery Time"
         }
     }
     , ar: {
@@ -35,6 +48,19 @@ const Strings = {
             TOTAL: "المجموع الكلي",
             MY_CART: "عربتي",
             CHECKOUT: "تنفيذ الطلب",
+            FIRST_NAME: "الاسم الاول",
+            LAST_NAME: "اسم العائلة",
+            PHONE_NUMBER: "رقم الهاتف",
+            EMAIL: "البريد الالكتروني",
+            AREA: "المنطقة",
+            STREET: "الشارع",
+            BUILDING: "البناية",
+            APARTMENT: "الشقة",
+            FLOOR: "الطابق",
+            ORDER: "الطلب",
+            CUSTOMER_DETAILS: "معلومات المستخدم",
+            SUBMIT_ORDER: "اطلب",
+            DELIVERY_TIME: "فترة التوصيل",
         }
     }
 };

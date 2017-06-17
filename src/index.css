@@ -56,3 +56,11 @@ body {
 .no-margin-right{
     margin-right: 0;
 }
+
+.padding-bottom-2rem{
+    padding-bottom: 2rem;
+}
+
+.white-background{
+    background-color: white;
+}
