@@ -5,7 +5,7 @@ import {browserHistory, Route, Router, IndexRoute, IndexRedirect} from "react-ro
 import React from "react";
 import {RouteConstants} from "../utils";
 import AppContainer from "./AppContainer";
-import {CustomerContainer, CustomerMainComponent, RestaurantsListContainer} from "./customer";
+import {CustomerContainer, CustomerMainComponent, RestaurantsListContainer, CheckoutContainer} from "./customer";
 import {MenuContainer} from "./shared";
 
 let Routing = () => {
@@ -19,6 +19,7 @@ let Routing = () => {
                         <IndexRoute component={RestaurantsListContainer}/>
                         <Route path=":id" component={MenuContainer}/>
                     </Route>
+                    <Route path={RouteConstants.ROUTE_APP_CUSTOMER_CHECKOUT} component={CheckoutContainer}/>
                 </Route>
                 <Route/>
             </Route>

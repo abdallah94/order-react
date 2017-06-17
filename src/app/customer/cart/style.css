@@ -23,3 +23,9 @@
 
 .cart-title{
 }
+
+.checkout-button{
+    background-color: blue;
+    margin-bottom: 1rem;
+    color: azure;
+}

@@ -6,14 +6,20 @@
 import './style.css'
 
 /* Components */
-import {Constants} from '../../../utils';
+import {Constants, PathConstants} from '../../../utils';
 import {CartElement} from '../';
 /*Modules*/
 import React from 'react';
-import {Col, Image, Row} from 'react-bootstrap';
+import {Col, Image, Row, Button} from 'react-bootstrap';
 import i18next from 'i18next';
+import {browserHistory} from 'react-router';
 
 export class Cart extends React.Component {
+
+    navigateToCheckout() {
+        browserHistory.push(PathConstants.PATH_APP_CUSTOMER_CHECKOUT);
+    }
+
     render() {
         return (
             <div>
@@ -48,6 +54,12 @@ export class Cart extends React.Component {
                         <Col xs={6}>
                             <h5 className="text-align-right">{this.props.total}</h5>
                         </Col>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={8} xsOffset={2}>
+                        <Button className="center-block checkout-button"
+                                onClick={this.navigateToCheckout.bind(this)}>{i18next.t("CHECKOUT")}</Button>
                     </Col>
                 </Row>
             </div>

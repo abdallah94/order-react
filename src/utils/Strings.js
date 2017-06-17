@@ -16,7 +16,8 @@ const Strings = {
             EDIT: "Edit",
             SUM: "Sum",
             TOTAL: "Total",
-            MY_CART:"My Cart"
+            MY_CART: "My Cart",
+            CHECKOUT: "Checkout",
         }
     }
     , ar: {
@@ -32,7 +33,8 @@ const Strings = {
             Edit: "تعديل",
             SUM: "المجموع",
             TOTAL: "المجموع الكلي",
-            MY_CART:"حقيبتي"
+            MY_CART: "عربتي",
+            CHECKOUT: "تنفيذ الطلب",
         }
     }
 };
