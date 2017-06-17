@@ -1,10 +1,11 @@
 .cart-element-container {
-    border-bottom: solid 1px;
+    border-bottom: inset 1px;
     margin-top: 10px;
 }
 
 .card-item-name {
     margin-top: 3px;
+    text-align: left;
 }
 
 .card-item-price {

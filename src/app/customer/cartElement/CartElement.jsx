@@ -16,28 +16,35 @@ export class CartElement extends React.Component {
     constructor(props) {
         super(props);
         this.changeNumber = this.changeNumber.bind(this);
-        this.removeItem=this.removeItem.bind(this);
+        this.removeItem = this.removeItem.bind(this);
     }
 
     changeNumber(newNumber) {
         if (newNumber != this.props.number) {
             this.props.editItemNumber(this.props.id, newNumber, this.props.name, this.props.price, this.props.restaurantID,
-                this.props.minOrder, this.props.deliveryTime, this.props.deliveryFee,this.props.restaurantName);
+                this.props.minOrder, this.props.deliveryTime, this.props.deliveryFee, this.props.restaurantName);
         }
 
     }
 
-    removeItem(){
+    removeItem() {
         this.props.editItemNumber(this.props.id, 0, this.props.name, this.props.price, this.props.restaurantID,
-            this.props.minOrder, this.props.deliveryTime, this.props.deliveryFee,this.props.restaurantName);
+            this.props.minOrder, this.props.deliveryTime, this.props.deliveryFee, this.props.restaurantName);
     }
 
     render() {
         return (
             <Row className="cart-element-container">
+                {!this.props.checkout &&
                 <Col xs={4}>
                     <NumericInput size={1} min={0} max={100} value={this.props.number} onChange={this.changeNumber}/>
                 </Col>
+                }
+                {this.props.checkout &&
+                <Col xs={4}>
+                    <h5 className="text-align-center">{this.props.number}</h5>
+                </Col>
+                }
                 <Col xs={4}>
                     <h5 className="card-item-name">{this.props.name}</h5>
                 </Col>

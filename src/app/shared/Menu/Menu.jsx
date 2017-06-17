@@ -33,7 +33,7 @@ export class Menu extends React.Component {
                     ))}
                 </Col>
                 <Col xs={12} md={3} mdOffset={1} className="cart-container">
-                    <CartContainer/>
+                    <CartContainer checkout={false}/>
                 </Col>
             </Row>
         )

@@ -10,14 +10,17 @@ import {CartContainer} from '../';
 
 /*Modules*/
 import React from 'react';
+import {Col, Row} from 'react-bootstrap';
 
 export class Checkout extends React.Component {
     render() {
         return (
-            <div>
-                <h1>Checkout</h1>
-                <CartContainer/>
-            </div>
+            <Row className="body-container">
+                <h2>Summary</h2>
+                <Col xs={12} className="checkout-cart-container">
+                    <CartContainer/>
+                </Col>
+            </Row>
         )
 
     }
