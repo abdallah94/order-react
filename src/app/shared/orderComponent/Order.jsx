@@ -18,8 +18,8 @@ export class Order extends React.Component {
     }
 
     addOrder() {
-        this.props.addOrder(this.props.id, 1, this.props.name, this.props.price,
-            this.props.restaurantID, this.props.minOrder, this.props.deliveryTime,this.props.deliveryFee);
+        this.props.addOrder(this.props.id, 1, this.props.name, this.props.price, this.props.restaurantID,
+            this.props.minOrder, this.props.deliveryTime, this.props.deliveryFee, this.props.restaurantName);
     }
 
     render() {

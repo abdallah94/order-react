@@ -7,6 +7,7 @@ import {calulateItemsSum} from "../../utils";
 const initialState = {
     items: [],
     sum: 0,
+    restaurantName: "",
     restaurantID: -1,
     minOrder: 0,
     total: 0,
@@ -63,8 +64,9 @@ function editItem(addItems, items, payload, restaurantID) {
     let newRestaurantID = (sum) ? payload.restaurantID : -1;
     let deliveryTime = (sum) ? payload.deliveryTime : 0;
     let minOrder = (sum) ? payload.sum : 0;
+    let restaurantName = (sum) ? payload.restaurantName : "";
     let total = sum + deliveryFee;
-    return { 
+    return {
         items: tempItems,
         restaurantID: newRestaurantID,
         sum: sum,
@@ -72,6 +74,7 @@ function editItem(addItems, items, payload, restaurantID) {
         minOrder: minOrder,
         deliveryFee: deliveryFee,
         total: total,
+        restaurantName: restaurantName,
     };
 
 }

@@ -22,14 +22,14 @@ export class CartElement extends React.Component {
     changeNumber(newNumber) {
         if (newNumber != this.props.number) {
             this.props.editItemNumber(this.props.id, newNumber, this.props.name, this.props.price, this.props.restaurantID,
-                this.props.minOrder, this.props.deliveryTime, this.props.deliveryFee);
+                this.props.minOrder, this.props.deliveryTime, this.props.deliveryFee,this.props.restaurantName);
         }
 
     }
 
     removeItem(){
         this.props.editItemNumber(this.props.id, 0, this.props.name, this.props.price, this.props.restaurantID,
-            this.props.minOrder, this.props.deliveryTime, this.props.deliveryFee);
+            this.props.minOrder, this.props.deliveryTime, this.props.deliveryFee,this.props.restaurantName);
     }
 
     render() {

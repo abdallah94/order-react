@@ -17,8 +17,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        editItemNumber: (id, number, name, price, restaurantID, minOrder, deliveryTime, deliveryFee) => {
-            dispatch(editNumberOfItems(id, number, price, name, restaurantID, minOrder, deliveryTime, deliveryFee));
+        editItemNumber: (id, number, name, price, restaurantID, minOrder, deliveryTime, deliveryFee,restaurantName) => {
+            dispatch(editNumberOfItems(id, number, price, name, restaurantID, minOrder, deliveryTime, deliveryFee,restaurantName));
         }
     }
 };

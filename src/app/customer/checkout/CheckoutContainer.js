@@ -8,7 +8,9 @@ import {connect} from 'react-redux';
 
 
 const mapStateToProps = (state) => {
-    return {}
+    return {
+        ...state.cart,
+    }
 };
 
 const mapDispatchToPops = (dispatch) => {

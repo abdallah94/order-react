@@ -6,6 +6,7 @@
 import './style.css'
 
 /* Components */
+import {CartContainer} from '../';
 
 /*Modules*/
 import React from 'react';
@@ -13,7 +14,10 @@ import React from 'react';
 export class Checkout extends React.Component {
     render() {
         return (
-            <h1>Checkout</h1>
+            <div>
+                <h1>Checkout</h1>
+                <CartContainer/>
+            </div>
         )
 
     }

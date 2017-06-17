@@ -20,13 +20,14 @@ const mapStateToProps = (state, ownProps) => {
         edit: ownProps.edit,
         restaurantID: ownProps.restaurantID,
         deliveryFee: ownProps.deliveryFee,
+        restaurantName: ownProps.restaurantName,
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addOrder: (id, number, name, price, restaurantID, minOrder, deliveryTime, deliveryFee) => {//TODO: add calling API and navigating to retaurant page
-            dispatch(addItem(id, number, price, name, restaurantID, minOrder, deliveryTime, deliveryFee));
+        addOrder: (id, number, name, price, restaurantID, minOrder, deliveryTime, deliveryFee,restaurantName) => {//TODO: add calling API and navigating to retaurant page
+            dispatch(addItem(id, number, price, name, restaurantID, minOrder, deliveryTime, deliveryFee,restaurantName));
         }
     }
 };
