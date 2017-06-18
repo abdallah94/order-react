@@ -39,6 +39,7 @@ export class Checkout extends React.Component {
 
     submitOrder() {
         //TODO:add submit API and clear store
+        this.props.resetCart();
         this.open();
     }
 

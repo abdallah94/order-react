@@ -14,6 +14,7 @@ import {CartElement} from './cartElement/CartElement';
 import {editNumberOfItems} from './actions';
 import {CheckoutContainer} from './checkout/CheckoutContainer';
 import {OrderConfirm} from './orderConfirm/OrderConfirm';
+import {resetCart} from './actions';
 
 export {SearchContainer};
 export {CustomerMainComponent};
@@ -29,3 +30,4 @@ export {CartElement};
 export {editNumberOfItems};
 export {CheckoutContainer};
 export {OrderConfirm};
+export {resetCart};

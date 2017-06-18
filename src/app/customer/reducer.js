@@ -1,7 +1,7 @@
 /**
  * Created by Abdallah on 6/6/2017.
  */
-import {ADD_ITEM, REMOVE_ITEM, EDIT_NUM_ITEMS} from "./actions";
+import {ADD_ITEM, REMOVE_ITEM, EDIT_NUM_ITEMS, RESET_CART} from "./actions";
 import {calulateItemsSum} from "../../utils";
 
 const initialState = {
@@ -23,10 +23,11 @@ function cart(state = initialState, action) {
             state.items = [];
             return Object.assign({}, state, items);
         case EDIT_NUM_ITEMS:
-            console.log(action.payload);
             items = editItem(false, state.items, action.payload, state.restaurantID);
             state.items = [];
             return Object.assign({}, state, items);
+        case RESET_CART:
+            return initialState;
         case REMOVE_ITEM:
             break;
         default:

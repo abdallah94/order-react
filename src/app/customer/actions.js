@@ -7,6 +7,7 @@
 export const ADD_ITEM = "ADD_ITEM";
 export const REMOVE_ITEM = "REMOVE_ITEM";
 export const EDIT_NUM_ITEMS = "EDIT_NUM_ITEMS";
+export const RESET_CART = "REST_CART";
 
 //this action uses fetch instead of redux-JSON-API because the API doesn't follow the standards
 export function addItem(id, number, price, name, restaurantID, minOrder, deliveryTime, deliveryFee, restaurantName) {
@@ -40,5 +41,11 @@ export function editNumberOfItems(id, number, price, name, restaurantID, minOrde
             deliveryFee: deliveryFee,
             restaurantName: restaurantName,
         }
+    });
+}
+
+export function resetCart() {
+    return ({
+        type: RESET_CART,
     });
 }

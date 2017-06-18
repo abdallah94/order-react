@@ -10,7 +10,6 @@ import {editNumberOfItems} from '../';
 import {connect} from "react-redux";
 
 const mapStateToProps = (state, ownProps) => {
-    console.log(ownProps.checkout);
     let checkout = (ownProps.checkout!==undefined) ? ownProps.checkout : true;
     return {
         ...state.cart,

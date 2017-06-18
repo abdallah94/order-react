@@ -3,6 +3,7 @@
  */
 
 import {Checkout} from './Checkout';
+import {resetCart} from '../';
 
 import {connect} from 'react-redux';
 
@@ -14,7 +15,11 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToPops = (dispatch) => {
-    return {}
+    return {
+        resetCart: () => {
+            dispatch(resetCart());
+        }
+    }
 };
 
 const CheckoutContainer = connect(mapStateToProps, mapDispatchToPops)(Checkout);
