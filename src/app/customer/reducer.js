@@ -43,7 +43,7 @@ function editItem(addItems, items, payload, restaurantID) {
     let added = false;
     if (restaurantID !== -1 && payload.restaurantID !== restaurantID) {//TODO:Add error discard changes
         alertify.logPosition('bottom right');
-        alertify.error(i18next.t("ERROR_ITEMS_FROM_DIFFERENT_RESTAURANT")); 
+        alertify.error(i18next.t("ERROR_ITEMS_FROM_DIFFERENT_RESTAURANT"));
         console.log("error not same restaurant");
         return
     }

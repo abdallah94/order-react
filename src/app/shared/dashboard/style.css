@@ -1,0 +1,13 @@
+.cart-popover-container {
+    width: 500px;
+}
+
+.dashboard-cart-image {
+    height: 35px;
+    width: 35px;
+}
+
+.dashboard-padding {
+    padding-right: 4rem;
+    padding-left: 2rem;
+}
