@@ -13,6 +13,7 @@ import {CartContainer} from './cart/CartContainer';
 import {CartElement} from './cartElement/CartElement';
 import {editNumberOfItems} from './actions';
 import {CheckoutContainer} from './checkout/CheckoutContainer';
+import {OrderConfirm} from './orderConfirm/OrderConfirm';
 
 export {SearchContainer};
 export {CustomerMainComponent};
@@ -27,3 +28,4 @@ export {CartContainer};
 export {CartElement};
 export {editNumberOfItems};
 export {CheckoutContainer};
+export {OrderConfirm};

@@ -30,7 +30,12 @@ const Strings = {
             ORDER: "Order",
             CUSTOMER_DETAILS: "Customer Details",
             SUBMIT_ORDER: "Submit Order",
-            DELIVERY_TIME: "Delivery Time"
+            DELIVERY_TIME: "Delivery Time",
+            ORDER_SUBMITTED:"Submitted order",
+            OK:"Ok",
+            SUCCESSFUL_ORDER_SUBMIT_MESSAGE_1:"Your order has been submitted to ",
+            SUCCESSFUL_ORDER_SUBMIT_MESSAGE_2:".\nYor order will arrive within the next ",
+            MINUTES:"Minutes",
         }
     }
     , ar: {
@@ -61,6 +66,11 @@ const Strings = {
             CUSTOMER_DETAILS: "معلومات المستخدم",
             SUBMIT_ORDER: "اطلب",
             DELIVERY_TIME: "فترة التوصيل",
+            ORDER_SUBMITTED:"تم تقديم الطلب",
+            OK:"حسنا",
+            SUCCESSFUL_ORDER_SUBMIT_MESSAGE_1:"تم تقديم طلبك لمطعم ",
+            SUCCESSFUL_ORDER_SUBMIT_MESSAGE_2:".\nسيصل طلبك خلال ",
+            MINUTES:"دقيقة",
         }
     }
 };

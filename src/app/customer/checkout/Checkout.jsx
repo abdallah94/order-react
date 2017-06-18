@@ -7,11 +7,14 @@ import './style.css'
 
 /* Components */
 import {CartContainer} from '../';
+import {OrderConfirm} from '../';
+import {PathConstants} from '../../../utils';
 
 /*Modules*/
 import React from 'react';
 import {Col, Row, Form, FormGroup, FormControl, ControlLabel, Button} from 'react-bootstrap';
 import i18next from 'i18next';
+import {browserHistory} from 'react-router';
 
 export class Checkout extends React.Component {
 
@@ -27,12 +30,31 @@ export class Checkout extends React.Component {
             building: "",
             apartment: "",
             floor: "",
-        }
+            show: false,
+        };
+        this.submitOrder = this.submitOrder.bind(this);
+        this.open = this.open.bind(this);
+        this.close = this.close.bind(this);
+    }
+
+    submitOrder() {
+        //TODO:add submit API and clear store
+        this.open();
+    }
+
+    close() {
+        this.setState({show: false});
+    }
+
+    open() {
+        this.setState({show: true});
     }
 
     render() {
         return (
             <Row className="body-container">
+                <OrderConfirm show={this.state.show} close={this.close} restaurantName={this.props.restaurantName}
+                              deliveryTime={this.props.deliveryTime}/>
                 <Row className="checkout-cart-container">
                     <h4 className="text-align-center">{i18next.t("ORDER")}</h4>
                     <Col xs={12} className="no-padding">
@@ -115,7 +137,8 @@ export class Checkout extends React.Component {
                 </Row>
                 <Row className="order-button-container">
                     <Col xs={12}>
-                        <Button className="center-block submit-button">{i18next.t("SUBMIT_ORDER")}</Button>
+                        <Button className="center-block submit-button"
+                                onClick={this.submitOrder}>{i18next.t("SUBMIT_ORDER")}</Button>
                     </Col>
                 </Row>
             </Row>
