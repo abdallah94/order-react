@@ -31,11 +31,13 @@ const Strings = {
             CUSTOMER_DETAILS: "Customer Details",
             SUBMIT_ORDER: "Submit Order",
             DELIVERY_TIME: "Delivery Time",
-            ORDER_SUBMITTED:"Submitted order",
-            OK:"Ok",
-            SUCCESSFUL_ORDER_SUBMIT_MESSAGE_1:"Your order has been submitted to ",
-            SUCCESSFUL_ORDER_SUBMIT_MESSAGE_2:".\nYor order will arrive within the next ",
-            MINUTES:"Minutes",
+            ORDER_SUBMITTED: "Submitted order",
+            OK: "Ok",
+            SUCCESSFUL_ORDER_SUBMIT_MESSAGE_1: "Your order has been submitted to ",
+            SUCCESSFUL_ORDER_SUBMIT_MESSAGE_2: ".\nYor order will arrive within the next ",
+            MINUTES: "Minutes",
+            ERROR_ITEMS_FROM_DIFFERENT_RESTAURANT: "You already have items from another restaurant in your cart," +
+            " please checkout the current items or discard them before ordering from another restaurant."
         }
     }
     , ar: {
@@ -66,11 +68,12 @@ const Strings = {
             CUSTOMER_DETAILS: "معلومات المستخدم",
             SUBMIT_ORDER: "اطلب",
             DELIVERY_TIME: "فترة التوصيل",
-            ORDER_SUBMITTED:"تم تقديم الطلب",
-            OK:"حسنا",
-            SUCCESSFUL_ORDER_SUBMIT_MESSAGE_1:"تم تقديم طلبك لمطعم ",
-            SUCCESSFUL_ORDER_SUBMIT_MESSAGE_2:".\nسيصل طلبك خلال ",
-            MINUTES:"دقيقة",
+            ORDER_SUBMITTED: "تم تقديم الطلب",
+            OK: "حسنا",
+            SUCCESSFUL_ORDER_SUBMIT_MESSAGE_1: "تم تقديم طلبك لمطعم ",
+            SUCCESSFUL_ORDER_SUBMIT_MESSAGE_2: ".\nسيصل طلبك خلال ",
+            MINUTES: "دقيقة",
+            ERROR_ITEMS_FROM_DIFFERENT_RESTAURANT: "لديك طلبات من مطعم اخر حاليا, الرجاء القيام بتنفيذ الطلب الموجود حاليا او افراغ الطلبات قبل القيام بطلب اخر"
         }
     }
 };

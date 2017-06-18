@@ -4,6 +4,9 @@
 import {ADD_ITEM, REMOVE_ITEM, EDIT_NUM_ITEMS, RESET_CART} from "./actions";
 import {calulateItemsSum} from "../../utils";
 
+import alertify from 'alertify.js';
+import i18next from 'i18next';
+
 const initialState = {
     items: [],
     sum: 0,
@@ -39,8 +42,10 @@ function editItem(addItems, items, payload, restaurantID) {
     let tempItems = [];
     let added = false;
     if (restaurantID !== -1 && payload.restaurantID !== restaurantID) {//TODO:Add error discard changes
+        alertify.logPosition('bottom right');
+        alertify.error(i18next.t("ERROR_ITEMS_FROM_DIFFERENT_RESTAURANT")); 
         console.log("error not same restaurant");
-        //return
+        return
     }
     items.map((item, i) => {
         if (item.id === payload.id) {
