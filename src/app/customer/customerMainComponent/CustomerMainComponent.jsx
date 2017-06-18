@@ -12,7 +12,7 @@ class CustomerMainComponent extends Component {
                 <Row>
                     <SearchContainer/>
                 </Row>
-                <Row className="margin-top-by-3rem">
+                <Row className="offers-container">
                     <OffersContainer/>
                 </Row>
             </Grid>

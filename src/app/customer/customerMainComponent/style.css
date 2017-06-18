@@ -1,3 +1,10 @@
-.customer-main-container{
-    margin-top:25rem;
+.customer-main-container {
+    margin-top: 25rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.offers-container {
+    margin-top: 3rem;
+    padding-bottom: 1rem;
 }
