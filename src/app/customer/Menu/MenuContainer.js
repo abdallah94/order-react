@@ -10,7 +10,7 @@ import {connect} from "react-redux";
 const mapStateToProps = (state, ownProps) => {
     return {
         restaurantID: ownProps.params.id,
-        edit: (state.login.role === Constants.RESTAURANT),//TODO:change to value from API
+        edit: (state.login.role === Constants.RESTAURANT),
         //items: state.restaurant.items,//TODO:uncommint when adding API
     }
 };
