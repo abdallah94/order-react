@@ -6,7 +6,7 @@ import React from "react";
 import {RouteConstants} from "../utils";
 import AppContainer from "./AppContainer";
 import {CustomerContainer, CustomerMainComponent, RestaurantsListContainer, CheckoutContainer} from "./customer";
-import {MenuContainer} from "./shared";
+import {MenuContainer} from "./customer";
 import {LoginContainer} from './login';
 import {AdminContainer} from './admin';
 import {RestaurantContainer} from './restaurant';
@@ -25,7 +25,7 @@ let Routing = () => {
                            checkout={true}/>
                 </Route>
                 <Route path={RouteConstants.ROUTE_APP_LOGIN} component={LoginContainer}/>
-                <Route path={RouteConstants.ROUTE_APP_ADMIN} component={AdminContainer}/> 
+                <Route path={RouteConstants.ROUTE_APP_ADMIN} component={AdminContainer}/>
                 <Route path={RouteConstants.ROUTE_APP_RESTAURANT} component={RestaurantContainer}/>
                 <Route/>
             </Route>

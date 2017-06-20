@@ -12,7 +12,7 @@ const initialState = {
 
 function login(state = initialState, action) {
     switch (action.type) {//TODO add action cases
-        case LOGIN: 
+        case LOGIN:
             return Object.assign({}, state, action.payload);
         case LOGOUT:
             return Object.assign({}, state, action.payload);

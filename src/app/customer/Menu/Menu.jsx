@@ -6,9 +6,9 @@
 import './style.css'
 
 /* Components */
-import {OrderContainer} from '../';
-import {CartContainer} from '../../customer';
-import {RestaurantHeader} from '../';
+import {OrderContainer} from '../../shared';
+import {CartContainer} from '../';
+import {RestaurantHeader} from '../../shared';
 
 /*Modules*/
 import React from 'react';

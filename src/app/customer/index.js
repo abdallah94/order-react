@@ -15,6 +15,7 @@ import {editNumberOfItems} from './actions';
 import {CheckoutContainer} from './checkout/CheckoutContainer';
 import {OrderConfirm} from './orderConfirm/OrderConfirm';
 import {resetCart} from './actions';
+import {MenuContainer} from './Menu/MenuContainer';
 
 export {SearchContainer};
 export {CustomerMainComponent};
@@ -31,3 +32,4 @@ export {editNumberOfItems};
 export {CheckoutContainer};
 export {OrderConfirm};
 export {resetCart};
+export {MenuContainer};
