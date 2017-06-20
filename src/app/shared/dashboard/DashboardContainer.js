@@ -9,8 +9,8 @@ import {Constants} from '../../../utils';
 import {connect} from "react-redux";
 import i18next from "i18next";
 
-const mapStateToProps = (state) => {
-    return {}
+const mapStateToProps = (state, ownProps) => {
+    return {role: ownProps.role};
 };
 
 const mapDispatchToProps = (dispatch) => {

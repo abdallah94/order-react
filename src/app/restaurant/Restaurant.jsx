@@ -6,6 +6,7 @@
 import './style.css'
 
 /* Components */
+import {DashboardContainer} from '../shared';
 
 /*Modules*/
 import React from 'react';
@@ -13,7 +14,10 @@ import React from 'react';
 export class Restaurant extends React.Component {
     render() {
         return (
-            <h1>Restaurant</h1>
+            <div>
+                <DashboardContainer/>
+                <h1>Restaurant</h1>
+            </div>
 
         )
 

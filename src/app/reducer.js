@@ -1,10 +1,13 @@
 /**
  * Created by Abdallah on 4/23/2017.
  */
-import {combineReducers} from "redux";
 
 import {cart} from './customer';
+import {login} from './login';
 
-const reducers = combineReducers({cart});
+import {combineReducers} from "redux";
+
+
+const reducers = combineReducers({cart, login});
 
 export default reducers;

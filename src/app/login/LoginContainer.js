@@ -1,10 +1,13 @@
 /**
  * Created by Abdallah on 3/12/2017.
  */
+
 import {connect} from "react-redux";
-import Login from "./Login";
-import {PathConstants} from '../../utils';
 import {browserHistory} from 'react-router';
+
+import Login from "./Login";
+import {PathConstants, Constants} from '../../utils';
+import {loginAction} from './';
 
 import alertify from 'alertify.js';
 import i18next from 'i18next';
@@ -16,7 +19,7 @@ const mapStateToProps = () => {
 const mapDispatchToProps = (dispatch) => {
     return {
         login: (email, password) => {
-            dummyCheckLogin(email, password);
+            dummyCheckLogin(email, password, dispatch);
         }
     }
 };
@@ -26,13 +29,13 @@ const LoginContainer = connect(
     mapDispatchToProps
 )(Login);
 
-function dummyCheckLogin(email, password) {
-    console.log(email);
-    console.log(password);
+function dummyCheckLogin(email, password, dispatch) {
     if (email === "restaurant@gmail.com" && password === "res") {
+        dispatch(loginAction(Constants.RESTAURANT, 1));
         browserHistory.push(PathConstants.PATH_APP_RESTAURANT);
     }
     else if (email === "admin@gmail.com" && password === "admin") {
+        dispatch(loginAction(Constants.ADMIN, 1));
         browserHistory.push(PathConstants.PATH_APP_ADMIN);
     }
     else {

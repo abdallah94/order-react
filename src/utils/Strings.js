@@ -40,6 +40,7 @@ const Strings = {
             " please checkout the current items or discard them before ordering from another restaurant.",
             PASSWORD: "Password",
             LOGIN_WRONG_CREDENTIALS_MESSAGE: "Wrong Username/password",
+            ORDER: "Order",
         }
     }
     , ar: {
@@ -78,6 +79,7 @@ const Strings = {
             ERROR_ITEMS_FROM_DIFFERENT_RESTAURANT: "لديك طلبات من مطعم اخر حاليا, الرجاء القيام بتنفيذ الطلب الموجود حاليا او افراغ الطلبات قبل القيام بطلب اخر",
             PASSWORD: "كلمة المرور",
             LOGIN_WRONG_CREDENTIALS_MESSAGE: "اسم المتخدمظكلمة المرور غير صحيحة",
+            ORDER:"اطلب"
         }
     }
 };

@@ -21,7 +21,7 @@ class Dashboard extends Component {
             <Navbar inverse collapseOnSelect fixedTop fluid className="dashboard-padding">
                 <Navbar.Header>
                     <Navbar.Brand>{/*TODO:ADD LOGO*/}
-                        <Link to="/"><h5>ORDERS</h5></Link>
+                        <Link to="/"><h5>{i18next.t("ORDER")}</h5></Link>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>

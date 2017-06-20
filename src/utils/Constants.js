@@ -17,6 +17,9 @@ const Constants = {
     OFFER_3,
     OFFER_4,
     CART_IMG,
+    RESTAURANT: "restaurant",
+    ADMIN: "admin",
+    CUSTOMER: "customer",
 };
 
 export default Constants;
