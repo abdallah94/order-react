@@ -1,9 +1,13 @@
 import "./style.css";
+
 import React, {Component} from "react";
 import {Form, Col, Row, Button, Image} from "react-bootstrap";
 import Select from "react-select";
 import i18next from "i18next";
+import {browserHistory} from "react-router";
+
 import {Constants} from "../../../utils";
+import {PathConstants} from '../../../utils';
 
 class Search extends Component {
     constructor(props) {
@@ -13,6 +17,7 @@ class Search extends Component {
         }
         this.findRestaurant = this.findRestaurant.bind(this);
         this.findAllRestaurants = this.findAllRestaurants.bind(this);
+        this.navigateToRestaurant = this.navigateToRestaurant.bind(this);
     }
 
     render() {
@@ -51,7 +56,8 @@ class Search extends Component {
         }
         this.setState({value: value}, () => {
             if (value > 0 && value < 5) {
-                this.findRestaurant();
+                console.log("%%%");
+                this.navigateToRestaurant();
             }
         });
     }
@@ -63,6 +69,11 @@ class Search extends Component {
 
     findAllRestaurants() {
         this.props.findRestaurant("");
+    }
+
+    navigateToRestaurant() {
+        console.log(PathConstants.PATH_APP_CUSTOMER_RESTAURANTS + "/" + this.state.value);
+        browserHistory.push(PathConstants.PATH_APP_CUSTOMER_RESTAURANTS + "/" + this.state.value);
     }
 
 }
