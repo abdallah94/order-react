@@ -4,13 +4,12 @@
 import "./style.css";
 
 import {CartContainer} from '../../customer';
+import {Constants, PathConstants} from '../../../utils';
 
 import React, {Component} from "react";
 import {Navbar, Nav, NavItem, OverlayTrigger, Popover, Image} from 'react-bootstrap';
 import {Link} from 'react-router';
 import i18next from "i18next";
-
-import {Constants} from '../../../utils';
 
 class Dashboard extends Component {
     render() {
@@ -19,27 +18,29 @@ class Dashboard extends Component {
                 <CartContainer checkout={false}/>
             </Popover>);
         return (
-                <Navbar inverse collapseOnSelect fixedTop fluid className="dashboard-padding">
-                    <Navbar.Header>
-                        <Navbar.Brand>{/*TODO:ADD LOGO*/}
-                            <Link to="/"><h5>ORDERS</h5></Link>
-                        </Navbar.Brand>
-                        <Navbar.Toggle />
-                    </Navbar.Header>
-                    <Navbar.Collapse>
-                        <Nav pullRight>
-                            <NavItem eventKey={1}><h5>{i18next.t("LOGIN")}</h5></NavItem>
-                            <NavItem eventKey={2}><h5 onClick={() => {
-                                this.props.changeLanguage()
-                            }}>{i18next.t("LANGUAGE")}</h5></NavItem>
-                            <NavItem eventKey={3}><h5>{Constants.CONTACT_US_PHONE_NUMBER}</h5></NavItem>
-                            <OverlayTrigger trigger="click" placement="bottom"
-                                            overlay={cartPopover}>
-                                <NavItem eventKey={4}><Image className="dashboard-cart-image" src={Constants.CART_IMG}/></NavItem>
-                            </OverlayTrigger>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Navbar>
+            <Navbar inverse collapseOnSelect fixedTop fluid className="dashboard-padding">
+                <Navbar.Header>
+                    <Navbar.Brand>{/*TODO:ADD LOGO*/}
+                        <Link to="/"><h5>ORDERS</h5></Link>
+                    </Navbar.Brand>
+                    <Navbar.Toggle />
+                </Navbar.Header>
+                <Navbar.Collapse>
+                    <Nav pullRight>
+                        <NavItem eventKey={1}>
+                            <Link to={PathConstants.PATH_LOGIN}><h5>{i18next.t("LOGIN")}</h5></Link></NavItem>
+                        <NavItem eventKey={2}><h5 onClick={() => {
+                            this.props.changeLanguage()
+                        }}>{i18next.t("LANGUAGE")}</h5></NavItem>
+                        <NavItem eventKey={3}><h5>{Constants.CONTACT_US_PHONE_NUMBER}</h5></NavItem>
+                        <OverlayTrigger trigger="click" placement="bottom"
+                                        overlay={cartPopover}>
+                            <NavItem eventKey={4}><Image className="dashboard-cart-image"
+                                                         src={Constants.CART_IMG}/></NavItem>
+                        </OverlayTrigger>
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>
         );
     }
 
