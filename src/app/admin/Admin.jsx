@@ -6,17 +6,17 @@
 import './style.css'
 
 /* Components */
-
+import {DashboardContainer} from '../shared';
 /*Modules*/
 import React from 'react';
 
 export class Admin extends React.Component {
     render() {
         return (
-            <h1>Admin</h1>
-
+            <div>
+                <DashboardContainer/>
+                <h1>Admin</h1>
+            </div>
         )
-
     }
-
 }

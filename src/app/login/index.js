@@ -4,8 +4,9 @@
 
 import {LoginContainer} from './LoginContainer';
 import {login} from './reducer'
-import {loginAction} from './actions'
+import {loginAction, logoutAction} from './actions'
 
 export {LoginContainer};
 export {login};
 export {loginAction};
+export {logoutAction};

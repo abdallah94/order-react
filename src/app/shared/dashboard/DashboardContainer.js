@@ -5,12 +5,17 @@
 /* Components */
 import Dashboard from "./Dashboard";
 import {Constants} from '../../../utils';
+import {logoutAction} from '../../login';
+
 /* Modules */
 import {connect} from "react-redux";
 import i18next from "i18next";
 
-const mapStateToProps = (state, ownProps) => {
-    return {role: ownProps.role};
+const mapStateToProps = (state) => {
+    return {
+        loggedIn: state.login.loggedIn,
+        role: state.login.role,
+    };
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -18,8 +23,8 @@ const mapDispatchToProps = (dispatch) => {
         changeLanguage: () => {
             i18next.changeLanguage(i18next.language === Constants.ENGLISH ? Constants.ARABIC : Constants.ENGLISH);
         },
-        showCart: () => {
-
+        logout: () => {
+            dispatch(logoutAction());
         }
     }
 };

@@ -41,6 +41,7 @@ const Strings = {
             PASSWORD: "Password",
             LOGIN_WRONG_CREDENTIALS_MESSAGE: "Wrong Username/password",
             ORDER: "Order",
+            LOGOUT: "Logout",
         }
     }
     , ar: {
@@ -79,7 +80,8 @@ const Strings = {
             ERROR_ITEMS_FROM_DIFFERENT_RESTAURANT: "لديك طلبات من مطعم اخر حاليا, الرجاء القيام بتنفيذ الطلب الموجود حاليا او افراغ الطلبات قبل القيام بطلب اخر",
             PASSWORD: "كلمة المرور",
             LOGIN_WRONG_CREDENTIALS_MESSAGE: "اسم المتخدمظكلمة المرور غير صحيحة",
-            ORDER:"اطلب"
+            ORDER: "اطلب",
+            LOGOUT: "تسجيل الخروج",
         }
     }
 };

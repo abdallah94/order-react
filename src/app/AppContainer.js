@@ -7,7 +7,10 @@ import App from "./App";
 import {connect} from "react-redux";
 
 const mapStateToProps = (state) => {
-    return {}
+    return {
+        loggedIn: state.login.loggedIn,
+        role: state.login.role
+    }
 };
 
 const mapDispatchToProps = (dispatch) => {

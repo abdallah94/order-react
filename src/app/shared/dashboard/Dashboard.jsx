@@ -10,6 +10,7 @@ import React, {Component} from "react";
 import {Navbar, Nav, NavItem, OverlayTrigger, Popover, Image} from 'react-bootstrap';
 import {Link} from 'react-router';
 import i18next from "i18next";
+import {browserHistory} from 'react-router';
 
 class Dashboard extends Component {
     render() {
@@ -27,15 +28,27 @@ class Dashboard extends Component {
                 </Navbar.Header>
                 <Navbar.Collapse>
                     <Nav pullRight>
+                        {!this.props.loggedIn &&
                         <NavItem eventKey={1}>
-                            <Link to={PathConstants.PATH_LOGIN}><h5>{i18next.t("LOGIN")}</h5></Link></NavItem>
-                        <NavItem eventKey={2}><h5 onClick={() => {
+                            <h5 onClick={() => {
+                                browserHistory.push(PathConstants.PATH_LOGIN)
+                            }}>{i18next.t("LOGIN")}</h5>
+                        </NavItem>
+                        }
+                        {this.props.loggedIn &&
+                        <NavItem eventKey={2}>
+                            <h5 onClick={() => {
+                                this.props.logout();
+                            }}>{i18next.t("LOGOUT")}</h5>
+                        </NavItem>
+                        }
+                        <NavItem eventKey={3}><h5 onClick={() => {
                             this.props.changeLanguage()
                         }}>{i18next.t("LANGUAGE")}</h5></NavItem>
-                        <NavItem eventKey={3}><h5>{Constants.CONTACT_US_PHONE_NUMBER}</h5></NavItem>
+                        <NavItem eventKey={4}><h5>{Constants.CONTACT_US_PHONE_NUMBER}</h5></NavItem>
                         <OverlayTrigger trigger="click" placement="bottom"
                                         overlay={cartPopover}>
-                            <NavItem eventKey={4}><Image className="dashboard-cart-image"
+                            <NavItem eventKey={5}><Image className="dashboard-cart-image"
                                                          src={Constants.CART_IMG}/></NavItem>
                         </OverlayTrigger>
                     </Nav>
