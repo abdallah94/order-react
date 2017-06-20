@@ -3,19 +3,18 @@
  */
 
 /*CSS*/
+import './style.css'
 
 /* Components */
-import {DashboardContainer} from '../shared';
 
 /*Modules*/
 import React from 'react';
 
-export class Restaurant extends React.Component {
+export class RestaurantMainComponent extends React.Component {
     render() {
         return (
             <div>
-                <DashboardContainer/>
-                {this.props.children}
+                <h1>Restaurant</h1>
             </div>
 
         )

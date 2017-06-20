@@ -3,6 +3,8 @@
  */
 
 import {RestaurantContainer} from './RestaurantContainer';
+import {RestaurantMainComponentContainer} from './restaurantMainComponent/RestaurantMainComponentContainer';
 
 
 export {RestaurantContainer};
+export {RestaurantMainComponentContainer};
