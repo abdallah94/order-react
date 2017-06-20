@@ -24,10 +24,8 @@ class Search extends Component {
                         <Row className="row-eq-height">
                             <Col xs={3} xsOffset={4} className="no-padding">
                                 <Select className="select-search" value={this.state.value}
-                                        multi={false}
-                                        simpleValue={true}
-                                        disabled={false}
-                                        onChange={this.handleSelectChange.bind(this)}
+                                        multi={false} simpleValue={true}
+                                        disabled={false} onChange={this.handleSelectChange.bind(this)}
                                         options={this.props.options}>
                                 </Select>
                             </Col>
@@ -51,7 +49,11 @@ class Search extends Component {
         if (!value) {
             value = 0;
         }
-        this.setState({value: value});
+        this.setState({value: value}, () => {
+            if (value > 0 && value < 5) {
+                this.findRestaurant();
+            }
+        });
     }
 
     findRestaurant() {
