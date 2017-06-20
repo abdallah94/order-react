@@ -9,6 +9,7 @@ const RouteConstants = {
     ROUTE_APP_CUSTOMER_RESTAURANTS: "restaurants",
     ROUTE_APP_CUSTOMER_RESTAURANTS_FULL: "restaurants(?name=:name)",
     ROUTE_APP_CUSTOMER_CHECKOUT: "checkout",
+    ROUTE_APP_LOGIN: "login",
 };
 
 const PathConstants = {

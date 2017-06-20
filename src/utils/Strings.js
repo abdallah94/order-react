@@ -37,7 +37,9 @@ const Strings = {
             SUCCESSFUL_ORDER_SUBMIT_MESSAGE_2: ".\nYor order will arrive within the next ",
             MINUTES: "Minutes",
             ERROR_ITEMS_FROM_DIFFERENT_RESTAURANT: "You already have items from another restaurant in your cart," +
-            " please checkout the current items or discard them before ordering from another restaurant."
+            " please checkout the current items or discard them before ordering from another restaurant.",
+            PASSWORD: "Password",
+            LOGIN_WRONG_CREDENTIALS_MESSAGE: "Wrong Username/password",
         }
     }
     , ar: {
@@ -73,7 +75,9 @@ const Strings = {
             SUCCESSFUL_ORDER_SUBMIT_MESSAGE_1: "تم تقديم طلبك لمطعم ",
             SUCCESSFUL_ORDER_SUBMIT_MESSAGE_2: ".\nسيصل طلبك خلال ",
             MINUTES: "دقيقة",
-            ERROR_ITEMS_FROM_DIFFERENT_RESTAURANT: "لديك طلبات من مطعم اخر حاليا, الرجاء القيام بتنفيذ الطلب الموجود حاليا او افراغ الطلبات قبل القيام بطلب اخر"
+            ERROR_ITEMS_FROM_DIFFERENT_RESTAURANT: "لديك طلبات من مطعم اخر حاليا, الرجاء القيام بتنفيذ الطلب الموجود حاليا او افراغ الطلبات قبل القيام بطلب اخر",
+            PASSWORD: "كلمة المرور",
+            LOGIN_WRONG_CREDENTIALS_MESSAGE: "اسم المتخدمظكلمة المرور غير صحيحة",
         }
     }
 };

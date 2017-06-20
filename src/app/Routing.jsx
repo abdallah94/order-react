@@ -7,6 +7,7 @@ import {RouteConstants} from "../utils";
 import AppContainer from "./AppContainer";
 import {CustomerContainer, CustomerMainComponent, RestaurantsListContainer, CheckoutContainer} from "./customer";
 import {MenuContainer} from "./shared";
+import {LoginContainer} from './login';
 
 let Routing = () => {
     return (
@@ -19,8 +20,10 @@ let Routing = () => {
                         <IndexRoute component={RestaurantsListContainer}/>
                         <Route path=":id" component={MenuContainer}/>
                     </Route>
-                    <Route path={RouteConstants.ROUTE_APP_CUSTOMER_CHECKOUT} component={CheckoutContainer} checkout={true}/>
+                    <Route path={RouteConstants.ROUTE_APP_CUSTOMER_CHECKOUT} component={CheckoutContainer}
+                           checkout={true}/>
                 </Route>
+                <Route path={RouteConstants.ROUTE_APP_LOGIN} component={LoginContainer}/>
                 <Route/>
             </Route>
         </Router>
