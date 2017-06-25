@@ -27,14 +27,14 @@ class Search extends Component {
                 <Row className="search-component">
                     <Form horizontal>
                         <Row className="row-eq-height">
-                            <Col xs={3} xsOffset={4} className="no-padding">
+                            <Col md={3} mdOffset={4} className="no-padding" xs={5} xsOffset={1}>
                                 <Select className="select-search" value={this.state.value}
                                         multi={false} simpleValue={true}
                                         disabled={false} onChange={this.handleSelectChange.bind(this)}
                                         options={this.props.options}>
                                 </Select>
                             </Col>
-                            <Col xs={2} className="no-padding no-border-radius no-border">
+                            <Col md={2} xs={6} className="no-padding no-border-radius no-border">
                                 <Button className="button-find" onClick={() => {
                                     this.findRestaurant()
                                 }}>{i18next.t("FIND")}</Button>
