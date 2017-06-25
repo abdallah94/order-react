@@ -15,7 +15,7 @@ import Rating from 'react-rating';
 export class RestaurantHeader extends React.Component {
     render() {
         return (
-            <Row className="restaurant-header-container">
+            <Row className="restaurant-header-container row-same-height">
                 <Col xs={6} md={3}>
                     <Image responsive src={this.props.imageUrl} className="restaurant-item-restaurant-logo"/>
                 </Col>
