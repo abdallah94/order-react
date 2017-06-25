@@ -20,6 +20,7 @@ const Constants = {
     RESTAURANT: "restaurant",
     ADMIN: "admin",
     CUSTOMER: "customer",
+    LOGIN_COOKIE: "LOGIN_COOKIE",
 };
 
 export default Constants;

@@ -3,26 +3,19 @@ import {browserHistory} from 'react-router';
 
 import "./App.css";
 import {DashboardContainer} from "./shared";
-import {PathConstants, Constants} from '../utils';
+import {PathConstants, Constants, loadCookie} from '../utils';
+import {loginAction} from './login';
 
 class App extends Component {
 
-    componentWillMount() {
-        if (this.props.location.pathname === "/") {//root path, redirect user according to their permissions
-            if (!this.props.loggedIn) {//user is not logged in
-                browserHistory.push(PathConstants.PATH_APP_CUSTOMER);
-            }
-            else {
-                if (this.props.role === Constants.ADMIN) {
-                    browserHistory.push(PathConstants.PATH_APP_ADMIN);
-                }
-                else {
-                    if (this.props.role === Constants.RESTAURANT) {
-                        browserHistory.push(PathConstants.PATH_APP_RESTAURANT);
-                    }
-                }
-            }
+    constructor(props) {
+        super(props);
+        this.checkLogin = this.checkLogin.bind(this);
+    }
 
+    componentWillMount() {
+        if (!this.checkLogin() && this.props.location.pathname === "/") {
+            browserHistory.push(PathConstants.PATH_APP_CUSTOMER);
         }
     }
 
@@ -42,6 +35,16 @@ class App extends Component {
                 }
             }
         }
+    }
+
+    checkLogin() {
+        let loginCookies = loadCookie(Constants.LOGIN_COOKIE);
+        console.log(loginCookies);
+        if (loginCookies) {
+            this.props.loadUserInfo(loginCookies);
+            return true;
+        }
+        return false;
     }
 
     render() {

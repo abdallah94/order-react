@@ -3,6 +3,7 @@
  */
 /* Components */
 import App from "./App";
+import {loginAction} from './login';
 /* Modules */
 import {connect} from "react-redux";
 
@@ -14,7 +15,11 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {}
+    return {
+        loadUserInfo: (userDetails) => {
+            dispatch(loginAction(userDetails.role, userDetails.id));
+        }
+    }
 };
 
 let AppContainer = connect(mapStateToProps, mapDispatchToProps)(App);
