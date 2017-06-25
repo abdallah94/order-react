@@ -22,7 +22,8 @@ export class Cart extends React.Component {
 
     render() {
         const totalOffset = (this.props.checkout) ? 4 : 0;
-        const totalWidth = (this.props.checkout) ? 2 : 6;
+        const totalWidth = (this.props.checkout) ? 1 : 4;
+        const totalLabelWidth = (this.props.checkout) ? 3 : 8; 
         return (
             <div className="padding-bottom-2rem white-background">
                 {!this.props.checkout &&
@@ -46,25 +47,25 @@ export class Cart extends React.Component {
                 <br/>
                 <Row>
                     <Col xs={12}>
-                        <Col xs={totalWidth} xsOffset={totalOffset}>
+                        <Col xs={totalLabelWidth} xsOffset={totalOffset}>
                             <h5 className="text-align-left">{i18next.t("DELIVERY_TIME")}:</h5>
                         </Col>
                         <Col xs={totalWidth}>
                             <h5 className="text-align-right">{this.props.deliveryTime}</h5>
                         </Col>
-                        <Col xs={totalWidth} xsOffset={totalOffset}>
+                        <Col xs={totalLabelWidth} xsOffset={totalOffset}>
                             <h5 className="cart-sum text-align-left">{i18next.t("SUM")}:</h5>
                         </Col>
                         <Col xs={totalWidth}>
                             <h5 className="text-align-right">{this.props.sum}</h5>
                         </Col>
-                        <Col xs={totalWidth} xsOffset={totalOffset}>
+                        <Col xs={totalLabelWidth} xsOffset={totalOffset}>
                             <h5 className="text-align-left">{i18next.t("DELIVERY")}:</h5>
                         </Col>
                         <Col xs={totalWidth}>
                             <h5 className="text-align-right">{this.props.deliveryFee}</h5>
                         </Col>
-                        <Col xs={totalWidth} xsOffset={totalOffset}>
+                        <Col xs={totalLabelWidth} xsOffset={totalOffset}>
                             <h5 className="text-align-left">{i18next.t("TOTAL")}:</h5>
                         </Col>
                         <Col xs={totalWidth}>
