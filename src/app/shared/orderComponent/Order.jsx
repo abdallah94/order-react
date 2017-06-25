@@ -32,8 +32,8 @@ export class Order extends React.Component {
                     <h2>{this.props.name}</h2>
                     <p>{this.props.description}</p>
                 </Col>
-                <Col mdOffset={1} md={1} xsOffset={2} xs={4}>
-                    <h4 className="text-align-left order-price">{this.props.price} $</h4>
+                <Col mdOffset={0} md={2} xsOffset={2} xs={4}>
+                    <h5 className="text-align-center center-block order-price">{this.props.price} $</h5>
                 </Col>
                 {!this.props.edit &&
                 <Col mdOffset={0} md={2} xsOffset={3} xs={3}>
