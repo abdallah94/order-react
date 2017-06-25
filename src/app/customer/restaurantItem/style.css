@@ -26,12 +26,12 @@
 
 .restaurant-item-delivery-time {
     font-size: 16px;
-    margin-top: 6rem;
+    margin-top: 6.5rem;
 }
 
 .restaurant-item-min-order {
     font-size: 16px;
-    margin-top: 6rem;
+    margin-top: 4rem;
 }
 
 .restaurants-item-rating {
@@ -39,6 +39,6 @@
 }
 
 .restaurant-item-view {
-    margin-top: 4rem;
+    margin-top: 6rem;
     border-radius: 15px;
 }
