@@ -7,7 +7,9 @@ import {Admin} from './Admin';
 import {connect} from 'react-redux';
 
 let mapStateToProps = (state) => {
-    return {}
+    return {
+        role: state.login.role
+    }
 };
 
 let mapDispatchToProps = (dispatch) => {
