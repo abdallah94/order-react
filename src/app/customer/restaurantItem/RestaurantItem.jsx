@@ -20,7 +20,7 @@ import Rating from 'react-rating';
 export class RestaurantItem extends React.Component {
     render() {
         return (//TODO:continue UI
-            <Row className="restaurant-item-container" onClick={this.navigateToRestaurant.bind(this)}>
+            <Row className="restaurant-item-container row-same-height" onClick={this.navigateToRestaurant.bind(this)}>
                 <Col xs={6} md={3}>
                     <Image responsive src={this.props.imageUrl} className="restaurant-item-restaurant-logo"/>
                 </Col>

@@ -64,3 +64,11 @@ body {
 .white-background{
     background-color: white;
 }
+
+.row-same-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
