@@ -8,29 +8,30 @@ import {PathConstants, Constants} from '../utils';
 class App extends Component {
 
     componentWillMount() {
-        if (!this.props.loggedIn) {//user is not logged in
-            browserHistory.push(PathConstants.PATH_APP_CUSTOMER);
-        }
-        else {
-            if (this.props.role === Constants.ADMIN) {
-                browserHistory.push(PathConstants.PATH_APP_ADMIN);
+        if (this.props.location.pathname === "/") {//root path, redirect user according to their permissions
+            if (!this.props.loggedIn) {//user is not logged in
+                browserHistory.push(PathConstants.PATH_APP_CUSTOMER);
             }
             else {
-                if (this.props.role === Constants.RESTAURANT) {
-                    browserHistory.push(PathConstants.PATH_APP_RESTAURANT);
+                if (this.props.role === Constants.ADMIN) {
+                    browserHistory.push(PathConstants.PATH_APP_ADMIN);
+                }
+                else {
+                    if (this.props.role === Constants.RESTAURANT) {
+                        browserHistory.push(PathConstants.PATH_APP_RESTAURANT);
+                    }
                 }
             }
+
         }
     }
 
     componentWillReceiveProps(nextProps) {
-        console.log("YYYY");
-        console.log(nextProps);
-        if (this.props.loggedIn && !nextProps.loggedIn) {//user logged out
-            browserHistory.push(PathConstants.PATH_APP_CUSTOMER);
-        }
-        else {
-            if (this.props.loggedIn && this.props.role !== nextProps.role)
+        if (nextProps.location.pathname === "/") {//root path, redirect user according to their permissions
+            if (!nextProps.loggedIn) {//user is not logged in
+                browserHistory.push(PathConstants.PATH_APP_CUSTOMER);
+            }
+            else {
                 if (nextProps.role === Constants.ADMIN) {
                     browserHistory.push(PathConstants.PATH_APP_ADMIN);
                 }
@@ -39,6 +40,7 @@ class App extends Component {
                         browserHistory.push(PathConstants.PATH_APP_RESTAURANT);
                     }
                 }
+            }
         }
     }
 

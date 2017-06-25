@@ -6,7 +6,7 @@ import App from "./App";
 /* Modules */
 import {connect} from "react-redux";
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
         loggedIn: state.login.loggedIn,
         role: state.login.role

@@ -15,7 +15,6 @@ let Routing = () => {
     return (
         <Router history={browserHistory}>
             <Route path="/" component={AppContainer}>
-                <IndexRedirect to={RouteConstants.ROUTE_APP_CUSTOMER}/>
                 <Route path={RouteConstants.ROUTE_APP_CUSTOMER} component={CustomerContainer}>
                     <IndexRoute component={CustomerMainComponent}/>
                     <Route path={RouteConstants.ROUTE_APP_CUSTOMER_RESTAURANTS}>

@@ -10,7 +10,7 @@ import {logoutAction} from '../../login';
 /* Modules */
 import {connect} from "react-redux";
 import i18next from "i18next";
-
+import {browserHistory} from 'react-router';
 const mapStateToProps = (state) => {
     return {
         loggedIn: state.login.loggedIn,
@@ -25,6 +25,8 @@ const mapDispatchToProps = (dispatch) => {
         },
         logout: () => {
             dispatch(logoutAction());
+            browserHistory.push("/")//redirect to main
+
         }
     }
 };
