@@ -3,6 +3,7 @@
  */
 import {cart} from "./customer";
 import {login} from "./login";
+import {restaurant,restaurants} from './shared';
 import {START_LOADING, FINISH_LOADING} from "./actions";
 import {combineReducers} from "redux";
 
@@ -17,6 +18,6 @@ function loading(state = {isLoading: false}, action) {
     }
 }
 
-const reducers = combineReducers({cart, login, loading});
+const reducers = combineReducers({cart, login, loading,restaurant,restaurants});
 
 export default reducers;

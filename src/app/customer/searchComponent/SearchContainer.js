@@ -3,14 +3,15 @@
  */
 /* Components */
 import {Search} from "./Search";
-import {PathConstants} from '../../../utils';
+import {PathConstants} from "../../../utils";
+import {getRestaurants} from "../../shared";
 /* Modules */
 import {connect} from "react-redux";
-import {browserHistory} from 'react-router';
+import {browserHistory} from "react-router";
 
 const mapStateToProps = (state) => {
     return {//TODO: Add Restaurants from API
-        options: getDummyData(),
+        options: getOptions(state.restaurants),
     }
 };
 
@@ -22,19 +23,21 @@ const mapDispatchToProps = (dispatch) => {
                 options.query = {name: name}
             }
             browserHistory.push(options);
+        },
+        getRestaurants: () => {
+            dispatch(getRestaurants(""));
         }
     }
 };
 
-//TODO: Delete dummy data
-function getDummyData() {
-    return [{value: 0, label: "Restaurant", disabled: true}, {value: 1, label: "MCdonalds"}, {value: 2, label: "KFC"}, {
-        value: 3,
-        label: "Mr.Pizza"
-    }, {
-        value: 4,
-        label: "Buffalo wings"
-    }];
+function getOptions(restaurants) {
+    let array = [{value: 0, label: "Restaurant", disabled: true}];
+    if (restaurants) {
+        for (let i in restaurants) {
+            array.push({value: restaurants[i].id, label: restaurants[i].name});
+        }
+    }
+    return array;
 }
 
 let SearchContainer = connect(mapStateToProps, mapDispatchToProps)(Search);

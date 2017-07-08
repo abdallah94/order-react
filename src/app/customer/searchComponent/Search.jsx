@@ -20,6 +20,10 @@ class Search extends Component {
         this.navigateToRestaurant = this.navigateToRestaurant.bind(this);
     }
 
+    componentWillMount() {
+        this.props.getRestaurants();
+    }
+
     render() {
         return (
             <div className="search-wrapper">
@@ -55,8 +59,7 @@ class Search extends Component {
             value = 0;
         }
         this.setState({value: value}, () => {
-            if (value > 0 && value < 5) {
-                console.log("%%%");
+            if (value > 0 && value < this.props.options.length) {
                 this.navigateToRestaurant();
             }
         });
@@ -72,7 +75,6 @@ class Search extends Component {
     }
 
     navigateToRestaurant() {
-        console.log(PathConstants.PATH_APP_CUSTOMER_RESTAURANTS + "/" + this.state.value);
         browserHistory.push(PathConstants.PATH_APP_CUSTOMER_RESTAURANTS + "/" + this.state.value);
     }
 
