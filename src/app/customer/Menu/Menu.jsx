@@ -15,6 +15,9 @@ import React from 'react';
 import {Row, Col} from 'react-bootstrap';
 
 export class Menu extends React.Component {
+    componentWillMount(){
+        this.props.fetchItems(this.props.restaurantID);
+    }
     render() {
         return (
             <Row className="body-container">

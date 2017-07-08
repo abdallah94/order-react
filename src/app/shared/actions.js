@@ -29,7 +29,7 @@ export function getRestaurant(id) {
             .then(res => {
                 dispatch({
                     type: GET_RESTAURANT,
-                    payload: res.data.data
+                    payload: res.data.restaurant
                 })
             });
     }
