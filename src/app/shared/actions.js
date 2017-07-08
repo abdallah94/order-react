@@ -17,7 +17,7 @@ export function getRestaurants(search) {
             .then(res => {
                 dispatch({
                     type: GET_RESTAURANTS,
-                    payload: res.data.data
+                    payload: res.data
                 })
             });
     }

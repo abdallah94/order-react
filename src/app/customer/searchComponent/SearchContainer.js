@@ -11,7 +11,7 @@ import {browserHistory} from "react-router";
 
 const mapStateToProps = (state) => {
     return {//TODO: Add Restaurants from API
-        options: getOptions(state.restaurants),
+        options: getOptions(state.restaurants.data),
     }
 };
 

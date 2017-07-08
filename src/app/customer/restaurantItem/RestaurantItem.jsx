@@ -26,7 +26,7 @@ export class RestaurantItem extends React.Component {
                 </Col>
                 <Col xs={6} md={3}>
                     <p className="restaurant-item-restaurant-name">{this.props.name}</p>
-                    <h3 className="restaurant-item-restaurant-phone">{this.props.phoneNum}</h3>
+                    <h3 className="restaurant-item-restaurant-phone">{this.props.phone}</h3>
                 </Col>
                 <Col xs={6} md={3}>
                     <div className="restaurants-item-rating">
@@ -50,3 +50,10 @@ export class RestaurantItem extends React.Component {
     }
 
 }
+RestaurantItem.defaultProps = {
+    imageUrl: Constants.FOOD_IMG,
+    name: "Awesome Restaurant",
+    deliveryTime: 10,
+    rating: 1,
+    minOrder: 20,
+};
