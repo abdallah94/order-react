@@ -44,9 +44,9 @@ export class CartElement extends React.Component {
                 <Col xs={4}>
                     <h5 className="text-align-center">{this.props.number}</h5>
                 </Col>
-                }
-                <Col xs={4}>
-                    <h5 className="card-item-name">{this.props.name}</h5>
+                } 
+                <Col xs={4} className="no-padding">
+                    <h6 className="card-item-name">{this.props.name}</h6>
                 </Col>
                 <Col xs={2}>
                     <h5 className="card-item-price">{this.props.price}$</h5>
