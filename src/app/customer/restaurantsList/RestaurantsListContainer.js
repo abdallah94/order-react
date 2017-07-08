@@ -13,6 +13,7 @@ import {connect} from "react-redux";
 const mapStateToProps = (state, ownProps) => {
     let searchName = ownProps.location.query.name;//TODO:use value to get data from api;
     return {//TODO:remove dummy data
+        restaurants: state.restaurants.data,
     }
 };
 
