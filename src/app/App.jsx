@@ -39,7 +39,6 @@ class App extends Component {
 
     checkLogin() {
         let loginCookies = loadCookie(Constants.LOGIN_COOKIE);
-        console.log(loginCookies);
         if (loginCookies) {
             this.props.loadUserInfo(loginCookies);
             return true;
