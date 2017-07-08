@@ -6,6 +6,7 @@ import {initializeI18} from './i18-initializer';
 import {RouteConstants, PathConstants} from './RouteConstants';
 import {calulateItemsSum} from './functions';
 import {loadCookie, removeCookie, setCookie} from './cookies-utils';
+import {APIConstants} from './APIConstants';
 
 export {Constants};
 export {initializeI18};
@@ -13,3 +14,4 @@ export{RouteConstants};
 export {PathConstants};
 export {calulateItemsSum};
 export {loadCookie, removeCookie, setCookie};
+export {APIConstants};
