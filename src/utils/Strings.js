@@ -42,6 +42,7 @@ const Strings = {
             LOGIN_WRONG_CREDENTIALS_MESSAGE: "Wrong Username/password",
             ORDER: "Order",
             LOGOUT: "Logout",
+            GENERAL_SERVER_ERROR: "Oops, something wrong. Please try again"
         }
     }
     , ar: {
@@ -82,6 +83,7 @@ const Strings = {
             LOGIN_WRONG_CREDENTIALS_MESSAGE: "اسم المتخدمظكلمة المرور غير صحيحة",
             ORDER: "اطلب",
             LOGOUT: "تسجيل الخروج",
+            GENERAL_SERVER_ERROR: "خطأ, يرجى المحاولة مرة أخرى"
         }
     }
 };
