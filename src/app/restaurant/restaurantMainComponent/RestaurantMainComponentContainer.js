@@ -4,6 +4,7 @@
 
 import {RestaurantMainComponent} from './RestaurantMainComponent';
 import {Constants} from '../../../utils';
+import {getRestaurant} from '../../shared';
 
 import {connect} from 'react-redux';
 
@@ -12,13 +13,16 @@ let mapStateToProps = (state) => {
     return {
         restaurantID: state.login.id,
         edit: (state.login.role === Constants.RESTAURANT),
-        //items: state.restaurant.items,//TODO:uncommint when adding API
+        restaurantName: state.restaurant.name,
+        phoneNum: state.restaurant.phone,
+        items: state.restaurant.items,
     }
 };
 
 let mapDispatchToProps = (dispatch) => {
     return {
         fetchItems: (restaurantID) => {//TODO:ADD API
+            dispatch(getRestaurant(restaurantID));
 
         }
     }

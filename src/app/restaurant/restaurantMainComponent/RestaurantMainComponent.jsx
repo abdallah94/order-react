@@ -9,6 +9,11 @@ import {Row, Col} from "react-bootstrap";
 import React from "react";
 
 export class RestaurantMainComponent extends React.Component {
+
+    componentWillMount() {
+        this.props.fetchItems(this.props.restaurantID);
+    }
+
     render() {
         return (
             <Row className="body-container">
