@@ -16,7 +16,7 @@ export class RestaurantMainComponent extends React.Component {
 
     render() {
         return (
-            <Row className="body-container">
+            <Row className="body-container no-margins">
                 <Col xs={12}>
                     <RestaurantHeader restaurantID={this.props.restaurantID} imageUrl={this.props.imageUrl}
                                       phoneNum={this.props.phoneNum} name={this.props.restaurantName}
