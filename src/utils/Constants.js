@@ -17,8 +17,8 @@ const Constants = {
     OFFER_3,
     OFFER_4,
     CART_IMG,
-    RESTAURANT: "restaurant",
-    ADMIN: "admin",
+    RESTAURANT: "RESTAURANT",
+    ADMIN: "ADMIN",
     CUSTOMER: "customer",
     LOGIN_COOKIE: "LOGIN_COOKIE",
 };

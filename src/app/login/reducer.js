@@ -7,7 +7,8 @@ import {LOGIN, LOGOUT} from './actions';
 const initialState = {
     role: "customer",
     loggedIn: false,
-    id: -1
+    id: -1,
+    token: "",
 };
 
 function login(state = initialState, action) {

@@ -17,7 +17,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         loadUserInfo: (userDetails) => {
-            dispatch(loginAction(userDetails.role, userDetails.id));
+            dispatch(loginAction(userDetails.role, userDetails.id, userDetails.token));
         }
     }
 };

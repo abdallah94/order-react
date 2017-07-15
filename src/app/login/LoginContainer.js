@@ -7,7 +7,7 @@ import {browserHistory} from 'react-router';
 
 import Login from "./Login";
 import {PathConstants, Constants} from '../../utils';
-import {loginAction} from './';
+import {loginAction, loginFunction} from './';
 
 import alertify from 'alertify.js';
 import i18next from 'i18next';
@@ -19,7 +19,7 @@ const mapStateToProps = () => {
 const mapDispatchToProps = (dispatch) => {
     return {
         login: (email, password) => {
-            dummyCheckLogin(email, password, dispatch);
+            dispatch(loginFunction(email, password));
         }
     }
 };

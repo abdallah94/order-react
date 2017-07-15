@@ -3,10 +3,11 @@
  */
 
 import {LoginContainer} from './LoginContainer';
-import {login} from './reducer'
-import {loginAction, logoutAction} from './actions'
+import {login} from './reducer';
+import {loginAction, logoutAction, loginFunction} from './actions';
 
 export {LoginContainer};
 export {login};
 export {loginAction};
 export {logoutAction};
+export {loginFunction};
