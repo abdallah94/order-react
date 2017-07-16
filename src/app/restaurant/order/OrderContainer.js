@@ -12,6 +12,7 @@ let mapStateToProps = (state, ownProps) => {
     return {
         role: state.login.role,
         orderID: ownProps.params.id,
+        order: state.order.data
     }
 };
 
