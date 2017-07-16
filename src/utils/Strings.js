@@ -42,7 +42,10 @@ const Strings = {
             LOGIN_WRONG_CREDENTIALS_MESSAGE: "Wrong Username/password",
             ORDER: "Order",
             LOGOUT: "Logout",
-            GENERAL_SERVER_ERROR: "Oops, something wrong. Please try again"
+            GENERAL_SERVER_ERROR: "Oops, something wrong. Please try again",
+            NAME: "Name",
+            LOCATION: "Location",
+            SHOW_ORDER: "Show Order",
         }
     }
     , ar: {
@@ -83,7 +86,10 @@ const Strings = {
             LOGIN_WRONG_CREDENTIALS_MESSAGE: "اسم المتخدمظكلمة المرور غير صحيحة",
             ORDER: "اطلب",
             LOGOUT: "تسجيل الخروج",
-            GENERAL_SERVER_ERROR: "خطأ, يرجى المحاولة مرة أخرى"
+            GENERAL_SERVER_ERROR: "خطأ, يرجى المحاولة مرة أخرى",
+            NAME: "الاسم",
+            LOCATION: "العنوان",
+            SHOW_ORDER: "عرض الطلب",
         }
     }
 };

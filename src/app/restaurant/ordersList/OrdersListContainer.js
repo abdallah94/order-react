@@ -3,15 +3,23 @@
  */
 
 import {OrdersList} from './OrdersList';
+import {getOrders} from '../';
 
 import {connect} from 'react-redux';
 
 let mapStateToProps = (state) => {
-    return {}
+    return {
+        restaurantID: state.login.id,
+        orders: state.orders.data,
+    }
 };
 
 let mapDispatchToProps = (dispatch) => {
-    return {}
+    return {
+        getOrders: (restaurantID) => {//TODO:ADD API
+            dispatch(getOrders(restaurantID, true));
+        }
+    }
 };
 
 const OrdersListContainer = connect(mapStateToProps, mapDispatchToProps)(OrdersList);
@@ -21,8 +29,8 @@ OrdersListContainer.defaultProps = {
         {
             orderID: 1,
             name: "Abdallah",
-            location:"Naji-Al Ali st., Almasyoon Arab Bank Building",
-            phoneNumber:"0123456789",
+            location: "Naji-Al Ali st., Almasyoon Arab Bank Building",
+            phoneNumber: "0123456789",
             items: [{
                 itemID: 1,
                 itemName: "Burger",
@@ -41,8 +49,8 @@ OrdersListContainer.defaultProps = {
         {
             orderID: 2,
             name: "Ahmad",
-            location:"Al-ersal st, Palestine Tower, floor No. 5 apt No. 3",
-            phoneNumber:"123456789",
+            location: "Al-ersal st, Palestine Tower, floor No. 5 apt No. 3",
+            phoneNumber: "123456789",
             items: [{
                 itemID: 5,
                 itemName: "Shawerma",
@@ -61,8 +69,8 @@ OrdersListContainer.defaultProps = {
         {
             orderID: 3,
             name: "Ahmad",
-            location:"Al-ersal st, Palestine Tower, floor No. 5 apt No. 3",
-            phoneNumber:"123456789",
+            location: "Al-ersal st, Palestine Tower, floor No. 5 apt No. 3",
+            phoneNumber: "123456789",
             items: [{
                 itemID: 5,
                 itemName: "Shawerma",
@@ -81,8 +89,8 @@ OrdersListContainer.defaultProps = {
         {
             orderID: 4,
             name: "Ahmad",
-            location:"Al-ersal st, Palestine Tower, floor No. 5 apt No. 3",
-            phoneNumber:"123456789",
+            location: "Al-ersal st, Palestine Tower, floor No. 5 apt No. 3",
+            phoneNumber: "123456789",
             items: [{
                 itemID: 5,
                 itemName: "Shawerma",
@@ -101,8 +109,8 @@ OrdersListContainer.defaultProps = {
         {
             orderID: 5,
             name: "Ahmad",
-            location:"Al-ersal st, Palestine Tower, floor No. 5 apt No. 3",
-            phoneNumber:"123456789",
+            location: "Al-ersal st, Palestine Tower, floor No. 5 apt No. 3",
+            phoneNumber: "123456789",
             items: [{
                 itemID: 5,
                 itemName: "Shawerma",
@@ -121,8 +129,8 @@ OrdersListContainer.defaultProps = {
         {
             orderID: 6,
             name: "Ahmad",
-            location:"Al-ersal st, Palestine Tower, floor No. 5 apt No. 3",
-            phoneNumber:"123456789",
+            location: "Al-ersal st, Palestine Tower, floor No. 5 apt No. 3",
+            phoneNumber: "123456789",
             items: [{
                 itemID: 5,
                 itemName: "Shawerma",
@@ -141,8 +149,8 @@ OrdersListContainer.defaultProps = {
         {
             orderID: 7,
             name: "Ahmad",
-            location:"Al-ersal st, Palestine Tower, floor No. 5 apt No. 3",
-            phoneNumber:"123456789",
+            location: "Al-ersal st, Palestine Tower, floor No. 5 apt No. 3",
+            phoneNumber: "123456789",
             items: [{
                 itemID: 5,
                 itemName: "Shawerma",
