@@ -16,7 +16,7 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        getOrders: (restaurantID) => {//TODO:ADD API
+        getOrders: (restaurantID) => {
             dispatch(getOrders(restaurantID, true));
         }
     }

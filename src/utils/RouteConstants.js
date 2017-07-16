@@ -10,6 +10,7 @@ const RouteConstants = {
     ROUTE_APP_CUSTOMER_RESTAURANTS_FULL: "restaurants(?name=:name)",
     ROUTE_APP_CUSTOMER_CHECKOUT: "checkout",
     ROUTE_APP_LOGIN: "login",
+    ROUTE_APP_ORDER: "order"
 };
 
 const PathConstants = {
@@ -19,6 +20,7 @@ const PathConstants = {
     PATH_APP_RESTAURANT: "/" + RouteConstants.ROUTE_APP_RESTAURANT,
     PATH_APP_CUSTOMER_RESTAURANTS: "/" + RouteConstants.ROUTE_APP_CUSTOMER + "/" + RouteConstants.ROUTE_APP_CUSTOMER_RESTAURANTS,
     PATH_APP_CUSTOMER_CHECKOUT: "/" + RouteConstants.ROUTE_APP_CUSTOMER + "/" + RouteConstants.ROUTE_APP_CUSTOMER_CHECKOUT,
+    PATH_APP_ORDER: "/" + RouteConstants.ROUTE_APP_ORDER,
 };
 
 

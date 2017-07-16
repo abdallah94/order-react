@@ -6,11 +6,12 @@
 import './style.css'
 
 /* Components */
-
+import {PathConstants} from '../../../utils';
 /*Modules*/
 import React from 'react';
 import {Row, Button} from 'react-bootstrap';
 import i18next from 'i18next';
+import {browserHistory} from 'react-router';
 
 export class OrdersList extends React.Component {
     constructor(props) {
@@ -22,8 +23,9 @@ export class OrdersList extends React.Component {
         this.props.getOrders(this.props.restaurantID);
     }
 
-    navigateToOrder() {
-
+    navigateToOrder(id) {
+        let path = PathConstants.PATH_APP_ORDER + "/" + id;
+        browserHistory.push(path);
     }
 
     render() {
@@ -37,7 +39,9 @@ export class OrdersList extends React.Component {
                         <p>{i18next.t("LOCATION")}:{order.location}</p>
                         <p>{i18next.t("PHONE_NUMBER")}:{order.phone}</p>
                         <p>{i18next.t("TOTAL")}: {order.total}</p>
-                        <Button onClick={this.navigateToOrder}>{i18next.t("SHOW_ORDER")}</Button>
+                        <Button onClick={() => {
+                            this.navigateToOrder(order.id)
+                        }}>{i18next.t("SHOW_ORDER")}</Button>
                     </Row>
                 ))}
             </div>
