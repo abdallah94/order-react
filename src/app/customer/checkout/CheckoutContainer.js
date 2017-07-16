@@ -4,6 +4,7 @@
 
 import {Checkout} from './Checkout';
 import {resetCart} from '../';
+import {submitOrder} from '../';
 
 import {connect} from 'react-redux';
 
@@ -16,6 +17,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToPops = (dispatch) => {
     return {
+        submitOrder: (data) => {
+            dispatch(submitOrder(data));
+        },
         resetCart: () => {
             dispatch(resetCart());
         }

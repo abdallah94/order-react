@@ -16,6 +16,7 @@ import {CheckoutContainer} from './checkout/CheckoutContainer';
 import {OrderConfirm} from './orderConfirm/OrderConfirm';
 import {resetCart} from './actions';
 import {MenuContainer} from './Menu/MenuContainer';
+import {submitOrder} from './actions';
 
 export {SearchContainer};
 export {CustomerMainComponent};
@@ -33,3 +34,4 @@ export {CheckoutContainer};
 export {OrderConfirm};
 export {resetCart};
 export {MenuContainer};
+export {submitOrder};

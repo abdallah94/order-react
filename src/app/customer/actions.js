@@ -2,7 +2,9 @@
  * Created by Abdallah on 6/6/2017.
  */
 /*modules*/
+import axios from 'axios';
 /*Components*/
+import {APIConstants} from '../../utils';
 
 export const ADD_ITEM = "ADD_ITEM";
 export const REMOVE_ITEM = "REMOVE_ITEM";
@@ -48,4 +50,18 @@ export function resetCart() {
     return ({
         type: RESET_CART,
     });
+}
+
+export function submitOrder(data) {
+    console.log(data);
+    return function (dispatch, getState) {
+        var config = {
+            headers: {'Authorization': getState().login.token}
+        };
+        axios.post(APIConstants.GET_ORDERS, data, config).then(() => {
+            console.log("^^^^")
+        }, (err) => {
+            console.log(err);
+        })
+    }
 }

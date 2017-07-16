@@ -45,7 +45,7 @@ function editItem(addItems, items, payload, restaurantID) {
         alertify.logPosition('bottom right');
         alertify.error(i18next.t("ERROR_ITEMS_FROM_DIFFERENT_RESTAURANT"));
         console.log("error not same restaurant");
-        return
+        return;
     }
     items.map((item, i) => {
         if (item.id === payload.id) {

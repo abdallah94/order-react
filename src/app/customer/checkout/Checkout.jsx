@@ -35,12 +35,56 @@ export class Checkout extends React.Component {
         this.submitOrder = this.submitOrder.bind(this);
         this.open = this.open.bind(this);
         this.close = this.close.bind(this);
+        this.getLocation = this.getLocation.bind(this);
+        this.getItems = this.getItems.bind(this);
     }
 
     submitOrder() {
         //TODO:add submit API and clear store
+        let location = this.getLocation();
+        let items = this.getItems();
+        let data = {
+            "first_name": this.state.firstName,
+            "last_name": this.state.lastName,
+            "email": this.state.email,
+            "phone": this.state.phone,
+            "location": location,
+            "total": this.props.sum,
+            "restaurant_id": this.props.restaurantID,
+            items: items
+        };
+        this.props.submitOrder(data);
         this.props.resetCart();
         this.open();
+    }
+
+    getLocation() {
+        let location = "";
+        if (this.state.building) {
+            location += this.state.building + ",";
+        }
+        if (this.state.floor) {
+            location += this.state.floor + ",";
+        }
+        if (this.state.apartment) {
+            location += this.state.apartment + ",";
+        }
+        if (location !== "") {
+            location += "\n";
+        }
+        if (this.state.street) {
+            location += this.state.street + ",";
+        }
+        if (this.state.area) {
+            location += this.state.area;
+        }
+        return location;
+    }
+
+    getItems() {
+        return this.props.items.map((item) => {
+            return {id: item.id, number: item.number};
+        })
     }
 
     close() {

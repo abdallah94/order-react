@@ -33,10 +33,6 @@ export function loginFunction(email, password) {
                     }
                 }
             }
-            // dispatch({
-            //     type: GET_RESTAURANT,
-            //     payload: res.data.restaurant
-            // })
         }, err => {
             alertify.logPosition('top right');
             alertify.error(i18next.t("LOGIN_WRONG_CREDENTIALS_MESSAGE"));
