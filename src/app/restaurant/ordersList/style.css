@@ -1,7 +1,7 @@
 .notification-order-container{
     color: #e6ede8;
-    padding-left: 1.5rem;
+    padding-left: 25px;
+    padding-right: 25px;
     padding-bottom: 2rem;
-    margin-bottom: 0.5rem;
     border-bottom: solid 1px;
 }

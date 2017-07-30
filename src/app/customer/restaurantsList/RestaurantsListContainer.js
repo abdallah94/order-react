@@ -10,10 +10,15 @@ import {getRestaurants} from '../../shared';
 /* Modules */
 import {connect} from "react-redux";
 
-const mapStateToProps = (state, ownProps) => {
-    let searchName = ownProps.location.query.name;//TODO:use value to get data from api;
-    return {//TODO:remove dummy data
+const mapStateToProps = (state, ownprops) => {
+    console.log(ownprops);
+    if (!ownprops.admin) {
+        let searchName = ownprops.location.query.name;//TODO:use value to get data from api;
+    }
+    let admin = (ownprops.admin) ? ownprops.admin : false;
+    return {
         restaurants: state.restaurants.data,
+        admin: admin,
     }
 };
 

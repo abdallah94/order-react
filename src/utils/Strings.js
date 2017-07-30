@@ -46,6 +46,15 @@ const Strings = {
             NAME: "Name",
             LOCATION: "Location",
             SHOW_ORDER: "Show Order",
+            ACCEPT_ORDER:"Accept",
+            ACCEPT_ORDER_ERROR:"Something went wrong, Couldn't accept this order.Please try again later",
+            ORDER_ID:"Order ID",
+            ADDRESS:"Address",
+            ORDER_TIME:"Order Time",
+            CUSTOMER_NAME:"Customer Name",
+            STATUS:"Status",
+            ACCEPTED:"Accepted",
+            PENDING:"Pending",
         }
     }
     , ar: {
@@ -58,7 +67,7 @@ const Strings = {
             DELIVERY: "التوصيل",
             Min: "حد أدنى",
             VIEW: "عرض",
-            Edit: "تعديل",
+            EDIT: "تعديل",
             SUM: "المجموع",
             TOTAL: "المجموع الكلي",
             MY_CART: "عربتي",
@@ -90,6 +99,15 @@ const Strings = {
             NAME: "الاسم",
             LOCATION: "العنوان",
             SHOW_ORDER: "عرض الطلب",
+            ACCEPT_ORDER:"قبول",
+            ACCEPT_ORDER_ERROR:"خطأ في عملية قبول الطلب, الرجاء المحاولة مرة اخرى",
+            ORDER_ID:"رقم الطلب",
+            ADDRESS:"العنوان",
+            ORDER_TIME:"وقت الطلب",
+            CUSTOMER_NAME:"الاسم الكامل",
+            STATUS:"الحالة",
+            ACCEPTED:"تم القبول",
+            PENDING:"غير مقبولة",
         }
     }
 };

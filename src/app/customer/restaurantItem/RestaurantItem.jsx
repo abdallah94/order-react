@@ -46,7 +46,12 @@ export class RestaurantItem extends React.Component {
     }
 
     navigateToRestaurant() {
-        browserHistory.push(PathConstants.PATH_APP_CUSTOMER_RESTAURANTS + "/" + this.props.id);
+        if (this.props.admin) {
+            browserHistory.push(PathConstants.PATH_APP_RESTAURANT + "/" + this.props.id);
+        }
+        else {
+            browserHistory.push(PathConstants.PATH_APP_CUSTOMER_RESTAURANTS + "/" + this.props.id);
+        }
     }
 
 }

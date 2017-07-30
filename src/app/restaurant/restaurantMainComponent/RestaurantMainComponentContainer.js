@@ -9,10 +9,11 @@ import {getRestaurant} from '../../shared';
 import {connect} from 'react-redux';
 
 
-let mapStateToProps = (state) => {
+let mapStateToProps = (state, ownProps) => {//TODO: Check admin permission or same restaurant
+    let restaurantID = (ownProps.params.id) ? (ownProps.params.id) : state.login.id;
     return {
-        restaurantID: state.login.id,
-        edit: (state.login.role === Constants.RESTAURANT),
+        restaurantID: restaurantID,
+        edit: (state.login.role === Constants.RESTAURANT || state.login.role === Constants.ADMIN),
         restaurantName: state.restaurant.name,
         phoneNum: state.restaurant.phone,
         items: state.restaurant.items,

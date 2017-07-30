@@ -12,7 +12,7 @@ import {PathConstants} from '../../../utils';
 
 /*Modules*/
 import React from 'react';
-import {Col, Row, Form, FormGroup, FormControl, ControlLabel, Button} from 'react-bootstrap';
+import {Col, Row, Form, FormGroup, FormControl, ControlLabel, Button, Radio} from 'react-bootstrap';
 import i18next from 'i18next';
 import {browserHistory} from 'react-router';
 
@@ -31,12 +31,33 @@ export class Checkout extends React.Component {
             apartment: "",
             floor: "",
             show: false,
+            delivery: true,
         };
         this.submitOrder = this.submitOrder.bind(this);
         this.open = this.open.bind(this);
         this.close = this.close.bind(this);
         this.getLocation = this.getLocation.bind(this);
         this.getItems = this.getItems.bind(this);
+        this.setDelivery = this.setDelivery.bind(this);
+        this.setCheckout = this.setCheckout.bind(this);
+    }
+
+    setDelivery() {
+        this.setState({
+            delivery: true,
+        });
+    }
+
+    setCheckout() {
+        this.setState({
+            delivery: false,
+        });
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if ((this.props.restaurantName && !nextProps.restaurantName)) {
+            this.open();
+        }
     }
 
     submitOrder() {
@@ -51,11 +72,10 @@ export class Checkout extends React.Component {
             "location": location,
             "total": this.props.sum,
             "restaurant_id": this.props.restaurantID,
+            "delivery": this.state.delivery,
             items: items
         };
         this.props.submitOrder(data);
-        this.props.resetCart();
-        this.open();
     }
 
     getLocation() {
@@ -82,9 +102,11 @@ export class Checkout extends React.Component {
     }
 
     getItems() {
-        return this.props.items.map((item) => {
-            return {id: item.id, number: item.number};
-        })
+        let items = [];
+        this.props.items.map((item) => {
+            items.push({item_id: item.id, number: item.number});
+        });
+        return items;
     }
 
     close() {
@@ -170,6 +192,21 @@ export class Checkout extends React.Component {
                                 <FormControl onChange={(e) => {
                                     this.setState({apartment: e.target.value})
                                 }} placeholder={i18next.t("APARTMENT")} type="text" value={this.state.apartment}/>
+                            </FormGroup>
+                        </Col>
+                        <Col smOffset={2} sm={8} xs={12}>
+                            <FormGroup>
+                                <Col xs={6}>
+                                    <Radio className="text-align-center" name="order" defaultChecked
+                                           onChange={this.setDelivery}>
+                                        Delivery
+                                    </Radio>
+                                </Col>
+                                <Col xs={6}>
+                                    <Radio className="text-align-center" name="order" onChange={this.setCheckout}>
+                                        Pick up
+                                    </Radio>
+                                </Col>
                             </FormGroup>
                         </Col>
                         <FormGroup>

@@ -8,7 +8,9 @@ import {OrdersListContainer} from './ordersList/OrdersListContainer';
 import {NotificationContainer} from './notifications/NotificationContainer';
 import {order, orders} from './reducer';
 import {getOrder, getOrders} from './actions';
-import {OrderContainer} from './order/OrderContainer';
+import {OrderDetailsContainer} from './order/OrderDetailsContainer';
+import {OrdersContainer} from './Orders/OrdersContainer';
+import {acceptOrder} from './actions';
 
 
 export {RestaurantContainer};
@@ -19,4 +21,6 @@ export {order};
 export {orders};
 export {getOrder};
 export {getOrders};
-export {OrderContainer};
+export {OrderDetailsContainer};
+export {OrdersContainer};
+export {acceptOrder};

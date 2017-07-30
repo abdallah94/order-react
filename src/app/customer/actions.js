@@ -53,15 +53,13 @@ export function resetCart() {
 }
 
 export function submitOrder(data) {
-    console.log(data);
     return function (dispatch, getState) {
         var config = {
             headers: {'Authorization': getState().login.token}
         };
         axios.post(APIConstants.GET_ORDERS, data, config).then(() => {
-            console.log("^^^^")
+            dispatch(resetCart());
         }, (err) => {
-            console.log(err);
         })
     }
 }

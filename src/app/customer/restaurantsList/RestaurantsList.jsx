@@ -22,7 +22,7 @@ export class RestaurantsList extends React.Component {
             <Grid fluid>
                 <Row className="restaurant-list-container">
                     {this.props.restaurants && Object.keys(this.props.restaurants).length !== 0 && this.props.restaurants.map((restaurant, index) => (
-                        <RestaurantItem key={restaurant.id} {...restaurant}/>
+                        <RestaurantItem key={restaurant.id} {...restaurant} admin={this.props.admin}/>
                     ))
                     }
                 </Row>

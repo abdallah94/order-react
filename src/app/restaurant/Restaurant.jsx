@@ -15,7 +15,7 @@ import {browserHistory} from 'react-router';
 export class Restaurant extends React.Component {
 
     componentWillMount() {
-        if (this.props.role !== Constants.RESTAURANT) {
+        if (this.props.role !== Constants.RESTAURANT && this.props.role !== Constants.ADMIN) {
             browserHistory.push("/");
         }
     }

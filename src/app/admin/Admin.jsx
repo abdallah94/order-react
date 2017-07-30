@@ -8,6 +8,7 @@ import './style.css'
 /* Components */
 import {DashboardContainer} from '../shared';
 import {Constants} from '../../utils';
+import {RestaurantsListContainer} from '../customer';
 
 /*Modules*/
 import React from 'react';
@@ -25,7 +26,9 @@ export class Admin extends React.Component {
         return (
             <div>
                 <DashboardContainer/>
-                <h1>Admin</h1>
+                <div className="body-container no-margins">
+                    <RestaurantsListContainer admin={true}/>
+                </div>
             </div>
         )
     }

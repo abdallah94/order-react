@@ -3,13 +3,13 @@
  */
 
 import {OrdersList} from './OrdersList';
-import {getOrders} from '../';
+import {getOrders, acceptOrder} from '../';
 
 import {connect} from 'react-redux';
 
-let mapStateToProps = (state) => {
+let mapStateToProps = (state, ownprops) => {
     return {
-        restaurantID: state.login.id,
+        restaurantID: ownprops.restaurantID,
         orders: state.orders.data,
     }
 };
@@ -18,6 +18,9 @@ let mapDispatchToProps = (dispatch) => {
     return {
         getOrders: (restaurantID) => {
             dispatch(getOrders(restaurantID, true));
+        },
+        acceptOrder: (orderID,restaurantID) => {
+            dispatch(acceptOrder(orderID,getOrders(restaurantID)));
         }
     }
 };
