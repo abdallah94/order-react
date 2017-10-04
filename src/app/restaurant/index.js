@@ -11,6 +11,8 @@ import {getOrder, getOrders} from './actions';
 import {OrderDetailsContainer} from './order/OrderDetailsContainer';
 import {OrdersContainer} from './Orders/OrdersContainer';
 import {acceptOrder} from './actions';
+import {OrderModalContainer} from './OrderModal/OrderModalContainer';
+import {addItem,editItem} from './actions';
 
 
 export {RestaurantContainer};
@@ -24,3 +26,6 @@ export {getOrders};
 export {OrderDetailsContainer};
 export {OrdersContainer};
 export {acceptOrder};
+export {OrderModalContainer};
+export {addItem};
+export {editItem};

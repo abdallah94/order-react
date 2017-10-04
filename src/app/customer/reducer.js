@@ -1,7 +1,7 @@
 /**
  * Created by Abdallah on 6/6/2017.
  */
-import {ADD_ITEM, REMOVE_ITEM, EDIT_NUM_ITEMS, RESET_CART} from "./actions";
+import {ADD_ITEM, REMOVE_ITEM, EDIT_NUM_ITEMS, RESET_CART, SUCCESSFULL_ORDER} from "./actions";
 import {calulateItemsSum} from "../../utils";
 
 import alertify from 'alertify.js';
@@ -16,6 +16,7 @@ const initialState = {
     total: 0,
     deliveryTime: 0,
     deliveryFee: 0,
+    orderSubmitted: false,
 };
 
 function cart(state = initialState, action) {
@@ -31,6 +32,8 @@ function cart(state = initialState, action) {
             return Object.assign({}, state, items);
         case RESET_CART:
             return initialState;
+        case SUCCESSFULL_ORDER:
+            return Object.assign({}, state, action.payload);
         case REMOVE_ITEM:
             break;
         default:

@@ -15,6 +15,7 @@ import {browserHistory} from 'react-router';
 
 export class OrderConfirm extends React.Component {
     navigateToMain(){
+        this.props.resetCart();
         browserHistory.push(PathConstants.PATH_APP_CUSTOMER);
     }
     render() {

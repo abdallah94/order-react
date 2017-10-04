@@ -49,6 +49,13 @@ export class OrderDetails extends React.Component {
                                 <h5>{i18next.t("ORDER_TIME")}:{this.props.order.created_at}</h5>
                             </Col>
                             <Col xs={12}>
+                                {this.props.order.remarks &&
+                                <Col xs={6}>
+                                    <p className="text-align-left inline-block">{this.props.order.remarks}</p>
+                                </Col>}
+                                <h5 className="text-align-center inline-block">{this.props.order.delivery ? i18next.t("DELIVERY") : i18next.t("PICK_UP")}</h5>
+                            </Col>
+                            < Col xs={12}>
                                 <BootstrapTable data={items} striped hover condensed>
                                     <TableHeaderColumn dataField='item_id' isKey>Item ID</TableHeaderColumn>
                                     <TableHeaderColumn dataField='item_name'>Item Name</TableHeaderColumn>
@@ -58,7 +65,8 @@ export class OrderDetails extends React.Component {
                             </Col>
                             {!this.props.order.accepted &&
                             <Col xs={12} className="text-align-center">
-                                <Button onClick={()=>this.props.acceptOrder(this.props.order.id)} className="btn-primary center-block">{i18next.t("Accept")}</Button>
+                                <Button onClick={() => this.props.acceptOrder(this.props.order.id)}
+                                        className="btn-primary center-block">{i18next.t("Accept")}</Button>
                             </Col>
                             }
                         </div>

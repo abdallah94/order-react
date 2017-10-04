@@ -10,6 +10,7 @@ export const ADD_ITEM = "ADD_ITEM";
 export const REMOVE_ITEM = "REMOVE_ITEM";
 export const EDIT_NUM_ITEMS = "EDIT_NUM_ITEMS";
 export const RESET_CART = "REST_CART";
+export const SUCCESSFULL_ORDER = "SUCCESSFULL_ORDER";
 
 //this action uses fetch instead of redux-JSON-API because the API doesn't follow the standards
 export function addItem(id, number, price, name, restaurantID, minOrder, deliveryTime, deliveryFee, restaurantName) {
@@ -58,8 +59,15 @@ export function submitOrder(data) {
             headers: {'Authorization': getState().login.token}
         };
         axios.post(APIConstants.GET_ORDERS, data, config).then(() => {
-            dispatch(resetCart());
+            dispatch(orderSuccess());
         }, (err) => {
         })
+    }
+}
+
+function orderSuccess() {
+    return {
+        type: SUCCESSFULL_ORDER,
+        payload: {orderSubmitted: true}
     }
 }

@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {browserHistory} from 'react-router';
+import i18next from 'i18next';
 
 import "./App.css";
 import {DashboardContainer} from "./shared";
@@ -48,7 +49,7 @@ class App extends Component {
 
     render() {
         return (
-            <div>
+            <div key={i18next.language}>
                 {this.props.children}
             </div>
         );

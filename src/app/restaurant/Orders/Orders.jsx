@@ -44,6 +44,13 @@ export class Orders extends React.Component {
         )
     }
 
+    getType(cell, row) {
+        let status = (row.delivery) ? i18next.t("DELIVERY") : i18next.t("PICK_UP");
+        return (
+            <div>{status}</div>
+        )
+    }
+
     rowStyle(row, rowIndex) {
         let backgroundColor = row && (row.accepted) ? '#6192e8' : '#ed5f55';
         return {backgroundColor: backgroundColor};
@@ -73,6 +80,7 @@ export class Orders extends React.Component {
                                     <TableHeaderColumn
                                         dataField='created_at'>{i18next.t("ORDER_TIME")}</TableHeaderColumn>
                                     <TableHeaderColumn dataField='total'>{i18next.t("TOTAL")}</TableHeaderColumn>
+                                    <TableHeaderColumn dataFormat={this.getType}>{i18next.t("TYPE")}</TableHeaderColumn>
                                     <TableHeaderColumn
                                         dataFormat={this.getStatus}>{i18next.t("STATUS")}</TableHeaderColumn>
                                 </BootstrapTable>

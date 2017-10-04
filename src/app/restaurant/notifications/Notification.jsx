@@ -36,7 +36,7 @@ export class Notification extends React.Component {
                 </ScrollArea>
                 <Col xs={12}>
                     <Button onClick={this.navigateToOrders}
-                            className="text-align-center center-block show-all-button btn-primary">{i18next.t("SHOW_ALL ")}</Button>
+                            className="text-align-center center-block show-all-button btn-primary">{i18next.t("SHOW_ALL")}</Button>
                 </Col>
             </div>
         )

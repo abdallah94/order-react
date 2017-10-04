@@ -9,5 +9,31 @@
 
 .dashboard-padding {
     padding-right: 4rem;
-    padding-left: 2rem;
+    padding-left: 15%;
+    background-color: #e36b0a;
+}
+
+.foody-express-logo {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+}
+
+.logo-title {
+    margin-top: 0;
+    font-weight: 500;
+    color: white;
+}
+
+.dashboard-text-color {
+    color: white;
+}
+
+.dashboard-text {
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.dashboard-items-container {
+    margin-right: 10%;
 }

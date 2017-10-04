@@ -1,9 +1,18 @@
+@font-face {
+    font-family: 'Segeo Print';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./assets/fonts/segeo-print.ttf');
+}
+
 body {
-    margin: 0;
-    font-family: sans-serif;
+    font-family: Segeo Print;
     padding-top: 4.571em;
     background-color: #e6ede8;
     color: #414c44;
+    min-width: 300px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .no-padding {
@@ -80,4 +89,8 @@ body {
     display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
+}
+
+.inline-block {
+    display: inline-block;
 }

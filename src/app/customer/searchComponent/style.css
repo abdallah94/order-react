@@ -5,6 +5,8 @@
     border-radius: 0;
     height: 100%;
     width: 50%;
+    color: black;
+    font-size: 16px;
 }
 
 .button-show-all {
@@ -12,6 +14,8 @@
     border: 1px solid #ccc;
     border-radius: 0;
     width: 50%;
+    font-size: 16px;
+    color: black;
 }
 
 .select-search > .Select-control {
@@ -29,11 +33,15 @@
     display: inline-block;
     z-index: -1;
     position: absolute;
-    width: 100%;
+    width: 45%;
     height: 35rem;
     top: 6.8rem;
-    left: 0;
+    left: 50%;
+}
 
+.image-food:first-child {
+    left: 0;
+    margin-left: 5%;
 }
 
 .search-wrapper {
@@ -41,6 +49,9 @@
 
 .search-component {
     z-index: 2;
-    margin-top: 6rem;
+    margin-top: -9rem;
+    margin-bottom: 15rem;
     margin-right: 1rem;
+    font-size: 16px;
+    color: black;
 }

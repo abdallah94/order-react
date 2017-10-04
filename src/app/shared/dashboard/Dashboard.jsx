@@ -22,35 +22,36 @@ class Dashboard extends Component {
             <Navbar inverse collapseOnSelect fixedTop fluid className="dashboard-padding">
                 <Navbar.Header>
                     <Navbar.Brand>{/*TODO:ADD LOGO*/}
-                        <Link to="/"><h5>{i18next.t("ORDER")}</h5></Link>
+                        <Link to="/"><h2 className="logo-title">FoodyExpress</h2></Link>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>
                 <Navbar.Collapse>
-                    <Nav pullRight>
+                    <Nav pullRight className="dashboard-items-container">
                         {!this.props.loggedIn &&
                         <NavItem eventKey={1}>
-                            <h5 onClick={() => {
+                            <h5 className="dashboard-text-color dashboard-text" onClick={() => {
                                 browserHistory.push(PathConstants.PATH_LOGIN)
                             }}>{i18next.t("LOGIN")}</h5>
                         </NavItem>
                         }
                         {this.props.loggedIn &&
                         <NavItem eventKey={2}>
-                            <h5 onClick={() => {
+                            <h5 className="dashboard-text-color dashboard-text" onClick={() => {
                                 this.props.logout();
                             }}>{i18next.t("LOGOUT")}</h5>
                         </NavItem>
                         }
-                        <NavItem eventKey={3}><h5 onClick={() => {
+                        <NavItem eventKey={3}><h5 className="dashboard-text-color dashboard-text" onClick={() => {
                             this.props.changeLanguage()
                         }}>{i18next.t("LANGUAGE")}</h5></NavItem>
-                        <NavItem eventKey={4}><h5>{Constants.CONTACT_US_PHONE_NUMBER}</h5></NavItem>
-                        <OverlayTrigger trigger="click" placement="bottom"
-                                        overlay={cartPopover}>
+                        {this.props.role !== Constants.ADMIN && this.props.role !== Constants.RESTAURANT &&
+                        < OverlayTrigger trigger="click" placement="bottom"
+                                         overlay={cartPopover}>
                             <NavItem eventKey={5}><Image className="dashboard-cart-image"
                                                          src={Constants.CART_IMG}/></NavItem>
                         </OverlayTrigger>
+                        }
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

@@ -22,6 +22,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
         changeLanguage: () => {
             i18next.changeLanguage(i18next.language === Constants.ENGLISH ? Constants.ARABIC : Constants.ENGLISH);
+            browserHistory.push("/")//redirect to main
+
         },
         logout: () => {
             dispatch(logoutAction());

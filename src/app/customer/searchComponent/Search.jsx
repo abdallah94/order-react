@@ -27,7 +27,8 @@ class Search extends Component {
     render() {
         return (
             <div className="search-wrapper">
-                <Image responsive src={Constants.FOOD_IMG} className="image-food"/>
+                <Image responsive src={Constants.MAIN_PIC_1} className="image-food"/>
+                <Image responsive src={Constants.MAIN_PIC_2} className="image-food"/>
                 <Row className="search-component">
                     <Form horizontal>
                         <Row className="row-eq-height">

@@ -6,11 +6,13 @@ import App from "./App";
 import {loginAction} from './login';
 /* Modules */
 import {connect} from "react-redux";
+import i18next from "i18next";
 
 const mapStateToProps = (state, ownProps) => {
     return {
         loggedIn: state.login.loggedIn,
-        role: state.login.role
+        role: state.login.role,
+        language:i18next.language,
     }
 };
 

@@ -3,7 +3,7 @@
  */
 
 const Config = (process.env.NODE_ENV === 'production') ? {//production
-        SERVER_HOST_URL: "http://192.168.10.10",//add production server url here
+        SERVER_HOST_URL: "http://foodyexpress.net:9000",//add production server url here
         SERVER_PATH_URL: "/api/",//add production server path url here
 
     } : {//development

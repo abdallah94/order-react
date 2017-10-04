@@ -2,4 +2,51 @@
     width: 100%;
     object-fit: cover;
     margin: 0 auto;
+    height: 370px !important;
+}
+
+.small-offer-img {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+    margin-bottom: 25px;
+}
+
+.logo-img {
+    width: 125px;
+    height: 125px;
+    object-fit: contain;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 767px) {
+    .offer-image {
+        width: 100%;
+        object-fit: cover;
+        margin: 0 auto;
+        height: 200px !important;
+    }
+
+    .small-offer-img {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+        margin-bottom: 25px;
+    }
+
+}
+
+@media (max-width: 990px) {
+    .second-offers-container {
+        margin-top: 3rem;
+    }
+
+    .small-offer-img {
+        width: 45%;
+    }
+
+    .small-offer-img:first-child {
+        margin-right: 10%;
+    }
+
 }

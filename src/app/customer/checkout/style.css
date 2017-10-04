@@ -1,39 +1,49 @@
 .checkout-cart-container {
     margin-top: 2rem;
-    border:2px outset #587276;
+    border: 2px outset #587276;
     border-radius: 5px;
     background-color: #cccccc;
 }
 
-.checkout-cart-container .cart-element-container{
+.checkout-cart-container .cart-element-container {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
 }
 
-.address-form-container{
+.address-form-container {
     margin-top: 6rem;
-    border:2px outset #587276;
+    border: 2px outset #587276;
     border-radius: 5px;
     background-color: #cccccc;
 }
 
-.address-form{
-    padding:2rem;
+.address-form {
+    padding: 2rem;
     margin-top: 2rem;
     background-color: white;
 }
 
-.order-button-container{
+.order-button-container {
+    margin-top:2rem;
+    margin-bottom: 5rem;
+}
+
+.recapcha-container {
     margin-top: 2rem;
     margin-bottom: 5rem;
 }
 
-.customer-details{
-text-align: center;
+.recapcha {
+    width: 304px;
+    text-align: center;
 }
 
-.submit-button{
+.customer-details {
+    text-align: center;
+}
+
+.submit-button {
     background-color: blue;
     color: azure;
 }
