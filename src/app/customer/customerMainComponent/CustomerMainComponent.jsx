@@ -4,6 +4,7 @@ import {Grid, Row} from "react-bootstrap";
 /*Components*/
 import {SearchContainer} from "../";
 import {OffersContainer} from "../";
+import {PageFooter} from "../PageFooter/PageFooter"
 
 class CustomerMainComponent extends Component {
     render() {
@@ -14,6 +15,9 @@ class CustomerMainComponent extends Component {
                 </Row>
                 <Row className="offers-container">
                     <OffersContainer/>
+                </Row>
+                <Row className="footer-container">
+                    <PageFooter/>
                 </Row>
             </Grid>
         );
