@@ -32,6 +32,7 @@ class Search extends Component {
                 <Row className="search-component">
                     <Form horizontal>
                         <Row className="row-eq-height">
+                            <Col md={5} mdOffset={2} className="no-padding" xs={4} xsOffset={2}>
                                 <Select className="select-search" value={this.state.value}
                                         multi={false} simpleValue={true}
                                         disabled={false} onChange={this.handleSelectChange.bind(this)}
