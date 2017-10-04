@@ -22,7 +22,7 @@ class Dashboard extends Component {
             <Navbar inverse collapseOnSelect fixedTop fluid className="dashboard-padding">
                 <Navbar.Header>
                     <Navbar.Brand>{/*TODO:ADD LOGO*/}
-                        <Link to="/"><h2 className="logo-title">FoodyExpress</h2></Link>
+                        <Link to="/"><h2 className="logo-title">Foody Express</h2></Link>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>

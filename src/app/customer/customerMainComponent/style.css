@@ -8,3 +8,23 @@
     margin-top: 3rem;
     padding-bottom: 4rem;
 }
+
+.welcome-to-foodyexpress {
+    z-index: 2;
+    font-size: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    text-decoration: double;
+}
+
+.welcome-to-foodyexpress:first-child {
+    font-weight: 300;
+    font-size: 38px;
+}
+
+.welcome-to-foodyexpress-container {
+    margin-top: -10rem;
+    margin-bottom: 1.5rem;
+}

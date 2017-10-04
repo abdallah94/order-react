@@ -41,8 +41,8 @@ export class Offers extends React.Component {
                     <Image src={this.props.offers[3].image} className="small-offer-img"/>
                 </Col>
                 <Col xs={12} md={8}>
-                    <Carousel activeIndex={this.state.index} direction={this.state.direction}
-                              onSelect={this.handleSelect} interval={1} slide wrap>
+                    <Carousel direction={this.state.direction}
+                              onSelect={this.handleSelect} interval={Constants.OFFERS_CYCLING_PERIOD} slide wrap>
                         {this.props.offers.map((offer, i) => (
                             <Carousel.Item key={i}>
                                 <Image responsive src={offer.image} className="offer-image"/>

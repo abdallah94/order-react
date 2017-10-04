@@ -68,8 +68,10 @@ const Strings = {
             SUCCESSFULL_EDIT_ITEM_MESSAGE: "Item has been updated successfully",
             TYPE: "Type",
             EMPTY_CART_MESSAGE: "Please add items to your cart to be able to submit order",
-            USER_INVALID_MESSAGE:"You need to pass the verification test first",
-            REMARKS:"Remarks",
+            USER_INVALID_MESSAGE: "You need to pass the verification test first",
+            REMARKS: "Remarks",
+            MAIN_PAGE_TEXT1: "Welcome to Foody Express",
+            MAIN_PAGE_TEXT2:"Order Your Favourite Food Onlnie Now"
         }
     }
     , ar: {
@@ -137,8 +139,8 @@ const Strings = {
             SUCCESSFULL_EDIT_ITEM_MESSAGE: "تم التعديل بنجاح",
             TYPE: "النوع",
             EMPTY_CART_MESSAGE: "الرجاء اضافة عناصر للتمكن من تقديم الطلب",
-            USER_INVALID_MESSAGE:"يجب ان تنجح في الاثبات اولا",
-            REMARKS:"تعليقات"
+            USER_INVALID_MESSAGE: "يجب ان تنجح في الاثبات اولا",
+            REMARKS: "تعليقات"
         }
     }
 };

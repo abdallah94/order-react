@@ -30,6 +30,10 @@ class Search extends Component {
                 <Image responsive src={Constants.MAIN_PIC_1} className="image-food"/>
                 <Image responsive src={Constants.MAIN_PIC_2} className="image-food"/>
                 <Row className="search-component">
+                    <Row className="welcome-to-foodyexpress-container">
+                        <h1 className="welcome-to-foodyexpress">{i18next.t("MAIN_PAGE_TEXT1")}</h1>
+                        <h1 className="welcome-to-foodyexpress">{i18next.t("MAIN_PAGE_TEXT2")}</h1>
+                    </Row>
                     <Form horizontal>
                         <Row className="row-eq-height">
                             <Col md={5} mdOffset={2} className="no-padding" xs={4} xsOffset={2}>

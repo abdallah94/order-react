@@ -16,9 +16,9 @@ class CustomerMainComponent extends Component {
                 <Row className="offers-container">
                     <OffersContainer/>
                 </Row>
-                <Row className="footer-container">
-                    <PageFooter/>
-                </Row>
+                {/*<Row className="footer-container">*/}
+                    {/*<PageFooter/>*/}
+                {/*</Row>*/}
             </Grid>
         );
     }
