@@ -23,7 +23,8 @@ export function loginFunction(email, password) {
                 alertify.error(i18next.t("LOGIN_WRONG_CREDENTIALS_MESSAGE"));
             }
             else {
-                dispatch(loginAction(res.data.user.role, res.data.user.id, res.data.token));
+                console.log(res.data);
+                dispatch(loginAction(res.data.user.role, res.data.user.id, res.data.token,res.data.user.restaurant_id));
                 if (res.data.user.role === Constants.ADMIN) {
                     browserHistory.push(PathConstants.PATH_APP_ADMIN);
                 }
@@ -39,8 +40,8 @@ export function loginFunction(email, password) {
         });
     }
 }
-export function loginAction(role, id, token) {
-    let loginInfo = {role: role, id: id, token: token};
+export function loginAction(role, id, token,restaurant_id) {
+    let loginInfo = {role: role, id: id, token: token,restaurant_id:restaurant_id};
     setCookie(Constants.LOGIN_COOKIE, loginInfo);
     return {
         type: LOGIN,
@@ -48,6 +49,7 @@ export function loginAction(role, id, token) {
             role: role,
             id: id,
             token: token,
+            restaurant_id:restaurant_id,
             loggedIn: true,
         }
     }
@@ -61,6 +63,7 @@ export function logoutAction() {
             role: Constants.CUSTOMER,
             id: -1,
             token: "",
+            restaurant_id:-1,
             loggedIn: false,
         }
     }

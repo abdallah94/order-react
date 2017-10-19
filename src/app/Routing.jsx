@@ -12,6 +12,8 @@ import {AdminContainer} from './admin';
 import {RestaurantContainer} from './restaurant';
 import {RestaurantMainComponentContainer} from './restaurant';
 import {OrderDetailsContainer, OrdersContainer} from './restaurant';
+import {AdminMainComponent} from './admin/adminMainComponent/AdminMainComponent'
+import {AdminRestaurantsComponent} from './admin/adminRestaurants/AdminRestaurantsComponent'
 let Routing = () => {
     return (
         <Router history={browserHistory}>
@@ -26,7 +28,11 @@ let Routing = () => {
                            checkout={true}/>
                 </Route>
                 <Route path={RouteConstants.ROUTE_APP_LOGIN} component={LoginContainer}/>
-                <Route path={RouteConstants.ROUTE_APP_ADMIN} component={AdminContainer}/>
+                <Route path={RouteConstants.ROUTE_APP_ADMIN} component={AdminContainer}>
+                    <IndexRedirect to={RouteConstants.ROUTE_APP_ADMIN_HOME}/>
+                    <Route path={RouteConstants.ROUTE_APP_ADMIN_HOME} component={AdminMainComponent}/>
+                    <Route path={RouteConstants.ROUTE_APP_ADMIN_RESTAURANTS} component={AdminRestaurantsComponent}/>
+                </Route>
                 <Route path={RouteConstants.ROUTE_APP_RESTAURANT} component={RestaurantContainer}>
                     <IndexRoute component={RestaurantMainComponentContainer}/>
                     <Route path=":id" component={RestaurantMainComponentContainer}/>
@@ -41,6 +47,6 @@ let Routing = () => {
             </Route>
         </Router>
     );
-};
+    };
 
-export default Routing;
+    export default Routing;

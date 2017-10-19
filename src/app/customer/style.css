@@ -1,6 +1,7 @@
 .customer-container {
     padding-right: 5rem;
     padding-left: 5rem;
+    min-height: 500px;
 }
 
 @media (max-width: 767px) {

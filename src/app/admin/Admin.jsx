@@ -27,7 +27,7 @@ export class Admin extends React.Component {
             <div>
                 <DashboardContainer/>
                 <div className="body-container no-margins">
-                    <RestaurantsListContainer admin={true}/>
+                    {this.props.children}
                 </div>
             </div>
         )

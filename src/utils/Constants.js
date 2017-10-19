@@ -8,10 +8,10 @@ import OFFER_3 from "../assets/img/offers_3.jpeg";
 import OFFER_4 from "../assets/img/offers_4.jpeg";
 import CART_IMG from "../assets/img/cart.png";
 import BURGER_KING_LOGO from '../assets/img/logo-burger-king.png';
-import DOMINOS_LOGO from '../assets/img/logo-dominos.png';
+import DOMINOS_LOGO from '../assets/img/logo-dominos.jpg';
 import KFC_LOGO from '../assets/img/logo-kfc.png';
-import SUBWAY_LOGO from '../assets/img/logo-subway.png';
-import MCDONALDS_LOGO from '../assets/img/logo-mcdonalds.png';
+import HUT_POTATO_LOGO from '../assets/img/logo-hut-potato.png';
+import PIZZA_HUT_LOGO from '../assets/img/logo_pizza-hut.png';
 import WENDYS_LOGO from '../assets/img/logo-wendys.png';
 import FOODY_EXPRESS_LOGO from '../assets/img/FoodyExpress.png'
 import MAIN_PIC_1 from '../assets/img/main-pic-1.jpg';
@@ -36,8 +36,8 @@ const Constants = {
     BURGER_KING_LOGO,
     DOMINOS_LOGO,
     KFC_LOGO,
-    SUBWAY_LOGO,
-    MCDONALDS_LOGO,
+    HUT_POTATO_LOGO,
+    PIZZA_HUT_LOGO,
     WENDYS_LOGO,
     RECAPTCHA_SITE_KEY: "6LcfWS4UAAAAAEdFTmn6CdwxszAxZRA2eAjgaWN4",
     MAIN_PIC_1,

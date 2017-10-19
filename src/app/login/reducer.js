@@ -8,6 +8,7 @@ const initialState = {
     role: "customer",
     loggedIn: false,
     id: -1,
+    restaurant_id:-1,
     token: "",
 };
 

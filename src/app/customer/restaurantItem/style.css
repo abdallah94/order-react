@@ -42,3 +42,34 @@
     margin-top: 6rem;
     border-radius: 15px;
 }
+
+@media (max-width: 776px) {
+    .restaurant-item-restaurant-logo {
+        height: 12rem;
+        width: 12rem;
+    }
+
+    .restaurant-item-restaurant-name {
+        margin-top: 1rem;
+    }
+
+    .restaurant-item-restaurant-phone {
+        margin-top: 4rem;
+    }
+
+    .restaurants-item-rating {
+        margin-top: 2rem;
+    }
+
+    .restaurant-item-delivery-time {
+        margin-top: 2.5rem;
+    }
+
+    .restaurant-item-min-order {
+        margin-top: 2.5rem;
+    }
+
+    .restaurant-item-view {
+        margin-top: 2rem;
+    }
+}

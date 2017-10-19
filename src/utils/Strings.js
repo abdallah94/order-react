@@ -71,7 +71,15 @@ const Strings = {
             USER_INVALID_MESSAGE: "You need to pass the verification test first",
             REMARKS: "Remarks",
             MAIN_PAGE_TEXT1: "Welcome to Foody Express",
-            MAIN_PAGE_TEXT2:"Order Your Favourite Food Onlnie Now"
+            MAIN_PAGE_TEXT2: "Order Your Favourite Food Online Now",
+            FOLLOW_US: "Follow us",
+            ABOUT_US: "About us",
+            ABOUT_US_MESSAGE: `Welcome to FoodyExpress... One of the best and  first websites for ordering your favourite food in Ramallah and Al-Bireh online.
+            Just open the website, choose your cuisine and your restaurant among many others in Ramallah.
+            No more waiting or calling. We are with you from the time you order till the food is in your hands.
+            Know your delivery time before you order.`,
+            ADD_RESTAURANT:"Add Restaurant",
+            VIEW_RESTAURANTS:"View Restaurants",
         }
     }
     , ar: {
@@ -140,7 +148,16 @@ const Strings = {
             TYPE: "النوع",
             EMPTY_CART_MESSAGE: "الرجاء اضافة عناصر للتمكن من تقديم الطلب",
             USER_INVALID_MESSAGE: "يجب ان تنجح في الاثبات اولا",
-            REMARKS: "تعليقات"
+            REMARKS: "تعليقات",
+            MAIN_PAGE_TEXT1: "اهلا بك في فودي اكسبرس",
+            MAIN_PAGE_TEXT2: "اطلب وجبتك المفضلة الان",
+            FOLLOW_US: "تابعنا",
+            ABOUT_US: "من نحن",
+            ABOUT_US_MESSAGE: `اهلا في فودي اكسبرس... واحد من افضل واول المواقع لطلب طعامكم المفضل في رام الله والبيرة.
+فقط افتح الموقع وقم باختيار وجبتك ومطعمك المفضل من عدة مطاعم في رام الله والبيرة. لا مزيد من الانتظار او الاتصال. نحن معك من لحظة الطلب الى ان يصل طلبكز اعرف وقت توصيل طلبك قبل ان تطلب!
+`,
+            ADD_RESTAURANT:"اضف مطعم",
+            VIEW_RESTAURANTS:"عرض المطاعم",
         }
     }
 };
