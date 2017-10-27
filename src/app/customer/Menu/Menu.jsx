@@ -15,9 +15,10 @@ import React from 'react';
 import {Row, Col} from 'react-bootstrap';
 
 export class Menu extends React.Component {
-    componentWillMount(){
+    componentWillMount() {
         this.props.fetchItems(this.props.restaurantID);
     }
+
     render() {
         return (
             <Row className="body-container">
@@ -28,6 +29,17 @@ export class Menu extends React.Component {
                                       rating={this.props.rating}/>
                 </Col>
                 <Col xs={12} md={8} className="orders-container">
+                    {!!this.props.categories && this.props.categories.map((category) => (
+                        <div>
+                            <h2 className="category-title">{category.name}</h2>
+                            {category.items && category.items.map((item) => (
+                                <OrderContainer restaurantID={this.props.restaurantID} key={item.id} {...item}
+                                                deliveryTime={this.props.deliveryTime} edit={this.props.edit}
+                                                restaurantName={this.props.restaurantName}
+                                                deliveryFee={this.props.deliveryFee} minOrder={this.props.minOrder}/>
+                            ))}
+                        </div>
+                    ))}
                     {!!this.props.items && this.props.items.map((item) => (
                         <OrderContainer restaurantID={this.props.restaurantID} key={item.id} {...item}
                                         deliveryTime={this.props.deliveryTime} edit={this.props.edit}

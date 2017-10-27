@@ -8,7 +8,7 @@
 
 .page-footer-container {
     padding-bottom: 35px;
-    background-color: darkslategrey;
+    background-color: black;
 }
 
 .follow-us {
@@ -36,4 +36,22 @@
 
 .about-us-string {
     font-size: 14px;
+}
+
+.news-letter-container {
+    margin-top: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid gray;
+}
+
+@media (max-width: 778px) {
+    .about-us-container {
+        width: 100%
+    }
+
+    .follow-us-container {
+        display: block;
+        width: 100%;
+        float: none;
+    }
 }

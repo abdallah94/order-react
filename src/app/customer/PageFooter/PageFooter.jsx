@@ -3,18 +3,22 @@
  */
 
 /*CSS*/
-import './style.css'
+import './style.css';
 
 /* Components */
-
+import {NewsLetterContainer} from '../NewsLetter/NewsLetterContainer';
 /*Modules*/
 import React from 'react';
+import {Row} from 'react-bootstrap';
 import i18next from 'i18next';
 
 export class PageFooter extends React.Component {
     render() {
         return (
             <div className="page-footer-container">
+                <Row className="news-letter-container">
+                    <NewsLetterContainer/>
+                </Row>
                 <div className="about-us-container">
                     <h3>{i18next.t("ABOUT_US")}</h3>
                     <p className="about-us-string">{i18next.t("ABOUT_US_MESSAGE")}</p>

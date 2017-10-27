@@ -95,8 +95,16 @@ body {
     display: inline-block;
 }
 
-.center-element{
+.center-element {
     display: block;
     margin: 0 auto;
     text-align: center;
+}
+
+.text-color-white {
+    color: white;
+}
+
+.margin-bottom-2rem{
+    margin-bottom: 2rem;
 }

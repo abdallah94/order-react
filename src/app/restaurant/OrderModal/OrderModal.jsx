@@ -51,7 +51,6 @@ export class OrderModal extends React.Component {
         this.props.addOrder(values, () => {
             this.props.close();
         });
-
     }
 
     editOrder() {

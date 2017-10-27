@@ -15,6 +15,7 @@ const mapStateToProps = (state, ownProps) => {
         restaurantName: state.restaurant.name,
         phoneNum: state.restaurant.phone,
         items: state.restaurant.items,
+        categories: state.restaurant.categories,
     }
 };
 

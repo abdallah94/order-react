@@ -7,7 +7,7 @@ import OFFER_2 from "../assets/img/offers_2.jpeg";
 import OFFER_3 from "../assets/img/offers_3.jpeg";
 import OFFER_4 from "../assets/img/offers_4.jpeg";
 import CART_IMG from "../assets/img/cart.png";
-import BURGER_KING_LOGO from '../assets/img/logo-burger-king.png';
+import DANDARA_LOGO from '../assets/img/logo-dandara.jpg';
 import DOMINOS_LOGO from '../assets/img/logo-dominos.jpg';
 import KFC_LOGO from '../assets/img/logo-kfc.png';
 import HUT_POTATO_LOGO from '../assets/img/logo-hut-potato.png';
@@ -33,7 +33,7 @@ const Constants = {
     ADMIN: "ADMIN",
     CUSTOMER: "customer",
     LOGIN_COOKIE: "LOGIN_COOKIE",
-    BURGER_KING_LOGO,
+    DANDARA_LOGO,
     DOMINOS_LOGO,
     KFC_LOGO,
     HUT_POTATO_LOGO,
@@ -44,7 +44,6 @@ const Constants = {
     MAIN_PIC_2,
     RESTAURANT_IMG,
     OFFERS_CYCLING_PERIOD: 3000
-
 };
 
 export default Constants;

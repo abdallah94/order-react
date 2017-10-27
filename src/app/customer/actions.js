@@ -3,6 +3,8 @@
  */
 /*modules*/
 import axios from 'axios';
+import alertify from 'alertify.js';
+import i18next from 'i18next';
 /*Components*/
 import {APIConstants} from '../../utils';
 
@@ -69,5 +71,20 @@ function orderSuccess() {
     return {
         type: SUCCESSFULL_ORDER,
         payload: {orderSubmitted: true}
+    }
+}
+
+export function subscribe(data) {
+    return function (dispatch, getState) {
+        var config = {
+            headers: {'Authorization': getState().login.token}
+        };
+        axios.post(APIConstants.SUBSCRIBE, data, config).then(() => {
+            alertify.logPosition('top right');
+            alertify.success(i18next.t("SUBSCRIBED_SUCCESSFULLY"));
+        }, (err) => {
+            alertify.logPosition('top right');
+            alertify.success(i18next.t("GENERAL_SERVER_ERROR"));
+        })
     }
 }

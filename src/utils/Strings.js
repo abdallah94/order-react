@@ -78,8 +78,12 @@ const Strings = {
             Just open the website, choose your cuisine and your restaurant among many others in Ramallah.
             No more waiting or calling. We are with you from the time you order till the food is in your hands.
             Know your delivery time before you order.`,
-            ADD_RESTAURANT:"Add Restaurant",
-            VIEW_RESTAURANTS:"View Restaurants",
+            ADD_RESTAURANT: "Add Restaurant",
+            VIEW_RESTAURANTS: "View Restaurants",
+            SUBSCRIBE_TO_OUR_NEWS_LETTER: "Subscribe to our newsletter",
+            SUBSCRIBE_NOW: "Subscribe Now",
+            SUBSCRIBED_SUCCESSFULLY: "Subscribed successfully",
+            SUBSCRIBED_MESSAGE: "You have subscribed to our newsletter. From now on,you will get the latest offers"
         }
     }
     , ar: {
@@ -156,8 +160,12 @@ const Strings = {
             ABOUT_US_MESSAGE: `اهلا في فودي اكسبرس... واحد من افضل واول المواقع لطلب طعامكم المفضل في رام الله والبيرة.
 فقط افتح الموقع وقم باختيار وجبتك ومطعمك المفضل من عدة مطاعم في رام الله والبيرة. لا مزيد من الانتظار او الاتصال. نحن معك من لحظة الطلب الى ان يصل طلبكز اعرف وقت توصيل طلبك قبل ان تطلب!
 `,
-            ADD_RESTAURANT:"اضف مطعم",
-            VIEW_RESTAURANTS:"عرض المطاعم",
+            ADD_RESTAURANT: "اضف مطعم",
+            VIEW_RESTAURANTS: "عرض المطاعم",
+            SUBSCRIBE_TO_OUR_NEWS_LETTER: "اشترك في نشرتنا الاخبارية",
+            SUBSCRIBE_NOW: "اشترك الان",
+            SUBSCRIBED_SUCCESSFULLY: "تم الاشتراك بنجاح ",
+            SUBSCRIBED_MESSAGE: "لقد اشتركت في نشرتنا بنجاح,من الان فصاعدا ستصلك اخر العروضات"
         }
     }
 };

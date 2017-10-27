@@ -17,23 +17,21 @@ export class Offers extends React.Component {
         return (
             <div>
                 <Col xs={12}>
-                    <Col xs={6} sm={4} md={3}>
+                    <Col xs={6} sm={4} md={2}>
                         <Image src={Constants.PIZZA_HUT_LOGO} className="logo-img"/>
                     </Col>
-                    <Col xs={6} sm={4} md={3}>
+                    <Col xs={6} sm={4} md={2}>
                         <Image src={Constants.KFC_LOGO} className="logo-img"/>
                     </Col>
-                    <Col xs={6} sm={4} md={3}>
+                    <Col xs={6} sm={4} md={2}>
                         <Image src={Constants.DOMINOS_LOGO} className="logo-img"/>
                     </Col>
-                    <Col xs={6} sm={4} md={3}>
+                    <Col xs={6} sm={4} md={2}>
                         <Image src={Constants.HUT_POTATO_LOGO} className="logo-img"/>
                     </Col>
-                    {false &&
-                    <Col xs={6} sm={4} md={3}>
-                        <Image src={Constants.BURGER_KING_LOGO} className="logo-img"/>
+                    <Col xs={6} sm={4} md={2}>
+                        <Image src={Constants.DANDARA_LOGO} className="logo-img"/>
                     </Col>
-                    }
                     {false &&
                     <Col xs={6} sm={4} md={2}>
                         <Image src={Constants.WENDYS_LOGO} className="logo-img"/>
