@@ -130,3 +130,20 @@ export function addItem(values, successCallback) {
             });
     }
 }
+
+export function addCategory(values, successCallback) {
+    return function (dispatch, getState) {
+        let path = APIConstants.CATEGORY;
+        var config = {
+            headers: {'Authorization': getState().login.token}
+        };
+        let data = values;
+        axios.post(path, data, config)
+            .then(res => {
+                successCallback();
+            }, (error) => {
+                alertify.logPosition('top right');
+                alertify.error(i18next.t("ERROR_TRY_AGAIN_LATER"));
+            });
+    }
+}

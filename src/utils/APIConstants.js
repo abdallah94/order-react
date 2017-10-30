@@ -9,4 +9,5 @@ export const APIConstants = {
     GET_ITEMS: Config.SERVER_HOST_URL + Config.SERVER_PATH_URL + "item",
     SUBSCRIBE: Config.SERVER_HOST_URL + Config.SERVER_PATH_URL + "subscribe",
     DELIVERY: Config.SERVER_HOST_URL + Config.SERVER_PATH_URL + "delivery",
+    CATEGORY: Config.SERVER_HOST_URL + Config.SERVER_PATH_URL + "category",
 };

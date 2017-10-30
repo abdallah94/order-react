@@ -83,7 +83,10 @@ const Strings = {
             SUBSCRIBE_TO_OUR_NEWS_LETTER: "Subscribe to our newsletter",
             SUBSCRIBE_NOW: "Subscribe Now",
             SUBSCRIBED_SUCCESSFULLY: "Subscribed successfully",
-            SUBSCRIBED_MESSAGE: "You have subscribed to our newsletter. From now on,you will get the latest offers"
+            SUBSCRIBED_MESSAGE: "You have subscribed to our newsletter. From now on,you will get the latest offers",
+            NEW_CATEGORY:"New Category",
+            EDIT_ORDER:"Edit",
+            CATEGORY_NAME:"Category Name"
         }
     }
     , ar: {
@@ -165,7 +168,9 @@ const Strings = {
             SUBSCRIBE_TO_OUR_NEWS_LETTER: "اشترك في نشرتنا الاخبارية",
             SUBSCRIBE_NOW: "اشترك الان",
             SUBSCRIBED_SUCCESSFULLY: "تم الاشتراك بنجاح ",
-            SUBSCRIBED_MESSAGE: "لقد اشتركت في نشرتنا بنجاح,من الان فصاعدا ستصلك اخر العروضات"
+            SUBSCRIBED_MESSAGE: "لقد اشتركت في نشرتنا بنجاح,من الان فصاعدا ستصلك اخر العروضات",
+            NEW_CATEGORY:"مجموعة جديدة",
+            CATEGORY_NAME:"اسم المجموعة"
         }
     }
 };

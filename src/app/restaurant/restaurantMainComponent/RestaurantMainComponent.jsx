@@ -5,6 +5,7 @@ import {OrderContainer, RestaurantHeader} from "../../shared";
 import {NotificationContainer} from '../';
 import {Constants} from '../../../utils';
 import {OrderModalContainer} from '../';
+import {CategoryModalContainer} from '../categoryModal/CategoryModalContainer';
 
 /*Modules*/
 import {Row, Col, Button} from "react-bootstrap";
@@ -17,6 +18,7 @@ export class RestaurantMainComponent extends React.Component {
         super(props);
         this.state = {
             showModal: false,
+            showCategoryModal: false,
             newOrder: true,
             itemID: -1,
             name: "",
@@ -26,10 +28,24 @@ export class RestaurantMainComponent extends React.Component {
         this.close = this.close.bind(this);
         this.open = this.open.bind(this);
         this.edit = this.edit.bind(this);
+        this.openCategoryModal = this.openCategoryModal.bind(this);
+        this.closeCategoryModal = this.closeCategoryModal.bind(this);
     }
 
     close() {
         this.setState({showModal: false});
+    }
+
+    openCategoryModal() {
+        this.setState({
+            showCategoryModal: true
+        })
+    }
+
+    closeCategoryModal() {
+        this.setState({
+            showCategoryModal: false
+        })
     }
 
     open() {
@@ -40,11 +56,11 @@ export class RestaurantMainComponent extends React.Component {
             name: "",
             description: "",
             price: "",
-            image:""
+            image: ""
         });
     }
 
-    edit(itemID, name, description, price,image) {
+    edit(itemID, name, description, price, image) {
         this.setState({
             newOrder: false,
             showModal: true,
@@ -52,7 +68,7 @@ export class RestaurantMainComponent extends React.Component {
             name: name,
             description: description,
             price: price,
-            image:image
+            image: image
         });
     }
 
@@ -80,6 +96,8 @@ export class RestaurantMainComponent extends React.Component {
                     ))}
                     <Button className="text-align-center center-block btn-primary"
                             onClick={this.open}>{i18next.t("NEW_ITEM")}</Button>
+                    <Button className="text-align-center center-block btn-primary new-categoory-btn"
+                            onClick={this.openCategoryModal}>{i18next.t("NEW_CATEGORY")}</Button>
                 </Col>
                 <Col xs={12} md={5}>
                     <NotificationContainer restaurantID={this.props.restaurantID}/>
@@ -88,6 +106,9 @@ export class RestaurantMainComponent extends React.Component {
                                      close={this.close} itemID={this.state.itemID} name={this.state.name}
                                      newOrder={this.state.newOrder} description={this.state.description}
                                      price={this.state.price} image={this.state.image}/>
+                <CategoryModalContainer restaurantID={this.props.restaurantID} show={this.state.showCategoryModal}
+                                        close={this.closeCategoryModal}/>
+
             </Row>
 
         )
