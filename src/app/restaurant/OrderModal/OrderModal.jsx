@@ -12,6 +12,7 @@ import React from 'react';
 import {Modal, Button, Form, FormGroup, ControlLabel, FormControl, Image, Col} from 'react-bootstrap'
 import i18next from 'i18next';
 import Dropzone from 'react-dropzone';
+import Select from 'react-select';
 
 export class OrderModal extends React.Component {
 
@@ -20,23 +21,41 @@ export class OrderModal extends React.Component {
         this.addOrder = this.addOrder.bind(this);
         this.editOrder = this.editOrder.bind(this);
         this.setValue = this.setValue.bind(this);
+        this.handleSelectCategory = this.handleSelectCategory.bind(this);
         let {name, description, price}=props;
         this.state = {
             name: name,
             description: description,
             price: price,
-            image: ""
+            image: "",
+            categories: [],
+            category_id: 0
         }
     }
 
+    componentWillMount() {
+        this.props.fetchCategories(this.props.restaurantID);
+    }
+
     componentWillReceiveProps(nextProps) {
-        let {name, description, price, image}=nextProps;
-        this.setState({
-            name: name,
-            description: description,
-            price: price,
-            image: image
-        })
+        let {name, description, price, image, category, categories}=nextProps;
+        console.log(name);
+        if (this.state.name==="" && name !== this.state.name) {
+            this.setState({
+                name: name,
+                description: description,
+                price: price,
+                image: image,
+                category_id: category,
+                categories: categories
+            });
+        }
+        else {
+            this.setState({
+                category_id: category,
+                categories: categories
+            })
+        }
 
     }
 
@@ -47,6 +66,10 @@ export class OrderModal extends React.Component {
 
     addOrder() {
         let values = this.state;
+        delete values.categories;
+        if (!this.state.category_id) {
+            delete values.category_id;
+        }
         values.restaurant_id = this.props.restaurantID;
         this.props.addOrder(values, () => {
             this.props.close();
@@ -59,6 +82,17 @@ export class OrderModal extends React.Component {
         values.id = this.props.itemID;
         this.props.editOrder(values, () => {
             this.props.close();
+        });
+    }
+
+    handleSelectCategory(value) {
+        if (!value) {
+            value = 0;
+        }
+        this.setState({category_id: value}, () => {
+            if (value > 0 && value < this.state.categories) {
+
+            }
         });
     }
 
@@ -94,6 +128,12 @@ export class OrderModal extends React.Component {
                                 <ControlLabel>{i18next.t("ITEM_PRICE")}</ControlLabel>
                                 <FormControl type="number" value={this.state.price}
                                              onChange={this.setValue}/>
+                            </FormGroup>
+                            <FormGroup controlId="category_id">
+                                <Select value={this.state.category_id} multi={false} simpleValue={true}
+                                        disabled={false} onChange={this.handleSelectCategory}
+                                        options={this.state.categories}>
+                                </Select>
                             </FormGroup>
                         </Form>
                     </Col>

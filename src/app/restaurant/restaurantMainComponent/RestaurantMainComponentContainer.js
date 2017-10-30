@@ -17,6 +17,7 @@ let mapStateToProps = (state, ownProps) => {//TODO: Check admin permission or sa
         restaurantName: state.restaurant.name,
         phoneNum: state.restaurant.phone,
         items: state.restaurant.items,
+        categories: state.restaurant.categories,
     }
 };
 

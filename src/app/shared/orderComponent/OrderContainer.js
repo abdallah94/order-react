@@ -29,8 +29,8 @@ const mapDispatchToProps = (dispatch, ownState) => {
         addOrder: (id, number, name, price, restaurantID, minOrder, deliveryTime, deliveryFee, restaurantName) => {//TODO: add calling API and navigating to retaurant page
             dispatch(addItem(id, number, price, name, restaurantID, minOrder, deliveryTime, deliveryFee, restaurantName));
         },
-        editOrder: (id, name, description, price,image) => {
-            ownState.editOrder(id, name, description, price,image);
+        editOrder: (id, name, description, price,image,category) => {
+            ownState.editOrder(id, name, description, price,image,category);
 
         }
     }

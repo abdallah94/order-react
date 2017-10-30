@@ -7,6 +7,8 @@ import {OrderModal} from './OrderModal';
 import {addItem, editItem} from '../';
 
 import {connect} from 'react-redux';
+import i18next from 'i18next';
+import {getCategories} from "../actions";
 
 let mapStateToProps = (state, ownProps) => {
     return {
@@ -18,6 +20,8 @@ let mapStateToProps = (state, ownProps) => {
         description: ownProps.description,
         showModal: ownProps.show,
         image: ownProps.image,
+        categories: getOptions(state.categories.data),
+        category: ownProps.category
     }
 };
 
@@ -33,9 +37,23 @@ let mapDispatchToProps = (dispatch, ownState) => {
         editOrder: (values, successCallback) => {
             dispatch(editItem(values, successCallback));
 
+        },
+        fetchCategories: (restaurantID) => {
+            dispatch(getCategories(restaurantID));
         }
     }
 };
 
 let OrderModalContainer = connect(mapStateToProps, mapDispatchToProps)(OrderModal);
 export {OrderModalContainer};
+
+function getOptions(categories) {
+    let array = [{value: 0, label: i18next.t("CATEGORY_NAME"), disabled: true}];
+    if (categories) {
+        for (let i in categories) {
+            array.push({value: categories[i].id, label: categories[i].name});
+        }
+    }
+    return array;
+}
+

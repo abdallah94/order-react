@@ -9,6 +9,7 @@ import alertify from 'alertify.js';
 import i18next from 'i18next';
 export const GET_ORDERS = "GET_ORDERS";
 export const GET_ORDER = "GET_ORDER";
+export const GET_CATEGORY = "GET_CATEGORY";
 
 export function getOrders(restaurantID = 0, showLatest = false, isDelivery = false) {
     return function (dispatch, getState) {
@@ -146,4 +147,21 @@ export function addCategory(values, successCallback) {
                 alertify.error(i18next.t("ERROR_TRY_AGAIN_LATER"));
             });
     }
+}
+
+export function getCategories(restaurantID) {
+    return function (dispatch, getState) {
+        let path = APIConstants.CATEGORY + "?restaurant_id=" + restaurantID;
+        var config = {
+            headers: {'Authorization': getState().login.token}
+        };
+        axios.get(path, config)
+            .then(res => {
+                dispatch({
+                    type: GET_CATEGORY,
+                    payload: res.data
+                })
+            });
+    }
+
 }

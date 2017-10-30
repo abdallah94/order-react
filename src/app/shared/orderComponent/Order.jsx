@@ -23,7 +23,7 @@ export class Order extends React.Component {
     }
 
     editOrder() {
-        this.props.editOrder(this.props.id, this.props.name, this.props.description, this.props.price,this.props.imageUrl);
+        this.props.editOrder(this.props.id, this.props.name, this.props.description, this.props.price, this.props.imageUrl, this.props.category_id);
 
     }
 
