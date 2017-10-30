@@ -14,6 +14,7 @@ const RouteConstants = {
     ROUTE_APP_ORDERS: "orders",
     ROUTE_APP_ADMIN_HOME: "home",
     ROUTE_APP_ADMIN_RESTAURANTS: "restaurants",
+    ROUTE_APP_DELIVERY: "delivery"
 };
 
 const PathConstants = {
@@ -21,6 +22,7 @@ const PathConstants = {
     PATH_APP_CUSTOMER: "/" + RouteConstants.ROUTE_APP_CUSTOMER,
     PATH_APP_ADMIN: "/" + RouteConstants.ROUTE_APP_ADMIN,
     PATH_APP_RESTAURANT: "/" + RouteConstants.ROUTE_APP_RESTAURANT,
+    PATH_APP_DELIVERY: "/" + RouteConstants.ROUTE_APP_DELIVERY,
     PATH_APP_CUSTOMER_RESTAURANTS: "/" + RouteConstants.ROUTE_APP_CUSTOMER + "/" + RouteConstants.ROUTE_APP_CUSTOMER_RESTAURANTS,
     PATH_APP_CUSTOMER_CHECKOUT: "/" + RouteConstants.ROUTE_APP_CUSTOMER + "/" + RouteConstants.ROUTE_APP_CUSTOMER_CHECKOUT,
     PATH_APP_ORDER: "/" + RouteConstants.ROUTE_APP_ORDER,

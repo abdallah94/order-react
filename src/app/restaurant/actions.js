@@ -10,9 +10,9 @@ import i18next from 'i18next';
 export const GET_ORDERS = "GET_ORDERS";
 export const GET_ORDER = "GET_ORDER";
 
-export function getOrders(restaurantID = 0, showLatest = false) {
+export function getOrders(restaurantID = 0, showLatest = false, isDelivery = false) {
     return function (dispatch, getState) {
-        let path = APIConstants.GET_ORDERS;
+        let path = (isDelivery)?APIConstants.DELIVERY:APIConstants.GET_ORDERS;
         if (restaurantID) {
             path = path + "?restaurant_id=" + restaurantID;
         }
@@ -62,6 +62,25 @@ export function acceptOrder(orderID, successAction) {
         };
         let data = {
             accepted: true
+        };
+        axios.patch(path, data, config)
+            .then(res => {
+                dispatch(successAction);
+            }, (error) => {
+                alertify.logPosition('top right');
+                alertify.error(i18next.t("ERROR_ITEMS_FROM_DIFFERENT_RESTAURANT"));
+            });
+    }
+}
+
+export function acceptDeliveryOrder(orderID, successAction) {
+    return function (dispatch, getState) {
+        let path = APIConstants.GET_ORDERS + "/" + orderID;
+        var config = {
+            headers: {'Authorization': getState().login.token}
+        };
+        let data = {
+            delivery_accepted: true
         };
         axios.patch(path, data, config)
             .then(res => {

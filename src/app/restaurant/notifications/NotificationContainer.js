@@ -6,8 +6,8 @@ import {Notification} from './Notification';
 
 import {connect} from 'react-redux';
 
-let mapStateToProps = (state) => {
-    return {}
+let mapStateToProps = (state,ownProps) => {
+    return {delivery: ownProps.delivery}
 };
 
 let mapDispatchToProps = (dispatch) => {

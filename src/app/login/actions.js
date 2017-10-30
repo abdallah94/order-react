@@ -23,14 +23,18 @@ export function loginFunction(email, password) {
                 alertify.error(i18next.t("LOGIN_WRONG_CREDENTIALS_MESSAGE"));
             }
             else {
-                console.log(res.data);
-                dispatch(loginAction(res.data.user.role, res.data.user.id, res.data.token,res.data.user.restaurant_id));
+                dispatch(loginAction(res.data.user.role, res.data.user.id, res.data.token, res.data.user.restaurant_id));
                 if (res.data.user.role === Constants.ADMIN) {
                     browserHistory.push(PathConstants.PATH_APP_ADMIN);
                 }
                 else {
                     if (res.data.user.role === Constants.RESTAURANT) {
                         browserHistory.push(PathConstants.PATH_APP_RESTAURANT);
+                    }
+                    else {
+                        if (res.data.user.role === Constants.DELIVERY) {
+                            browserHistory.push(PathConstants.PATH_APP_DELIVERY);
+                        }
                     }
                 }
             }
@@ -40,8 +44,8 @@ export function loginFunction(email, password) {
         });
     }
 }
-export function loginAction(role, id, token,restaurant_id) {
-    let loginInfo = {role: role, id: id, token: token,restaurant_id:restaurant_id};
+export function loginAction(role, id, token, restaurant_id) {
+    let loginInfo = {role: role, id: id, token: token, restaurant_id: restaurant_id};
     setCookie(Constants.LOGIN_COOKIE, loginInfo);
     return {
         type: LOGIN,
@@ -49,7 +53,7 @@ export function loginAction(role, id, token,restaurant_id) {
             role: role,
             id: id,
             token: token,
-            restaurant_id:restaurant_id,
+            restaurant_id: restaurant_id,
             loggedIn: true,
         }
     }
@@ -63,7 +67,7 @@ export function logoutAction() {
             role: Constants.CUSTOMER,
             id: -1,
             token: "",
-            restaurant_id:-1,
+            restaurant_id: -1,
             loggedIn: false,
         }
     }

@@ -14,6 +14,7 @@ import {RestaurantMainComponentContainer} from './restaurant';
 import {OrderDetailsContainer, OrdersContainer} from './restaurant';
 import {AdminMainComponent} from './admin/adminMainComponent/AdminMainComponent'
 import {AdminRestaurantsComponent} from './admin/adminRestaurants/AdminRestaurantsComponent'
+import {DeliveryContainer} from "./delivery/DeliveryContainer";
 let Routing = () => {
     return (
         <Router history={browserHistory}>
@@ -42,6 +43,8 @@ let Routing = () => {
                 </Route>
                 <Route path={RouteConstants.ROUTE_APP_ORDERS}>
                     <Route path=":id" component={OrdersContainer}/>
+                </Route>
+                <Route path={RouteConstants.ROUTE_APP_DELIVERY} component={DeliveryContainer}>
                 </Route>
                 <Route/>
             </Route>

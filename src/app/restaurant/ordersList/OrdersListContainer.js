@@ -6,11 +6,13 @@ import {OrdersList} from './OrdersList';
 import {getOrders, acceptOrder} from '../';
 
 import {connect} from 'react-redux';
+import {acceptDeliveryOrder} from "../actions";
 
 let mapStateToProps = (state, ownprops) => {
     return {
         restaurantID: ownprops.restaurantID,
         orders: state.orders.data,
+        delivery: ownprops.delivery
     }
 };
 
@@ -19,9 +21,15 @@ let mapDispatchToProps = (dispatch) => {
         getOrders: (restaurantID) => {
             dispatch(getOrders(restaurantID, true));
         },
-        acceptOrder: (orderID,restaurantID) => {
-            dispatch(acceptOrder(orderID,getOrders(restaurantID)));
-        }
+        acceptOrder: (orderID, restaurantID) => {
+            dispatch(acceptOrder(orderID, getOrders(restaurantID)));
+        },
+        getDeliveryOrders: () => {
+            dispatch(getOrders(0, true,true));
+        },
+        acceptDeliveryOrder: (orderID) => {
+            dispatch(acceptDeliveryOrder(orderID, getOrders(0,true,true)));
+        },
     }
 };
 

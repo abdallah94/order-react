@@ -33,6 +33,11 @@ class App extends Component {
                     if (nextProps.role === Constants.RESTAURANT) {
                         browserHistory.push(PathConstants.PATH_APP_RESTAURANT);
                     }
+                    else {
+                        if (nextProps.role === Constants.DELIVERY) {
+                            browserHistory.push(PathConstants.PATH_APP_DELIVERY);
+                        }
+                    }
                 }
             }
         }

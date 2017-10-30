@@ -30,14 +30,15 @@ export class Notification extends React.Component {
         return (
             <div>
                 <ScrollArea stopScrollPropagation className="notifications-slider orders-notifications-container"
-                            vertical={true}
-                            horizontal={false} smoothScrolling={true}>
-                    <OrdersListContainer restaurantID={this.props.restaurantID}/>
+                            vertical={true} horizontal={false} smoothScrolling={true}>
+                    <OrdersListContainer restaurantID={this.props.restaurantID} delivery={this.props.delivery}/>
                 </ScrollArea>
+                {!this.props.delivery &&
                 <Col xs={12}>
                     <Button onClick={this.navigateToOrders}
                             className="text-align-center center-block show-all-button btn-primary">{i18next.t("SHOW_ALL")}</Button>
                 </Col>
+                }
             </div>
         )
     }

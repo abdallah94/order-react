@@ -31,6 +31,7 @@ const Constants = {
     FOODY_EXPRESS_LOGO,
     RESTAURANT: "RESTAURANT",
     ADMIN: "ADMIN",
+    DELIVERY: "DELIVERY",
     CUSTOMER: "customer",
     LOGIN_COOKIE: "LOGIN_COOKIE",
     DANDARA_LOGO,
