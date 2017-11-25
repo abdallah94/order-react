@@ -23,12 +23,19 @@ export class Checkout extends React.Component {
 
     constructor(props) {
         super(props);
+        let area="",areaIndex=0,areaValid=false;
+        if (props.area) {
+            area=this.props.options[props.area].label;
+            areaIndex=props.area;
+            areaValid=true;
+        }
         this.state = {
             firstName: "",
             lastName: "",
             email: "",
             phone: "",
-            area: "",
+            area: area,
+            areaIndex: areaIndex,
             street: "",
             building: "",
             apartment: "",
@@ -39,11 +46,11 @@ export class Checkout extends React.Component {
             phoneValid: false,
             emailValid: true,
             apartmentValid: true,
-            floorValid: true,
+            floorValid: false,
             streetValid: true,
-            areaValid: false,
+            areaValid: areaValid,
             buildingValid: false,
-            customerVerified: false,
+            customerVerified: true,
         };
         this.submitOrder = this.submitOrder.bind(this);
         this.open = this.open.bind(this);
@@ -61,7 +68,7 @@ export class Checkout extends React.Component {
         let validationField = `${type}Valid`;
         let validationState = validate(type, value);
         if (value === "") {
-            if (type === 'email' || type === 'apartment' || type === 'floor' || type === 'street') {
+            if (type === 'email' || type === 'apartment' || type === 'street') {
                 this.setState({[validationField]: true});
                 return validationState;
             }
@@ -89,6 +96,10 @@ export class Checkout extends React.Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.orderSubmitted) {
             this.open();
+        }
+        if (nextProps.area) {
+            this.setValidationState('area', nextProps.area);
+            this.setState({area: this.props.options[nextProps.area].label, areaIndex: nextProps.area});
         }
     }
 
@@ -161,7 +172,20 @@ export class Checkout extends React.Component {
     getItems() {
         let items = [];
         this.props.items.map((item) => {
-            items.push({item_id: item.id, number: item.number});
+            let itemObj = {item_id: item.id, number: item.number};
+            if (item.size) {
+                itemObj.size = item.size.name;
+            }
+            else {
+                itemObj.size = "";
+            }
+            if (item.extras && typeof item.extras === 'string') {
+                itemObj.extras = item.extras;
+            }
+            else {
+                itemObj.extras = "";
+            }
+            items.push(itemObj);
         });
         return items;
     }
@@ -238,9 +262,13 @@ export class Checkout extends React.Component {
                             <FormGroup controlId="areaGroup"
                                        validationState={this.getValidationState('area', this.state.area)}>
                                 <FormControl onChange={(e) => {
-                                    this.setState({area: e.target.value});
-                                    this.setValidationState('area', e.target.value)
-                                }} placeholder={i18next.t("AREA")} type="text" value={this.state.area}/>
+                                    this.props.chooseArea(e.target.value);
+                                }} componentClass="select" value={this.state.areaIndex}>
+                                    {this.props.options && this.props.options.map((option,i) => (
+                                        <option value={option.value} key={i}>{option.label}</option>
+                                    ))
+                                    }
+                                </FormControl>
                                 <FormControl.Feedback />
                                 <HelpBlock>{i18next.t("REQUIRED")}</HelpBlock>
                             </FormGroup>
@@ -275,7 +303,7 @@ export class Checkout extends React.Component {
                                     this.setValidationState('floor', e.target.value)
                                 }} placeholder={i18next.t("FLOOR")} type="number" value={this.state.floor}/>
                                 <FormControl.Feedback />
-                                <HelpBlock>.</HelpBlock>
+                                <HelpBlock>{i18next.t("REQUIRED")}</HelpBlock>
                             </FormGroup>
                         </Col>
                         <Col sm={5} xs={12}>
@@ -291,7 +319,7 @@ export class Checkout extends React.Component {
                         </Col>
                         <Col smOffset={2} sm={8} xs={12}>
                             <FormGroup controlId="ramerksGroup"
-                                       validationState={true}>
+                                       validationState={"success"}>
                                 <FormControl componentClass="textarea" onChange={(e) => {
                                     this.setState({remarks: e.target.value});
                                 }} placeholder={i18next.t("REMARKS")} type="text" value={this.state.remarks}/>

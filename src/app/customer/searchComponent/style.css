@@ -1,12 +1,31 @@
 .button-find {
     border: 1px solid #ccc;
-    border-left-width: 0;
-    border-right-width: 0;
     border-radius: 0;
-    height: 100%;
-    width: 50%;
+    width: 40%;
     color: black;
     font-size: 16px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.type-search {
+    border-top: 0;
+    border-bottom: 0;
+    border-radius: 0;
+    width: 60%;
+    color: black;
+    font-size: 16px;
+    display: inline-block;
+    padding: 0 !important;
+}
+
+.type-search .Select-placeholder {
+    padding: 0;
+}
+
+.type-search .Select-control {
+    border-radius: 0;
+    border-left:0;
 }
 
 .button-show-all {
@@ -20,6 +39,7 @@
 
 .select-search > .Select-control {
     border-radius: 0;
+    border-right: 0;
 }
 
 .row-eq-height {

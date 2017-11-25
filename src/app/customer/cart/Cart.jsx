@@ -39,8 +39,8 @@ export class Cart extends React.Component {
                 </Col>
                 <br/>
                 <br/>
-                {this.props.items && this.props.items.map((item) => (
-                    <CartElement key={item.id} editItemNumber={this.props.editItemNumber} {...item}
+                {this.props.items && this.props.items.map((item,i) => (
+                    <CartElement key={i} editItemNumber={this.props.editItemNumber} {...item}
                                  checkout={this.props.checkout}/>
                 ))}
                 <br/>

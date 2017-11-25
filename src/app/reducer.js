@@ -10,6 +10,7 @@ import {orders, order} from './restaurant';
 
 import {combineReducers} from "redux";
 import {categories} from "./restaurant/reducer";
+import {area, areas, types, type} from "./customer/reducer";
 
 function loading(state = {isLoading: false}, action) {
     switch (action.type) {
@@ -22,6 +23,6 @@ function loading(state = {isLoading: false}, action) {
     }
 }
 
-const reducers = combineReducers({cart, login, loading, restaurant, restaurants, order, orders,categories});
+const reducers = combineReducers({cart, login, loading, restaurant, restaurants, order, orders, categories, area,areas,type,types});
 
 export default reducers;

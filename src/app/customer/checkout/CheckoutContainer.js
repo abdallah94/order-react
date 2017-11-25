@@ -7,11 +7,16 @@ import {resetCart} from '../';
 import {submitOrder} from '../';
 
 import {connect} from 'react-redux';
+import {chooseArea} from "../actions";
 
 
 const mapStateToProps = (state) => {
+    let options = state.areas.areas && state.areas.areas.length ? state.areas.areas : [];
+    let area = state.area && state.area.area ? state.area.area : "";
     return {
         ...state.cart,
+        options: options,
+        area: area
     }
 };
 
@@ -22,6 +27,11 @@ const mapDispatchToPops = (dispatch) => {
         },
         resetCart: () => {
             dispatch(resetCart());
+        },
+        chooseArea: (area) => {
+            if (area) {
+                dispatch(chooseArea(area))
+            }
         }
     }
 };

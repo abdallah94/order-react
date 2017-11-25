@@ -13,7 +13,7 @@ export const GET_CATEGORY = "GET_CATEGORY";
 
 export function getOrders(restaurantID = 0, showLatest = false, isDelivery = false) {
     return function (dispatch, getState) {
-        let path = (isDelivery)?APIConstants.DELIVERY:APIConstants.GET_ORDERS;
+        let path = (isDelivery) ? APIConstants.DELIVERY : APIConstants.GET_ORDERS;
         if (restaurantID) {
             path = path + "?restaurant_id=" + restaurantID;
         }
@@ -101,7 +101,13 @@ export function editItem(values, successCallback) {
         };
         let data = values;
         console.log(data);
-        axios.patch(path, data, config)
+        var form = new FormData();
+        let keys=Object.keys(values);
+        keys.map((key)=>{
+            form.append(key,values[key]);
+        });
+        console.log(form);
+        axios.patch(path, form, config)
             .then(res => {
                 dispatch(getRestaurant(values.restaurant_id));
                 alertify.logPosition('top right');

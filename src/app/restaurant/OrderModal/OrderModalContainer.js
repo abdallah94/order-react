@@ -21,7 +21,7 @@ let mapStateToProps = (state, ownProps) => {
         showModal: ownProps.show,
         image: ownProps.image,
         categories: getOptions(state.categories.data),
-        category: ownProps.category
+        category: ownProps.category,
     }
 };
 

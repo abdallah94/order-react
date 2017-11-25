@@ -22,17 +22,19 @@ export class CartElement extends React.Component {
     changeNumber(newNumber) {
         if (newNumber != this.props.number) {
             this.props.editItemNumber(this.props.id, newNumber, this.props.name, this.props.price, this.props.restaurantID,
-                this.props.minOrder, this.props.deliveryTime, this.props.deliveryFee, this.props.restaurantName);
+                this.props.minOrder, this.props.deliveryTime, this.props.deliveryFee, this.props.restaurantName, this.props.size, this.props.extras);
         }
 
     }
 
     removeItem() {
         this.props.editItemNumber(this.props.id, 0, this.props.name, this.props.price, this.props.restaurantID,
-            this.props.minOrder, this.props.deliveryTime, this.props.deliveryFee, this.props.restaurantName);
+            this.props.minOrder, this.props.deliveryTime, this.props.deliveryFee, this.props.restaurantName, this.props.size, this.props.extras);
     }
 
     render() {
+        let size = this.props.size ? this.props.size.name : "";
+        let extras=this.props.extras && this.props.extras.length?this.props.extras.split(","):null;
         return (
             <Row className="cart-element-container">
                 {!this.props.checkout &&
@@ -44,12 +46,20 @@ export class CartElement extends React.Component {
                 <Col xs={4}>
                     <h5 className="text-align-center">{this.props.number}</h5>
                 </Col>
-                } 
+                }
                 <Col xs={4} className="no-padding">
+                    {!size &&
                     <h6 className="card-item-name">{this.props.name}</h6>
+                    }
+                    {size &&
+                    <h6 className="card-item-name">{this.props.name}-{size}</h6>
+                    }
+                    {extras && extras.map((extra)=>(
+                        <h6 key={extra} className="card-item-name">-{extra}</h6>
+                    ))}
                 </Col>
                 <Col xs={2}>
-                    <h5 className="card-item-price">{this.props.price}$</h5>
+                    <h5 className="card-item-price">{this.props.price}</h5>
                 </Col>
                 <Col xs={2}>
                     <i className="fa fa-times pointer-cursor" aria-hidden="true" onClick={this.removeItem}></i>

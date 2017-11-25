@@ -18,13 +18,13 @@ export class Offers extends React.Component {
             <div>
                 <Col xs={12}>
                     <Col xs={6} sm={4} md={2}>
-                        <Image src={Constants.PIZZA_HUT_LOGO} className="logo-img"/>
+                        <Image src={Constants.ZARB_LOGO} className="logo-img"/>
                     </Col>
                     <Col xs={6} sm={4} md={2}>
-                        <Image src={Constants.KFC_LOGO} className="logo-img"/>
+                        <Image src={Constants.IT_WAITS_LOGO} className="logo-img"/>
                     </Col>
                     <Col xs={6} sm={4} md={2}>
-                        <Image src={Constants.DOMINOS_LOGO} className="logo-img"/>
+                        <Image src={Constants.BURGER_FACTORY_LOGO} className="logo-img"/>
                     </Col>
                     <Col xs={6} sm={4} md={2}>
                         <Image src={Constants.HUT_POTATO_LOGO} className="logo-img"/>
@@ -32,11 +32,9 @@ export class Offers extends React.Component {
                     <Col xs={6} sm={4} md={2}>
                         <Image src={Constants.DANDARA_LOGO} className="logo-img"/>
                     </Col>
-                    {false &&
                     <Col xs={6} sm={4} md={2}>
-                        <Image src={Constants.WENDYS_LOGO} className="logo-img"/>
+                        <Image src={Constants.CINABON_LOGO} className="logo-img"/>
                     </Col>
-                    }
                 </Col>
                 <Col md={2} xs={12}>
                     <Image src={this.props.offers[1].image} className="small-offer-img"/>

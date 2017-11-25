@@ -24,7 +24,9 @@ export class RestaurantMainComponent extends React.Component {
             name: "",
             description: "",
             price: "",
-            category: 0
+            category: 0,
+            sizes: [],
+            extras: [],
         };
         this.close = this.close.bind(this);
         this.open = this.open.bind(this);
@@ -58,11 +60,13 @@ export class RestaurantMainComponent extends React.Component {
             description: "",
             price: "",
             image: "",
-            category: 0
+            category: 0,
+            sizes: [],
+            extras: [],
         });
     }
 
-    edit(itemID, name, description, price, image, category) {
+    edit(itemID, name, description, price, image, category, sizes, extras) {
         this.setState({
             newOrder: false,
             showModal: true,
@@ -71,7 +75,9 @@ export class RestaurantMainComponent extends React.Component {
             description: description,
             price: price,
             image: image,
-            category: category
+            category: category,
+            sizes: sizes,
+            extras: extras,
         });
     }
 
@@ -105,8 +111,8 @@ export class RestaurantMainComponent extends React.Component {
                     {!!this.props.items && this.props.items.map((item) => (
                         <OrderContainer restaurantID={this.props.restaurantID} key={item.id} {...item}
                                         deliveryTime={this.props.deliveryTime} edit={this.props.edit}
-                                        restaurantName={this.props.restaurantName} editOrder={this.edit} 
-                                        deliveryFee={this.props.deliveryFee} minOrder={this.props.minOrder}/> 
+                                        restaurantName={this.props.restaurantName} editOrder={this.edit}
+                                        deliveryFee={this.props.deliveryFee} minOrder={this.props.minOrder}/>
                     ))}
                     <Button className="text-align-center center-block btn-primary"
                             onClick={this.open}>{i18next.t("NEW_ITEM")}</Button>
@@ -119,6 +125,7 @@ export class RestaurantMainComponent extends React.Component {
                 <OrderModalContainer restaurantID={this.props.restaurantID} show={this.state.showModal}
                                      close={this.close} itemID={this.state.itemID} name={this.state.name}
                                      newOrder={this.state.newOrder} description={this.state.description}
+                                     sizes={this.state.sizes} extras={this.state.extras}
                                      price={this.state.price} image={this.state.image} category={this.state.category}/>
                 <CategoryModalContainer restaurantID={this.props.restaurantID} show={this.state.showCategoryModal}
                                         close={this.closeCategoryModal}/>

@@ -7,6 +7,7 @@ import {loginAction} from './login';
 /* Modules */
 import {connect} from "react-redux";
 import i18next from "i18next";
+import {loadAreas, loadCuisineTypes} from "./customer/actions";
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -20,7 +21,14 @@ const mapDispatchToProps = (dispatch) => {
     return {
         loadUserInfo: (userDetails) => {
             dispatch(loginAction(userDetails.role, userDetails.id, userDetails.token,userDetails.restaurant_id));
-        }
+        },
+        loadAreas:()=>{
+            dispatch(loadAreas());
+        },
+
+        loadCuisines:()=>{
+            dispatch(loadCuisineTypes())
+    }
     }
 };
 

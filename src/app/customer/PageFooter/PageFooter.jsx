@@ -11,6 +11,7 @@ import {NewsLetterContainer} from '../NewsLetter/NewsLetterContainer';
 import React from 'react';
 import {Row} from 'react-bootstrap';
 import i18next from 'i18next';
+import {PathConstants} from "../../../utils/RouteConstants";
 
 export class PageFooter extends React.Component {
     render() {
@@ -20,8 +21,12 @@ export class PageFooter extends React.Component {
                     <NewsLetterContainer/>
                 </Row>
                 <div className="about-us-container">
-                    <h3>{i18next.t("ABOUT_US")}</h3>
-                    <p className="about-us-string">{i18next.t("ABOUT_US_MESSAGE")}</p>
+                    <a href={PathConstants.PATH_APP_ABOUT_US}><h3
+                        style={{"color": "white"}}>{i18next.t("ABOUT_US")}</h3></a>
+                    <a href={PathConstants.PATH_APP_CONTACT}><h3 style={{"color": "white"}}>{i18next.t("CONTACT")}</h3>
+                    </a>
+                    <a href={PathConstants.PATH_APP_TERMS_AND_CONDITIONS}><h3
+                        style={{"color": "white"}}>{i18next.t("TERMS_AND_CONDITIONS")}</h3></a>
                 </div>
                 <div className="follow-us-container">
                     <h3 className="follow-us">{i18next.t("FOLLOW_US")}</h3>

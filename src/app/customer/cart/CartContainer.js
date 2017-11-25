@@ -10,7 +10,7 @@ import {editNumberOfItems} from '../';
 import {connect} from "react-redux";
 
 const mapStateToProps = (state, ownProps) => {
-    let checkout = (ownProps.checkout!==undefined) ? ownProps.checkout : true;
+    let checkout = (ownProps.checkout !== undefined) ? ownProps.checkout : true;
     return {
         ...state.cart,
         checkout: checkout,
@@ -19,8 +19,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        editItemNumber: (id, number, name, price, restaurantID, minOrder, deliveryTime, deliveryFee, restaurantName) => {
-            dispatch(editNumberOfItems(id, number, price, name, restaurantID, minOrder, deliveryTime, deliveryFee, restaurantName));
+        editItemNumber: (id, number, name, price, restaurantID, minOrder, deliveryTime, deliveryFee, restaurantName, size, extras) => {
+            dispatch(editNumberOfItems(id, number, price, name, restaurantID, minOrder, deliveryTime, deliveryFee, restaurantName, size, extras));
         }
     }
 };

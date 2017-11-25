@@ -1,0 +1,17 @@
+.extra-container{
+    padding-bottom:10px;
+    border-bottom: solid 1px gray;
+}
+
+.extra-checkbox{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.extra-checkbox-label{
+    display: inline-block;
+}
+
+.extra-checkbox-price{
+margin: 0;
+}

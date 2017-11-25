@@ -14,7 +14,11 @@ const RouteConstants = {
     ROUTE_APP_ORDERS: "orders",
     ROUTE_APP_ADMIN_HOME: "home",
     ROUTE_APP_ADMIN_RESTAURANTS: "restaurants",
-    ROUTE_APP_DELIVERY: "delivery"
+    ROUTE_APP_DELIVERY: "delivery",
+    ROUTE_APP_ABOUT_US: "about_us",
+    ROUTE_APP_CONTACT: "contact",
+    ROUTE_APP_TERMS_AND_CONDITION: "terms_and_conditions",
+    ROUTE_APP_CONTENT: "content"
 };
 
 const PathConstants = {
@@ -29,6 +33,10 @@ const PathConstants = {
     PATH_APP_ORDERS: "/" + RouteConstants.ROUTE_APP_ORDERS,
     PATH_APP_ADMIN_HOME: "/" + RouteConstants.ROUTE_APP_ADMIN + "/" + RouteConstants.ROUTE_APP_ADMIN_HOME,
     PATH_APP_ADMIN_RESTAURANTS: "/" + RouteConstants.ROUTE_APP_ADMIN + "/" + RouteConstants.ROUTE_APP_ADMIN_RESTAURANTS,
+    PATH_APP_ABOUT_US: "/" + RouteConstants.ROUTE_APP_CONTENT + "/" + RouteConstants.ROUTE_APP_ABOUT_US,
+    PATH_APP_CONTACT: "/" + RouteConstants.ROUTE_APP_CONTENT + "/" + RouteConstants.ROUTE_APP_CONTACT,
+    PATH_APP_TERMS_AND_CONDITIONS: "/" + RouteConstants.ROUTE_APP_CONTENT + "/" + RouteConstants.ROUTE_APP_TERMS_AND_CONDITION,
+    PATH_APP_CONTENT: "/" + RouteConstants.ROUTE_APP_CONTENT
 };
 
 

@@ -19,6 +19,14 @@ body {
     padding: 0;
 }
 
+.no-padding-left {
+    padding-left: 0;
+}
+
+.no-padding-right {
+    padding-right: 0;
+}
+
 .no-margins {
     margin: 0;
 }
@@ -105,6 +113,10 @@ body {
     color: white;
 }
 
-.margin-bottom-2rem{
+.margin-bottom-2rem {
     margin-bottom: 2rem;
+}
+
+.display-inline-block{
+    display: inline-block;
 }

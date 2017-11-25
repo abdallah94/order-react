@@ -21,7 +21,9 @@ export class RestaurantHeader extends React.Component {
                 </Col>
                 <Col xs={6} md={3}>
                     <p className="restaurant-item-restaurant-name">{this.props.name}</p>
+                    {false &&
                     <h3 className="restaurant-item-restaurant-phone">{this.props.phoneNum}</h3>
+                    }
                 </Col>
                 <Col xs={6} md={3}>
                     <div className="restaurants-item-rating">
@@ -31,7 +33,9 @@ export class RestaurantHeader extends React.Component {
                     </div>
                 </Col>
                 <Col xs={6} md={3}>
+                    {false &&
                     <h2 className="restaurant-item-min-order">{this.props.minOrder} $</h2>
+                    }
                 </Col>
             </Row>
         )

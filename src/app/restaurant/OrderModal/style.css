@@ -1,4 +1,8 @@
-.order-modal-image{
+.order-modal-image {
     width: 100%;
     object-fit: contain;
+}
+
+.sizes-container {
+    padding-bottom: 20px;
 }

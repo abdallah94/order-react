@@ -14,17 +14,33 @@ class Search extends Component {
         super(props);
         this.state = {
             value: 0,
-        }
+            type: 0
+        };
         this.findRestaurant = this.findRestaurant.bind(this);
         this.findAllRestaurants = this.findAllRestaurants.bind(this);
-        this.navigateToRestaurant = this.navigateToRestaurant.bind(this);
+        this.ChooseArea = this.ChooseArea.bind(this);
     }
 
     componentWillMount() {
         this.props.getRestaurants();
+        if (this.props.area) {
+            this.setState({
+                value: this.props.area
+            });
+        }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (typeof nextProps.area !== undefined) {
+            this.setState({
+                value: nextProps.area
+            })
+        }
     }
 
     render() {
+        let isDisabled = !this.props.area;
+        console.log(isDisabled);
         return (
             <div className="search-wrapper">
                 <Image responsive src={Constants.MAIN_PIC_1} className="image-food"/>
@@ -47,12 +63,14 @@ class Search extends Component {
                                 </Select>
                             </Col>
                             <Col md={4} xs={5} className="no-padding no-border-radius no-border">
-                                <Button className="button-find" onClick={() => {
-                                    this.findRestaurant()
-                                }}>{i18next.t("FIND")}</Button>
-                                <Button className="button-show-all" onClick={() => {
+                                <Select className="type-search" value={this.state.type}
+                                        multi={false} simpleValue={true}
+                                        disabled={false} onChange={this.handleTypeChange.bind(this)}
+                                        options={this.props.types}>
+                                </Select>
+                                <Button disabled={isDisabled} className="button-find" onClick={() => {
                                     this.findAllRestaurants()
-                                }}>{i18next.t("SHOW_ALL")}</Button>
+                                }}>{i18next.t("FIND")}</Button>
                             </Col>
                         </Row>
                     </Form>
@@ -62,13 +80,24 @@ class Search extends Component {
             ;
     }
 
+    handleTypeChange(value) {
+        if (!value) {
+            value = 0;
+        }
+        this.setState({type: value}, () => {
+            if (value >= 0 && value < this.props.options.length) {
+                this.props.chooseCuisine(this.state.type);
+            }
+        });
+    }
+
     handleSelectChange(value) {
         if (!value) {
             value = 0;
         }
         this.setState({value: value}, () => {
-            if (value > 0 && value < this.props.options.length) {
-                this.navigateToRestaurant();
+            if (value >= 0 && value < this.props.options.length) {
+                this.ChooseArea();
             }
         });
     }
@@ -79,11 +108,12 @@ class Search extends Component {
     }
 
     findAllRestaurants() {
-        this.props.findRestaurant("");
+        let type = this.state.type ? this.props.types[this.state.type].label : "";
+        this.props.findRestaurant("", type);
     }
 
-    navigateToRestaurant() {
-        browserHistory.push(PathConstants.PATH_APP_CUSTOMER_RESTAURANTS + "/" + this.state.value);
+    ChooseArea() {
+        this.props.chooseArea(this.state.value);
     }
 
 }

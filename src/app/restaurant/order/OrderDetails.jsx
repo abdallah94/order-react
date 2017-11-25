@@ -60,6 +60,8 @@ export class OrderDetails extends React.Component {
                                     <TableHeaderColumn dataField='item_id' isKey>Item ID</TableHeaderColumn>
                                     <TableHeaderColumn dataField='item_name'>Item Name</TableHeaderColumn>
                                     <TableHeaderColumn dataField='price'>Price</TableHeaderColumn>
+                                    <TableHeaderColumn dataField='size'>size</TableHeaderColumn>
+                                    <TableHeaderColumn dataField='extras'>extras</TableHeaderColumn>
                                     <TableHeaderColumn dataField='number'>number</TableHeaderColumn>
                                 </BootstrapTable>
                             </Col>

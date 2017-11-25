@@ -1,7 +1,9 @@
 /**
  * Created by Abdallah on 6/6/2017.
  */
-import {ADD_ITEM, REMOVE_ITEM, EDIT_NUM_ITEMS, RESET_CART, SUCCESSFULL_ORDER} from "./actions";
+import {ADD_ITEM, REMOVE_ITEM, EDIT_NUM_ITEMS, RESET_CART, SUCCESSFULL_ORDER, CHOOSE_AREA,LOAD_AREAS, CHOOSE_CUISINE,
+    LOAD_CUISINES
+} from "./actions";
 import {calulateItemsSum} from "../../utils";
 
 import alertify from 'alertify.js';
@@ -49,21 +51,62 @@ function editItem(addItems, items, payload, restaurantID) {
         alertify.error(i18next.t("ERROR_ITEMS_FROM_DIFFERENT_RESTAURANT"));
         return;
     }
+
     items.map((item, i) => {
-        if (item.id === payload.id) {
-            if (addItems) {
-                item.number += payload.number;
+        if (item.id === payload.id && (!payload.size && !item.size || (payload.size && payload.size === item.size))) {
+            if (!(item.extras && item.extras.length) && !(payload.extras && payload.extras.length)) {//both empty
+                if (addItems) {
+                    item.number += payload.number;
+                }
+                else {
+                    item.number = payload.number;
+                }
+                added = true;
             }
             else {
-                item.number = payload.number;
+                //both have values
+                console.log(item);
+                console.log(payload);
+                if (!((item.extras && item.extras.length && !(payload.extras && payload.extras.length)) || (!(item.extras && item.extras.length) && (payload.extras && payload.extras.length)))) {
+                    let match = true;
+                    let splitExtras = item.extras.split(",");
+                    payload.extras.map((extra) => {
+                        let extraExist = false;
+                        splitExtras.map((splitExtra) => {
+                            if (splitExtra === extra) {
+                                extraExist = true;
+                            }
+                        });
+                        if (!extraExist) {
+                            match = false;
+                        }
+                    });
+                    if (match) {
+                        if (addItems) {
+                            item.number += payload.number;
+                        }
+                        else {
+                            item.number = payload.number;
+                        }
+                        added = true;
+                    }
+                }
             }
-            added = true;
         }
         if (item.number > 0) {
             tempItems.push(item);
         }
     });
     if (!added) {
+        if (payload.extras && payload.extras.length) {
+            let splitExtras = payload.extras[0];
+            for (let i in payload.extras) {
+                if (i != 0) {
+                    splitExtras += "," + payload.extras[i];
+                }
+            }
+            payload.extras = splitExtras;
+        }
         tempItems.push(payload);
     }
     let sum = calulateItemsSum(tempItems);
@@ -85,6 +128,42 @@ function editItem(addItems, items, payload, restaurantID) {
         restaurantName: restaurantName,
     };
 
+}
+
+export function area(state = {}, action) {
+    switch (action.type) {
+        case CHOOSE_AREA:
+            return Object.assign({}, state, action.payload);
+        default:
+            return state;
+    }
+}
+
+export function areas(state = {}, action) {
+    switch (action.type) {
+        case LOAD_AREAS:
+            return Object.assign({}, state, action.payload);
+        default:
+            return state;
+    }
+}
+
+export function type(state = {}, action) {
+    switch (action.type) {
+        case CHOOSE_CUISINE:
+            return Object.assign({}, state, action.payload);
+        default:
+            return state;
+    }
+}
+
+export function types(state = {}, action) {
+    switch (action.type) {
+        case LOAD_CUISINES:
+            return Object.assign({}, state, action.payload);
+        default:
+            return state;
+    }
 }
 
 export {cart};

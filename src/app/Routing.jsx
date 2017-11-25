@@ -15,6 +15,10 @@ import {OrderDetailsContainer, OrdersContainer} from './restaurant';
 import {AdminMainComponent} from './admin/adminMainComponent/AdminMainComponent'
 import {AdminRestaurantsComponent} from './admin/adminRestaurants/AdminRestaurantsComponent'
 import {DeliveryContainer} from "./delivery/DeliveryContainer";
+import {AboutUs} from "./customer/aboutUs/AboutUs";
+import {Contact} from "./customer/contact/Contact";
+import {Content} from "./customer/content/Content";
+import {TermsAndCondition} from "./customer/termsAndCondition/TermsAndCondition";
 let Routing = () => {
     return (
         <Router history={browserHistory}>
@@ -46,10 +50,14 @@ let Routing = () => {
                 </Route>
                 <Route path={RouteConstants.ROUTE_APP_DELIVERY} component={DeliveryContainer}>
                 </Route>
-                <Route/>
+                <Route path={RouteConstants.ROUTE_APP_CONTENT} component={Content}>
+                    <Route path={RouteConstants.ROUTE_APP_ABOUT_US} component={AboutUs}/>
+                    <Route path={RouteConstants.ROUTE_APP_CONTACT} component={Contact}/>
+                    <Route path={RouteConstants.ROUTE_APP_TERMS_AND_CONDITION} component={TermsAndCondition}/>
+                </Route>
             </Route>
         </Router>
     );
-    };
+};
 
-    export default Routing;
+export default Routing;

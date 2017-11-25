@@ -18,6 +18,8 @@ class App extends Component {
         if (!this.checkLogin() && this.props.location.pathname === "/") {
             browserHistory.push(PathConstants.PATH_APP_CUSTOMER);
         }
+        this.props.loadAreas();
+        this.props.loadCuisines();
     }
 
     componentWillReceiveProps(nextProps) {

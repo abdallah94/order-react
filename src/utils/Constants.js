@@ -17,6 +17,10 @@ import FOODY_EXPRESS_LOGO from '../assets/img/FoodyExpress.png'
 import MAIN_PIC_1 from '../assets/img/main-pic-1.jpg';
 import MAIN_PIC_2 from '../assets/img/main-pic-2.jpg';
 import RESTAURANT_IMG from '../assets/img/restaurant.jpg';
+import BURGER_FACTORY_LOGO from '../assets/img/logo-burger-factory.jpg';
+import IT_WAITS_LOGO from '../assets/img/logo-it-waits.png';
+import ZARB_LOGO from '../assets/img/logo-zarb.png';
+import CINABON_LOGO from '../assets/img/logo-cinabon.jpg';
 
 const Constants = {
     ENGLISH: "en",
@@ -44,6 +48,10 @@ const Constants = {
     MAIN_PIC_1,
     MAIN_PIC_2,
     RESTAURANT_IMG,
+    BURGER_FACTORY_LOGO,
+    IT_WAITS_LOGO,
+    ZARB_LOGO,
+    CINABON_LOGO,
     OFFERS_CYCLING_PERIOD: 3000
 };
 
