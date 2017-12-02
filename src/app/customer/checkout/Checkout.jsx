@@ -50,7 +50,7 @@ export class Checkout extends React.Component {
             streetValid: true,
             areaValid: areaValid,
             buildingValid: false,
-            customerVerified: true,
+            customerVerified: false,
         };
         this.submitOrder = this.submitOrder.bind(this);
         this.open = this.open.bind(this);
@@ -239,7 +239,6 @@ export class Checkout extends React.Component {
                             <FormGroup controlId="phoneGroup"
                                        validationState={this.getValidationState('phone', this.state.phone)}>
                                 <FormControl onChange={(e) => {
-                                    console.log("####");
                                     this.setState({phone: e.target.value});
                                     this.setValidationState('phone', e.target.value)
                                 }} placeholder={i18next.t("PHONE_NUMBER")} type="tel" value={this.state.phone}/>

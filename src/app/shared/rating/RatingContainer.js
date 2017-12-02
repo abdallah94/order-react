@@ -8,14 +8,7 @@ import i18next from "i18next";
 
 let mapStateToProps = (state, ownProps) => {
     return {
-        restaurantID: ownProps.restaurantID,
-        newOrder: ownProps.newOrder,
-        itemID: ownProps.itemID,
-        name: ownProps.name,
-        price: ownProps.price,
-        description: ownProps.description,
-        showModal: ownProps.show,
-        image: ownProps.image,
+
     }
 };
 

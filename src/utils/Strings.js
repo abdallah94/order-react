@@ -113,6 +113,10 @@ const Strings = {
             TERMS_AND_CONDITIONS: "Terms and Conditions",
             ABOUT_FOODY_EXPRESS:"About FoodyExpress",
             TYPE_OF_CUISINE:"Type of Cuisine",
+            CONTACT_US_MESSAGE:"For general inquiries, any problems, or suggestions, send us an Email and we will get back\n" +
+            "to you as soon as possible",
+            ADD_YOUR_RESTAURANT:"Add your Restaurant",
+            ADD_YOUR_RESTAURANT_STRING:"If you are a restaurant owner/manager with interest in joining us. Please fill the following form and we will get in touch"
         }
     }
     , ar: {
@@ -222,7 +226,10 @@ const Strings = {
             CONTACT: "تواصل",
             TERMS_AND_CONDITIONS: "الشروط والاحكام",
             ABOUT_FOODY_EXPRESS:"عن فودي اكسبرس",
-            TYPE_OF_CUISINE:"نوع الطعام"
+            TYPE_OF_CUISINE:"نوع الطعام",
+            CONTACT_US_MESSAGE:"في حالة وجود اي مشكلة, شكاوى, او اقتراحات. الرجاء التواصل معنا عن طريق البريد الالكتروني",
+            ADD_YOUR_RESTAURANT:"اضف مطعمك",
+            ADD_YOUR_RESTAURANT_STRING:'اذا كنت صاحب مطعم وترغب بالانضمام الينا, الرجاء تعبئة المعلومات التالية وسنتواصل معك'
         }
     }
 };

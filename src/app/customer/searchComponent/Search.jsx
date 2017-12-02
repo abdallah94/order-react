@@ -31,7 +31,7 @@ class Search extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (typeof nextProps.area !== undefined) {
+        if (typeof nextProps.area !== "undefined") {
             this.setState({
                 value: nextProps.area
             })
@@ -40,7 +40,6 @@ class Search extends Component {
 
     render() {
         let isDisabled = !this.props.area;
-        console.log(isDisabled);
         return (
             <div className="search-wrapper">
                 <Image responsive src={Constants.MAIN_PIC_1} className="image-food"/>

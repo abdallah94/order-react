@@ -27,6 +27,8 @@ export class PageFooter extends React.Component {
                     </a>
                     <a href={PathConstants.PATH_APP_TERMS_AND_CONDITIONS}><h3
                         style={{"color": "white"}}>{i18next.t("TERMS_AND_CONDITIONS")}</h3></a>
+                    <a href={PathConstants.PATH_APP_ADD_RESTAURANT}><h3
+                        style={{"color": "white"}}>{i18next.t("ADD_YOUR_RESTAURANT")}</h3></a>
                 </div>
                 <div className="follow-us-container">
                     <h3 className="follow-us">{i18next.t("FOLLOW_US")}</h3>

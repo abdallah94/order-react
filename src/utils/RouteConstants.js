@@ -18,7 +18,8 @@ const RouteConstants = {
     ROUTE_APP_ABOUT_US: "about_us",
     ROUTE_APP_CONTACT: "contact",
     ROUTE_APP_TERMS_AND_CONDITION: "terms_and_conditions",
-    ROUTE_APP_CONTENT: "content"
+    ROUTE_APP_CONTENT: "content",
+    ROUTE_APP_ADD_RESTAURANT:"add_restaurant"
 };
 
 const PathConstants = {
@@ -36,7 +37,8 @@ const PathConstants = {
     PATH_APP_ABOUT_US: "/" + RouteConstants.ROUTE_APP_CONTENT + "/" + RouteConstants.ROUTE_APP_ABOUT_US,
     PATH_APP_CONTACT: "/" + RouteConstants.ROUTE_APP_CONTENT + "/" + RouteConstants.ROUTE_APP_CONTACT,
     PATH_APP_TERMS_AND_CONDITIONS: "/" + RouteConstants.ROUTE_APP_CONTENT + "/" + RouteConstants.ROUTE_APP_TERMS_AND_CONDITION,
-    PATH_APP_CONTENT: "/" + RouteConstants.ROUTE_APP_CONTENT
+    PATH_APP_CONTENT: "/" + RouteConstants.ROUTE_APP_CONTENT,
+    PATH_APP_ADD_RESTAURANT:"/"+RouteConstants.ROUTE_APP_ADD_RESTAURANT
 };
 
 

@@ -19,6 +19,7 @@ import {AboutUs} from "./customer/aboutUs/AboutUs";
 import {Contact} from "./customer/contact/Contact";
 import {Content} from "./customer/content/Content";
 import {TermsAndCondition} from "./customer/termsAndCondition/TermsAndCondition";
+import {AddRestaurantContainer} from "./customer/addRestaurant/AddRestaurantContainer";
 let Routing = () => {
     return (
         <Router history={browserHistory}>
@@ -55,6 +56,7 @@ let Routing = () => {
                     <Route path={RouteConstants.ROUTE_APP_CONTACT} component={Contact}/>
                     <Route path={RouteConstants.ROUTE_APP_TERMS_AND_CONDITION} component={TermsAndCondition}/>
                 </Route>
+                <Route path={RouteConstants.ROUTE_APP_ADD_RESTAURANT} component={AddRestaurantContainer}/>
             </Route>
         </Router>
     );

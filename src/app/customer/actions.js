@@ -74,6 +74,18 @@ export function submitOrder(data) {
     }
 }
 
+export function submitRequest(data,successCallback) {
+    return function (dispatch, getState) {
+        var config = {
+            headers: {'Authorization': getState().login.token}
+        };
+        axios.post(APIConstants.ADD_RESTAURANT, data, config).then(() => {
+           successCallback();
+        }, (err) => {
+        })
+    }
+}
+
 function orderSuccess() {
     return {
         type: SUCCESSFULL_ORDER,

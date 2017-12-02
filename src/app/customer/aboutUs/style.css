@@ -1,6 +1,11 @@
-.content-container{
-    margin-top:8rem;
-    padding:50px;
+.content-container {
+    margin-top: 5rem;
+    padding: 40px;
     background-color: white;
+}
 
+.about-us-title {
+    border-bottom: solid 1px gray;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
 }
