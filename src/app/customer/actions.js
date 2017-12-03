@@ -74,13 +74,13 @@ export function submitOrder(data) {
     }
 }
 
-export function submitRequest(data,successCallback) {
+export function submitRequest(data, successCallback) {
     return function (dispatch, getState) {
         var config = {
             headers: {'Authorization': getState().login.token}
         };
         axios.post(APIConstants.ADD_RESTAURANT, data, config).then(() => {
-           successCallback();
+            successCallback();
         }, (err) => {
         })
     }
@@ -139,8 +139,12 @@ export function loadAreas() {
 
 export function loadCuisineTypes() {
     let array = [{value: 0, label: i18next.t("TYPE_OF_CUISINE"), disabled: true},
-        {value: 1, label: "Sandwich", disabled: false},
-        {value: 2, label: "Sweet", disabled: false}];
+        {value: 1, label: "Sandwiches", disabled: false},
+        {value: 2, label: "Pizza", disabled: false},
+        {value: 3, label: "Shawerma", disabled: false},
+        {value: 4, label: "Desserts", disabled: false},
+        {value: 2, label: "Healthy Food", disabled: false},
+        {value: 2, label: "Burgers", disabled: false}];
     return {
         type: LOAD_CUISINES,
         payload: {types: array}
