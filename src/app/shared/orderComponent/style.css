@@ -11,8 +11,6 @@
 }
 
 .order-button-edit {
-    margin-top: 4rem;
-    margin-left: 40%;
     font-size: 16px;
 }
 .add-symbol:hover{
@@ -20,5 +18,5 @@
 }
 
 .order-price{
-    margin-top: 25px;
+    margin-top: 5px;
 }

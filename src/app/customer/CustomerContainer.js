@@ -7,7 +7,7 @@ import {Customer} from "./Customer";
 import {connect} from "react-redux";
 
 const mapStateToProps = (state) => {
-    return {}
+    return {total: state.cart.total}
 };
 
 const mapDispatchToProps = (dispatch) => {

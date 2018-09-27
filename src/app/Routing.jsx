@@ -20,6 +20,7 @@ import {Contact} from "./customer/contact/Contact";
 import {Content} from "./customer/content/Content";
 import {TermsAndCondition} from "./customer/termsAndCondition/TermsAndCondition";
 import {AddRestaurantContainer} from "./customer/addRestaurant/AddRestaurantContainer";
+import {RatingContainer} from "./shared/rating/RatingContainer";
 let Routing = () => {
     return (
         <Router history={browserHistory}>
@@ -57,6 +58,9 @@ let Routing = () => {
                     <Route path={RouteConstants.ROUTE_APP_TERMS_AND_CONDITION} component={TermsAndCondition}/>
                 </Route>
                 <Route path={RouteConstants.ROUTE_APP_ADD_RESTAURANT} component={AddRestaurantContainer}/>
+                <Route path={RouteConstants.ROUTE_APP_RATING}>
+                    <Route path=":id" component={RatingContainer}/>
+                </Route>
             </Route>
         </Router>
     );

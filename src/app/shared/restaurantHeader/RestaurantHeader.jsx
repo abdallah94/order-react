@@ -13,6 +13,12 @@ import i18next from 'i18next';
 import Rating from 'react-rating';
 
 export class RestaurantHeader extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.getHours = this.getHours.bind(this);
+    }
+
     render() {
         return (
             <Row className="restaurant-header-container row-same-height">
@@ -26,20 +32,25 @@ export class RestaurantHeader extends React.Component {
                     }
                 </Col>
                 <Col xs={6} md={3}>
-                    <div className="restaurants-item-rating">
-                        <Rating readonly initialRate={this.props.rating} empty="fa fa-star-o fa-2x medium"
-                                full="fa fa-star fa-2x medium"/>
-                        <h6 className="restaurant-item-delivery-time">{i18next.t("DELIVERY")} {this.props.deliveryTime} {i18next.t("MIN")}</h6>
-                    </div>
+                    <h6 className="restaurant-item-delivery-time">{i18next.t("DELIVERY")} {this.props.deliveryTime} {i18next.t("MIN")}</h6>
                 </Col>
                 <Col xs={6} md={3}>
                     {false &&
                     <h2 className="restaurant-item-min-order">{this.props.minOrder} $</h2>
                     }
+                    <h5 className="restaurant-item-delivery-time">{i18next.t("OPENING_HOURS")} {this.getHours()[0]}-{this.getHours()[1]}</h5>
                 </Col>
             </Row>
         )
+    }
 
+    getHours() {
+        let open = this.props.openHour ? this.props.openHour : "8:00";
+        let close = this.props.closeHour ? this.props.closeHour : "20:00";
+        let array = [];
+        array.push(open);
+        array.push(close);
+        return array;
     }
 
 }

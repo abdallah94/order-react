@@ -11,14 +11,18 @@ import {getRestaurants} from '../../shared';
 import {connect} from "react-redux";
 
 const mapStateToProps = (state, ownprops) => {
-    console.log(ownprops);
     if (!ownprops.admin) {
         let searchName = ownprops.location.query.name;//TODO:use value to get data from api;
     }
     let admin = (ownprops.admin) ? ownprops.admin : false;
+    let area="";
+    if(state.areas && state.area && state.area.area){
+        area=state.areas.areas[state.area.area].label
+    }
     return {
         restaurants: state.restaurants.data,
         admin: admin,
+        area:area
     }
 };
 

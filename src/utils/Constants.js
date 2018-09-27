@@ -13,7 +13,7 @@ import KFC_LOGO from '../assets/img/logo-kfc.png';
 import HUT_POTATO_LOGO from '../assets/img/logo-hut-potato.png';
 import PIZZA_HUT_LOGO from '../assets/img/logo_pizza-hut.png';
 import WENDYS_LOGO from '../assets/img/logo-wendys.png';
-import FOODY_EXPRESS_LOGO from '../assets/img/FoodyExpress.png'
+import FOODY_EXPRESS_LOGO from '../../public/FoodyExpress.png'
 import MAIN_PIC_1 from '../assets/img/main-pic-1.jpg';
 import MAIN_PIC_2 from '../assets/img/main-pic-2.jpg';
 import RESTAURANT_IMG from '../assets/img/restaurant.jpg';
@@ -52,7 +52,8 @@ const Constants = {
     IT_WAITS_LOGO,
     ZARB_LOGO,
     CINABON_LOGO,
-    OFFERS_CYCLING_PERIOD: 3000
+    OFFERS_CYCLING_PERIOD: 3000,
+    CHECKOUT: "CHECKOUT",
 };
 
 export default Constants;

@@ -1,13 +1,16 @@
 /**
  * Created by Abdallah on 6/6/2017.
  */
-import {ADD_ITEM, REMOVE_ITEM, EDIT_NUM_ITEMS, RESET_CART, SUCCESSFULL_ORDER, CHOOSE_AREA,LOAD_AREAS, CHOOSE_CUISINE,
-    LOAD_CUISINES
+import {
+    ADD_ITEM, REMOVE_ITEM, EDIT_NUM_ITEMS, RESET_CART, SUCCESSFULL_ORDER, CHOOSE_AREA, LOAD_AREAS, CHOOSE_CUISINE,
+    LOAD_CUISINES, RATING, CHECKOUT_TYPE, SET_DELIVERY
 } from "./actions";
 import {calulateItemsSum} from "../../utils";
 
 import alertify from 'alertify.js';
 import i18next from 'i18next';
+import {APIConstants} from "../../utils/APIConstants";
+import Constants from "../../utils/Constants";
 
 const initialState = {
     items: [],
@@ -34,6 +37,8 @@ function cart(state = initialState, action) {
             return Object.assign({}, state, items);
         case RESET_CART:
             return initialState;
+        case SET_DELIVERY:
+            return Object.assign({}, state, action.payload);
         case SUCCESSFULL_ORDER:
             return Object.assign({}, state, action.payload);
         case REMOVE_ITEM:
@@ -160,6 +165,26 @@ export function type(state = {}, action) {
 export function types(state = {}, action) {
     switch (action.type) {
         case LOAD_CUISINES:
+            return Object.assign({}, state, action.payload);
+        default:
+            return state;
+    }
+}
+
+export function rating(state = {submitted: false}, action) {
+    switch (action.type) {
+        case
+        RATING
+        :
+            return Object.assign({}, state, action.payload);
+        default:
+            return state;
+    }
+}
+
+export function checkoutType(state = {type: Constants.DELIVERY}, action) {
+    switch (action.type) {
+        case CHECKOUT_TYPE:
             return Object.assign({}, state, action.payload);
         default:
             return state;

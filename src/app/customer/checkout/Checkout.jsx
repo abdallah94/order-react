@@ -23,11 +23,11 @@ export class Checkout extends React.Component {
 
     constructor(props) {
         super(props);
-        let area="",areaIndex=0,areaValid=false;
+        let area = "", areaIndex = 0, areaValid = false;
         if (props.area) {
-            area=this.props.options[props.area].label;
-            areaIndex=props.area;
-            areaValid=true;
+            area = this.props.options[props.area].label;
+            areaIndex = props.area;
+            areaValid = true;
         }
         this.state = {
             firstName: "",
@@ -50,7 +50,7 @@ export class Checkout extends React.Component {
             streetValid: true,
             areaValid: areaValid,
             buildingValid: false,
-            customerVerified: false,
+            customerVerified: true,
         };
         this.submitOrder = this.submitOrder.bind(this);
         this.open = this.open.bind(this);
@@ -82,12 +82,14 @@ export class Checkout extends React.Component {
     }
 
     setDelivery() {
+        this.props.chooseCheckoutType(Constants.DELIVERY);
         this.setState({
             delivery: true,
         });
     }
 
     setCheckout() {
+        this.props.chooseCheckoutType(Constants.CHECKOUT);
         this.setState({
             delivery: false,
         });
@@ -138,6 +140,8 @@ export class Checkout extends React.Component {
             "restaurant_id": this.props.restaurantID,
             "delivery": this.state.delivery,
             "remarks": this.state.remarks,
+            "delivery_time": this.props.deliveryTime,
+            'delivery_fee': this.props.delivery_fee,
             items: items
         };
         if (this.state.email) {
@@ -184,6 +188,12 @@ export class Checkout extends React.Component {
             }
             else {
                 itemObj.extras = "";
+            }
+            if (item.notes && typeof item.notes === 'string') {
+                itemObj.notes = item.notes;
+            }
+            else {
+                itemObj.notes = "";
             }
             items.push(itemObj);
         });
@@ -263,7 +273,7 @@ export class Checkout extends React.Component {
                                 <FormControl onChange={(e) => {
                                     this.props.chooseArea(e.target.value);
                                 }} componentClass="select" value={this.state.areaIndex}>
-                                    {this.props.options && this.props.options.map((option,i) => (
+                                    {this.props.options && this.props.options.map((option, i) => (
                                         <option value={option.value} key={i}>{option.label}</option>
                                     ))
                                     }
@@ -327,13 +337,15 @@ export class Checkout extends React.Component {
                         <Col smOffset={2} sm={8} xs={12}>
                             <FormGroup>
                                 <Col xs={6}>
-                                    <Radio className="text-align-center" name="order" defaultChecked
+                                    <Radio className="text-align-center" name="order"
+                                           checked={this.props.checkoutType === Constants.DELIVERY}
                                            onChange={this.setDelivery}>
                                         {i18next.t("Delivery")}
                                     </Radio>
                                 </Col>
                                 <Col xs={6}>
-                                    <Radio className="text-align-center" name="order" onChange={this.setCheckout}>
+                                    <Radio className="text-align-center" name="order" onChange={this.setCheckout}
+                                           checked={this.props.checkoutType === Constants.CHECKOUT}>
                                         {i18next.t("PICK_UP")}
                                     </Radio>
                                 </Col>

@@ -40,7 +40,8 @@ export class AddRestaurant extends React.Component {
             phone: "",
             address: "",
             restaurant: "",
-            nameValid: false,
+            firstNameValid: false,
+            lastNameValid: false,
             phoneValid: false,
             emailValid: false,
             restaurantValid: false,
@@ -60,11 +61,8 @@ export class AddRestaurant extends React.Component {
     setValidationState(type, value) {
         let validationField = `${type}Valid`;
         let validationState = validate(type, value);
-        if (value === "") {
-            if (type === 'email' || type === 'apartment' || type === 'street') {
-                this.setState({[validationField]: true});
-                return validationState;
-            }
+        if (type === "firstName" || type === "lastName" || type === "restaurant") {
+            validationState = validate('name', value);
         }
         this.setState({[validationField]: validationState});
         return validationState;
@@ -83,8 +81,7 @@ export class AddRestaurant extends React.Component {
             return;
         }
 
-        if (!this.state.phoneValid || !this.state.nameValid || !this.state.emailValid || !this.state.addressValid
-            || !this.state.restaurantValid) {
+        if (!this.state.phoneValid || !this.state.firstNameValid || !this.state.lastNameValid || !this.state.emailValid || !this.state.restaurantValid) {
             alertify.logPosition('top right');
             alertify.error(i18next.t("INVALID_DATA_MESSAGE"));
             return;
@@ -98,6 +95,9 @@ export class AddRestaurant extends React.Component {
             "restaurant": this.state.restaurant
         };
         this.props.submitRequest(data, () => {
+            alertify.logPosition('top right');
+            alertify.success(i18next.t("ADD_RESTAURANT_REQUEST_SUCCESS"));
+            browserHistory.push(PathConstants.PATH_APP_CUSTOMER);
 
         });
     }
@@ -117,7 +117,7 @@ export class AddRestaurant extends React.Component {
                                     <ControlLabel>{i18next.t("FIRST_NAME")}</ControlLabel>
                                     <FormControl onChange={(e) => {
                                         this.setState({firstName: e.target.value});
-                                        this.setValidationState('name', e.target.value)
+                                        this.setValidationState('firstName', e.target.value)
                                     }} placeholder={i18next.t("FIRST_NAME")} type="text" value={this.state.firstName}/>
                                     <FormControl.Feedback />
                                     <HelpBlock>{i18next.t("REQUIRED")}</HelpBlock>
@@ -140,7 +140,7 @@ export class AddRestaurant extends React.Component {
                                            validationState={this.getValidationState('name', this.state.restaurant)}>
                                     <ControlLabel>{i18next.t("RESTAURANT")}</ControlLabel>
                                     <FormControl onChange={(e) => {
-                                        this.setState({lastName: e.target.value});
+                                        this.setState({restaurant: e.target.value});
                                         this.setValidationState('restaurant', e.target.value)
                                     }} placeholder={i18next.t("RESTAURANT")} type="text" value={this.state.restaurant}/>
                                     <FormControl.Feedback />
@@ -172,7 +172,7 @@ export class AddRestaurant extends React.Component {
                                 </FormGroup>
                             </Col>
                             <Col xs={12} sm={8}>
-                                <FormGroup controlId="ramerksGroup">
+                                <FormGroup controlId="addressGroup">
                                     <ControlLabel>{i18next.t("ADDRESS")}</ControlLabel>
                                     <FormControl componentClass="textarea" onChange={(e) => {
                                         this.setState({address: e.target.value});

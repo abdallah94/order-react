@@ -116,7 +116,19 @@ const Strings = {
             CONTACT_US_MESSAGE:"For general inquiries, any problems, or suggestions, send us an Email and we will get back\n" +
             "to you as soon as possible",
             ADD_YOUR_RESTAURANT:"Add your Restaurant",
-            ADD_YOUR_RESTAURANT_STRING:"If you are a restaurant owner/manager with interest in joining us. Please fill the following form and we will get in touch"
+            ADD_YOUR_RESTAURANT_STRING:"If you are a restaurant owner/manager with interest in joining us. Please fill the following form and we will get in touch",
+            RATING:"Rating",
+            RESTAURANT_RATING:"Restaurant Rating",
+            DELIVERY_RATING:"Delivery Rating",
+            FOODY_EXPRESS_RATING:"Foody Express Rating",
+            RATING_MESSAGE:"Thank you for your feedback :)",
+            ADD_RESTAURANT_REQUEST_SUCCESS:"Your request has been sent successfully, our team will contact you soon",
+            ARRIVE_AT_RESTAURANT:"Arrive at restaurant",
+            ARRIVE_AT_CUSTOMER:"Arrive at customer",
+            OPENING_HOURS:"Opening Hours",
+            CHOOSE_ITEM_OPTIONS:"Choose Item Options",
+            ADD_NOTES:"Add notes",
+            CHOOSE_CHECKOUT_TYPE:"Choose Checkout Type"
         }
     }
     , ar: {
@@ -229,7 +241,19 @@ const Strings = {
             TYPE_OF_CUISINE:"نوع الطعام",
             CONTACT_US_MESSAGE:"في حالة وجود اي مشكلة, شكاوى, او اقتراحات. الرجاء التواصل معنا عن طريق البريد الالكتروني",
             ADD_YOUR_RESTAURANT:"اضف مطعمك",
-            ADD_YOUR_RESTAURANT_STRING:'اذا كنت صاحب مطعم وترغب بالانضمام الينا, الرجاء تعبئة المعلومات التالية وسنتواصل معك'
+            ADD_YOUR_RESTAURANT_STRING:'اذا كنت صاحب مطعم وترغب بالانضمام الينا, الرجاء تعبئة المعلومات التالية وسنتواصل معك',
+            RATING:"التقييم",
+            RESTAURANT_RATING:"تقييم المطعم",
+            DELIVERY_RATING:"تقييم التوصيل",
+            FOODY_EXPRESS_RATING:"تقييم فودي اكسبرس",
+            RATING_MESSAGE:"شكرا على تقييمك",
+            ADD_RESTAURANT_REQUEST_SUCCESS:"تم ارسال الطلب بنجاح, سيقوم فريقنا بالتواصل معك قريبا",
+            ARRIVE_AT_RESTAURANT:"الوصول الى المطعم",
+            ARRIVE_AT_CUSTOMER:"الوصول الى الزبون",
+            PENING_HOURS:"ساعات العمل",
+            CHOOSE_ITEM_OPTIONS:"خيارات الطلب",
+            ADD_NOTES:"اضف ملاحظات",
+            CHOOSE_CHECKOUT_TYPE:"اختر نوع الطلب"
         }
     }
 };

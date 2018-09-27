@@ -7,6 +7,7 @@ import alertify from 'alertify.js';
 import i18next from 'i18next';
 /*Components*/
 import {APIConstants} from '../../utils';
+import Constants from '../../utils/Constants';
 
 export const ADD_ITEM = "ADD_ITEM";
 export const REMOVE_ITEM = "REMOVE_ITEM";
@@ -17,8 +18,11 @@ export const CHOOSE_AREA = "CHOOSE_AREA";
 export const LOAD_AREAS = "LOAD_AREAS";
 export const LOAD_CUISINES = "LOAD_CUISINES";
 export const CHOOSE_CUISINE = "CHOOSE_CUISINE";
+export const RATING = "RATING";
+export const CHECKOUT_TYPE = "CHECKOUT_TYPE";
+export const SET_DELIVERY = "SET_DELIVERY";
 //this action uses fetch instead of redux-JSON-API because the API doesn't follow the standards
-export function addItem(id, number, price, name, restaurantID, minOrder, deliveryTime, deliveryFee, restaurantName, size, extras) {
+export function addItem(id, number, price, name, restaurantID, minOrder, deliveryTime, deliveryFee, restaurantName, size, extras, notes) {
     return ({
         type: ADD_ITEM,
         payload: {
@@ -32,7 +36,8 @@ export function addItem(id, number, price, name, restaurantID, minOrder, deliver
             deliveryFee: deliveryFee,
             restaurantName: restaurantName,
             size: size,
-            extras: extras
+            extras: extras,
+            notes: notes
         }
     });
 }
@@ -76,10 +81,7 @@ export function submitOrder(data) {
 
 export function submitRequest(data, successCallback) {
     return function (dispatch, getState) {
-        var config = {
-            headers: {'Authorization': getState().login.token}
-        };
-        axios.post(APIConstants.ADD_RESTAURANT, data, config).then(() => {
+        axios.post(APIConstants.ADD_RESTAURANT, data).then(() => {
             successCallback();
         }, (err) => {
         })
@@ -155,5 +157,45 @@ export function chooseType(type) {
     return {
         type: CHOOSE_CUISINE,
         payload: {type: type}
+    }
+}
+
+export function checkRatingSubmitted(orderID) {
+    return function (dispatch, getState) {
+        axios.get(APIConstants.RATING_SUBMITTED + "/" + orderID).then(res => {
+            return {
+                type: RATING,
+                payload: {submitted: res.data.isSubmitted}
+            }
+        }, (err) => {
+        })
+    }
+}
+
+export function submitRating(data, successCallback) {
+    return function (dispatch, getState) {
+        axios.post(APIConstants.RATING, data).then(() => {
+            successCallback();
+        }, (err) => {
+        })
+    }
+}
+
+export function chooseCheckoutType(type) {
+    return function (dispatch, getState) {
+        if (type === Constants.CHECKOUT)
+            dispatch(resetDelivery());
+        return {
+            type: CHECKOUT_TYPE,
+            payload: {type: type}
+        }
+    }
+
+}
+
+export function resetDelivery() {
+    return {
+        type: SET_DELIVERY,
+        payload: {deliveryFee: 0}
     }
 }

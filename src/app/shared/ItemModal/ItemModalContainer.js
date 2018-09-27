@@ -14,6 +14,7 @@ let mapStateToProps = (state, ownProps) => {
         description: ownProps.description,
         showModal: ownProps.show,
         image: ownProps.image,
+        maxExtras: ownProps.maxExtras
     }
 };
 
@@ -22,8 +23,8 @@ let mapDispatchToProps = (dispatch, ownState) => {
         close: () => {
             ownState.close();
         },
-        addOrder: (price, extras) => {
-            ownState.addOrder(ownState.size, price, extras)
+        addOrder: (price, extras,notes) => {
+            ownState.addOrder(ownState.size, price, extras,notes)
 
         }
     }

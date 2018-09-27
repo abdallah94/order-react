@@ -62,6 +62,7 @@ export class OrderDetails extends React.Component {
                                     <TableHeaderColumn dataField='price'>Price</TableHeaderColumn>
                                     <TableHeaderColumn dataField='size'>size</TableHeaderColumn>
                                     <TableHeaderColumn dataField='extras'>extras</TableHeaderColumn>
+                                    <TableHeaderColumn dataField='notes'>notes</TableHeaderColumn>
                                     <TableHeaderColumn dataField='number'>number</TableHeaderColumn>
                                 </BootstrapTable>
                             </Col>

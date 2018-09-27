@@ -27,7 +27,7 @@ export class OrderConfirm extends React.Component {
                     </Modal.Header>
                     <Modal.Body>
                         {i18next.t("SUCCESSFUL_ORDER_SUBMIT_MESSAGE_1") + this.props.restaurantName +
-                        i18next.t("SUCCESSFUL_ORDER_SUBMIT_MESSAGE_2") + this.props.deliveryTime + i18next.t("MINUTES")}
+                        i18next.t("SUCCESSFUL_ORDER_SUBMIT_MESSAGE_2") + this.props.deliveryTime + " "+i18next.t("MINUTES")}
                     </Modal.Body>
                     <Modal.Footer>
                         <Button onClick={this.navigateToMain.bind(this)} className="center-block" bsStyle="primary">{i18next.t("OK")}</Button>

@@ -1,7 +1,11 @@
-.orders-container{
-margin-top: 4rem;
+.orders-container {
+    margin-top: 4rem;
 }
 
-.category-title{
-    margin-bottom:3rem;
+.category-title {
+    margin-bottom: 8rem;
+}
+
+.panel-default {
+    border: 0;
 }

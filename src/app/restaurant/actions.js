@@ -100,14 +100,12 @@ export function editItem(values, successCallback) {
             headers: {'Authorization': getState().login.token}
         };
         let data = values;
-        console.log(data);
-        var form = new FormData();
-        let keys=Object.keys(values);
-        keys.map((key)=>{
-            form.append(key,values[key]);
-        });
-        console.log(form);
-        axios.patch(path, form, config)
+        // var form = new FormData();
+        // let keys=Object.keys(values);
+        // keys.map((key)=>{
+        //     form.append(key,values[key]);
+        // });
+        axios.patch(path, data, config)
             .then(res => {
                 dispatch(getRestaurant(values.restaurant_id));
                 alertify.logPosition('top right');

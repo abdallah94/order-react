@@ -19,24 +19,27 @@ import Rating from 'react-rating';
 
 export class RestaurantItem extends React.Component {
     render() {
+        let deliveryTime = this.props.deliveryTime;
+        if (this.props.restaurantDeliveries && this.props.restaurantDeliveries.length) {
+            this.props.restaurantDeliveries.map((del) => {
+                console.log(del);
+                if (del.area === this.props.area) {
+                    deliveryTime = del.time;
+                }
+            })
+        }
         return (//TODO:continue UI
             <Row className="restaurant-item-container row-same-height" onClick={this.navigateToRestaurant.bind(this)}>
                 <Col xs={6} md={3}>
                     <Image responsive src={this.props.imageUrl} className="restaurant-item-restaurant-logo"/>
                 </Col>
-                <Col xs={6} md={3}>
+                <Col xs={6} md={3} className="no-padding">
                     <p className="restaurant-item-restaurant-name">{this.props.name}</p>
-                    <h3 className="restaurant-item-restaurant-phone">{this.props.phone}</h3>
                 </Col>
-                <Col xs={6} md={3}>
-                    <div className="restaurants-item-rating">
-                        <Rating readonly initialRate={this.props.rating} empty="fa fa-star-o fa-2x medium"
-                                full="fa fa-star fa-2x medium"/>
-                        <h6 className="restaurant-item-delivery-time">{i18next.t("DELIVERY")} {this.props.deliveryTime} {i18next.t("MIN")}</h6>
-                    </div>
+                <Col xs={6} md={3} className="no-padding">
+                    <h6 className="restaurant-item-delivery-time">{i18next.t("DELIVERY")} {deliveryTime} {i18next.t("MIN")}</h6>
                 </Col>
-                <Col xs={6} md={3}>
-                    <h2 className="restaurant-item-min-order">{this.props.minOrder} $</h2>
+                <Col xs={6} md={3} className="no-padding">
                     <Button className="restaurant-item-view">{i18next.t("VIEW")}</Button>
                 </Col>
             </Row>
